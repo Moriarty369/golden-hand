@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css"/>
+  </head>
+
+  <body>
+    <header>
+      <div class="cabecera container">
+      <div class="logo">
+        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
+
+      </div>
+      <div class="company-name">
+        <h1>GOLDEN HANDS</h1>
+      </div>
+      <div class="button-container">
+        <a href="login.html" class="login-button">Login</a>
+        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+      <nav class="navegacion container">
+        <ul class="nav-links">
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+        </ul>
+      </nav>
+    
+    </header>
+
+    <section class="secondary-nav container">
+      <div class="secondary">
+        <nav class="product-nav">
+          <ul>
+            <li><a href="#gluten">Sin Gluten</a></li>
+            <li><a href="#lacteo">Sin Lactosa</a></li>
+            <li><a href="#frutos">Sin Frutos Secos</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </section>
+    <section>
+      <main class="products container" id="gluten">
+        <h2>Sustitutivos para celíacos</h2>
+        <div class="product-content">
+            <div class="product">
+                <img src="../images/imagenes_productos/harina-de-arroz.jpg" alt="Imagen de bolsa de harina de arroz">
+                <div class="product-txt">
+                    <h3>Harina de Arroz</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/harina-de-avena.jpg" alt="imagen de bolsa de harina de avena">
+                <div class="product-txt">
+                    <h3>Harina de Avena</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/harina-de-coco.webp" alt="imagen de bolsa de harina de coco">
+                <div class="product-txt">
+                    <h3>Harina de Coco</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/Harina-de-Trigo-Sarraceno.webp" alt="imagen de bolsa de harina de trigo sarraceno">
+                <div class="product-txt">
+                    <h3>Harina de Trigo</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/harina-de-almendra.jpg" alt="imagen de bolsa de harina de almendra">
+                <div class="product-txt">
+                    <h3>Harina de Almendra</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/harina-de-garbanzo.jpg" alt="imagen de bolsa de harina de garbanzo">
+                <div class="product-txt">
+                    <h3>Harina de Garbanzo</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar</a>
+                </div>
+            </div>
+        </div>
+      </main>
+    </section>
+
+    <section>
+      <main class="products container" id="lacteo">
+        <h2>Sustitutivos para lácteos</h2>
+        <div class="product-content">
+            <div class="product">
+                <img src="../images/imagenes_productos/leche-de-almendras.jpg" alt="imagen de cartón de leche de almendras">
+                <div class="product-txt">
+                    <h3>Leche de Almendra</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/leche-de-arroz.jpeg" alt="imagen de cartón de leche de arroz">
+                <div class="product-txt">
+                    <h3>Leche de <br>Arroz</br></h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/leche-de-coco.jpg" alt="imagen de cartón de leche de coco">
+                <div class="product-txt">
+                    <h3>Leche de <br>Coco</br></h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/leche-de-soja.jpg" alt="imagen de cartón de leche de soja">
+                <div class="product-txt">
+                    <h3>Leche de <br>Soja</br></h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    </section>
+
+    <section>
+      <main class="products container" id="frutos">
+        <h2>Sustitutivos para frutos secos</h2>
+        <div class="product-content">
+            <div class="product">
+                <img src="../images/imagenes_productos/avena.jpg" alt="imagen de bolsa de copos de avena">
+                <div class="product-txt">
+                    <h3>Avena</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/coco-rallado.jpg" alt="imagen de bolsa de coco rallado">
+                <div class="product-txt">
+                    <h3>Coco Rallado</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/semillas-de-calabaza.jpg" alt="imagen de bolsa de semillas de calabaza">
+                <div class="product-txt">
+                    <h3>Semillas de Calabaza</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/semillas-de-chia.jpg" alt="imagen de botella de semillas de chia">
+                <div class="product-txt">
+                    <h3>Semillas de Chia</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/semillas-de-girasol.jpg" alt="imagen de bolsa de semillas de girasol">
+                <div class="product-txt">
+                    <h3>Semillas de Girasol</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="../images/imagenes_productos/semillas-de-linaza.jpg" alt="imagen de bolsa de semillas de linaza">
+                <div class="product-txt">
+                    <h3>Semillas de Linaza</h3>
+                    <p class="precio">0.00€</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    </section>
+      <footer class="footer">
+      <div class="footer-content container">
+          <div class="link">
+              <h3>&copy; 2023 Golden Hands</h3>
+              <ul>
+                  <li><i class='bx bxl-instagram' ></i></li>
+                  <li><i class='bx bxl-linkedin-square' ></i></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>
