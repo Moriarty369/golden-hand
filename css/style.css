@@ -456,17 +456,17 @@
 .central{
   display: flex;
 }
-.todo h1{
+.todo h2{
   margin: 2% 10%;
 }
-.datos p{
-  margin-left: 10%;
-  font-size: 2em;
+.datos {
+
+  font-size: 1.25rem;
   font-weight: bold;
 }
-.datos .subrayar{
+.subrayar{
   text-decoration: underline gold;
-  width: 42%;
+
 }
 .mapa{
   margin-left: 10%;

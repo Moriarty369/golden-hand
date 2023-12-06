@@ -21,18 +21,17 @@
   <body>
     <header>
       <div class="cabecera container">
-      <div class="logo">
-        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
-
+        <div class="logo">
+          <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
+        </div>
+        <div class="company-name">
+          <h1>GOLDEN HANDS</h1>
+        </div>
+        <div class="button-container">
+          <a href="login.html" class="login-button">Login</a>
+          <button id="cart-button" onclick="addToCart()">Add to Cart</button>
+        </div>
       </div>
-      <div class="company-name">
-        <h1>GOLDEN HANDS</h1>
-      </div>
-      <div class="button-container">
-        <a href="login.html" class="login-button">Login</a>
-        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
-      </div>
-    </div>
       <nav class="navegacion container">
         <ul class="nav-links">
           <li><a href="Services.html">Services</a></li>
@@ -44,29 +43,25 @@
     
     </header>
     <main class="todo">
-      <h1>Contacto</h1>
-      <section class="datos">
-        <p>contacto@goldenhands.com</p>
-        <p class="subrayar">+34 91 813 29 28 / +34 91 813 50 50</p>
-        <p>Calle Fernando Poo 5 28045 Madrid</p>
-      </section>
+      <h2>Contacto</h2>
+      
       <section class="central">
-      <section class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d24314.33554858614!2d-3.7236111786742847!3d40.38022177247848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d40.362294399999996!2d-3.6927540999999997!4m5!1s0xd422633b66fba33%3A0x5d3d7e4094c7e18f!2sC.%20Fernando%20Poo%2C%205%2C%2028045%20Madrid!3m2!1d40.399709!2d-3.6992813!5e0!3m2!1ses!2ses!4v1699274767278!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </section class="contacto">
-      <section class="formulario">
-        <form action="https://goldenhands.netlify.app/">
-          <input type="text" name= "nombre" id="nombre" placeholder="Nombre Completo" autocomplete="off" required>
-          <input type="email" name= "email" id="email" placeholder="Correo Electrónico" autocomplete="off" required>
-          <input type="text" name= "asunto" id="asunto" placeholder="Asunto" autocomplete="off" required>
-          <textarea cols="10" rows="10" name= "mensaje" id="mensaje" placeholder="Mensaje" autocomplete="off" required></textarea>
-          <input type="submit" value="Enviar" class="enviar">
-        </form>
+        <article class="mapa contacto">
+            <p class="datos">contacto@goldenhands.com</p>
+            <p class="subrayar datos">+34 91 813 29 28 / +34 91 813 50 50</p>
+            <p class="datos">Calle Fernando Poo 5 28045 Madrid</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d24314.33554858614!2d-3.7236111786742847!3d40.38022177247848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d40.362294399999996!2d-3.6927540999999997!4m5!1s0xd422633b66fba33%3A0x5d3d7e4094c7e18f!2sC.%20Fernando%20Poo%2C%205%2C%2028045%20Madrid!3m2!1d40.399709!2d-3.6992813!5e0!3m2!1ses!2ses!4v1699274767278!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </article>
+          <form action="https://goldenhands.netlify.app/" class="formulario">
+            <input type="text" name= "nombre" id="nombre" placeholder="Nombre Completo" autocomplete="off" required>
+            <input type="email" name= "email" id="email" placeholder="Correo Electrónico" autocomplete="off" required>
+            <input type="text" name= "asunto" id="asunto" placeholder="Asunto" autocomplete="off" required>
+            <textarea cols="10" rows="10" name= "mensaje" id="mensaje" placeholder="Mensaje" autocomplete="off" required></textarea>
+            <span><input type="checkbox"> AUTORIZO el tratamiento de mis datos personales con la finalidad de atender mi contacto</span>
+            <input type="submit" value="Enviar" class="enviar">
+          </form>
       </section>
-      </section>
-        <section class="autorizo">
-        <span><input type="checkbox"> AUTORIZO el tratamiento de mis datos personales con la finalidad de atender mi contacto</span>
-      </section>
+     
     </main>
    <footer class="footer">
       <div class="footer-content container">
