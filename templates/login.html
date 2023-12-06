@@ -1,124 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css"/>
-  </head>
+<html lang="es">
 
-  <body>
-    <header>
-      <div class="cabecera container">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/logo/Golden_Hands.png">
+  <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="cabecera container">
       <div class="logo">
-        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
+        <a href="../index.html"><img class="logo" src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo" /></a>
 
       </div>
       <div class="company-name">
         <h1>GOLDEN HANDS</h1>
       </div>
-      <div class="button-container">
-        <a href="login.html" class="login-button">Login</a>
-        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
+    <nav class="navegacion">
+      <ul class="nav-links">
+        <li><a href="Services.html">Servicios</a></li>
+        <li><a href="Products.html">Productos</a></li>
+        <li><a href="Contact.html">Contactos</a></li>
+        <li><a href="AboutUs.html">Nosotros</a></li>
+        <i class="fa-solid fa-magnifying-glass icons"></i>
+        <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
+        <a href="./html/car.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+      </ul>
+    </nav>
+  </div>
+  </header>
+  <main class="login-container">
+    <div class="container-form register">
+      <div class="information">
+        <div class="info-childs">
+          <h2>Bienvenido</h2>
+          <p>
+            Para unirte a nuestros servicios por favor Inicia Sesión con tus
+            datos
+          </p>
+          <input type="button" value="Iniciar Sesión" id="Sign-IN" />
+        </div>
+      </div>
+      <div class="form-information">
+        <div class="form-information-childs">
+          <h2>Crear una Cuenta</h2>
+          <div class="icons">
+            <i class="bx bxl-google"></i>
+          </div>
+          <p>o usa tu mail para registrarte</p>
+          <form action="https://goldenhands.netlify.app/" class="form">
+            <label>
+              <i class="bx bx-user"></i>
+              <input type="text" placeholder="Nombre Completo" required />
+            </label>
+            <label>
+              <i class="bx bx-envelope"></i>
+              <input type="email" placeholder="Correo Electronico" required />
+            </label>
+            <label>
+              <i class="bx bx-lock-alt"></i>
+              <input type="password" placeholder="Password" required />
+            </label>
+            <input type="submit" value="Registrarse" />
+          </form>
+        </div>
       </div>
     </div>
-      <nav class="navegacion container">
-        <ul class="nav-links">
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="AboutUs.html">AboutUs</a></li>
-        </ul>
-      </nav>
-    
-    </header>
-    <section class="login-container">
-      <div class="container-form register">
-        <div class="information">
-          <div class="info-childs">
-            <h2>Bienvenido</h2>
-            <p>
-              Para unirte a nuestros servicios por favor Inicia Sesión con tus
-              datos
-            </p>
-            <input type="button" value="Iniciar Sesión" id="Sign-IN" />
-          </div>
-        </div>
-        <div class="form-information">
-          <div class="form-information-childs">
-            <h2>Crear una Cuenta</h2>
-            <div class="icons">
-              <i class="bx bxl-google"></i>
-              <i class="bx bxl-github"></i>
-              <i class="bx bxl-linkedin"></i>
-            </div>
-            <p>o usa tu mail para registrarte</p>
-            <form action="https://goldenhands.netlify.app/" class="form">
-              <label>
-                <i class="bx bx-user"></i>
-                <input type="text" placeholder="Nombre Completo" required />
-              </label>
-              <label>
-                <i class="bx bx-envelope"></i>
-                <input type="email" placeholder="Correo Electronico" required />
-              </label>
-              <label>
-                <i class="bx bx-lock-alt"></i>
-                <input type="password" placeholder="Password" required />
-              </label>
-              <input type="submit" value="Registrarse" />
-            </form>
-          </div>
-        </div>
-      </div>
 
-      <!– formulario de registro –>
+    <!-- formulario de registro -->
 
-      <div class="container-form login hide">
-        <div class="information">
-          <div class="info-childs">
-            <h2>Comienza a Registrarte</h2>
-            <p>
-              Para unirte a nuestros servicios por favor Inicia Sesión con tus
-              datos
-            </p>
-            <input type="button" value="Registrarse" id="Sign-Up" />
+    <section class="container-form login hide">
+      <aside class="information info-childs">
+          <h2>Comienza a Registrarte</h2>
+          <p>
+            Para unirte a nuestros servicios por favor Inicia Sesión con tus
+            datos
+          </p>
+          <input type="button" value="Registrarse" id="Sign-Up" />
+      </aside>
+      <form class="form-information form-information-childs form">
+
+          <h2>Iniciar Sesión</h2>
+          <div class="icons">
+            <i class="bx bxl-google"></i>
           </div>
-        </div>
-        <div class="form-information">
-          <div class="form-information-childs">
-            <h2>Iniciar Sesión</h2>
-            <div class="icons">
-              <i class="bx bxl-google"></i>
-              <i class="bx bxl-github"></i>
-              <i class="bx bxl-linkedin"></i>
+          <p>o inicia sesión con una cuenta</p>
+            <div>
+              <i class="bx bx-envelope"></i>
+              <input type="email" placeholder="Correo Electronico" required />
             </div>
-            <p>o inicia sesión con una cuenta</p>
-            <form class="form">
-              <label>
-                <i class="bx bx-envelope"></i>
-                <input type="email" placeholder="Correo Electronico" required />
-              </label>
-              <label>
-                <i class="bx bx-lock-alt"></i>
-                <input type="password" placeholder="Password" required />
-              </label>
-              <input type="submit" value="Iniciar Sesión" />
-            </form>
-          </div>
-        </div>
-      </div>
+            <div>
+              <i class="bx bx-lock-alt"></i>
+              <input type="password" placeholder="Password" required />
+            </div>
+            <input type="submit" value="Iniciar Sesión" />
+      </form>
     </section>
-    <script src="../src/script.js"></script>
-  </body>
+  </main>
+  <script src="../src/script.js"></script>
+</body>
+
 </html>
