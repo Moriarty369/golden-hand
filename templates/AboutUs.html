@@ -3,104 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title> Nosotros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/logo/Golden_Hands.png">
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
+      href="../images/logo/Golden_Hands.png">
+      <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <header>
       <div class="cabecera container">
-      <div class="logo">
-        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
+        <div class="logo">
+          <a href="../index.html"><img class="logo"
+              src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo" /></a>
 
+        </div>
+        <div class="company-name">
+          <h1>GOLDEN HANDS</h1>
+        </div>
+        <nav class="navegacion">
+          <ul class="nav-links">
+            <li><a href="Services.html">Servicios</a></li>
+            <li><a href="Products.html">Productos</a></li>
+            <li><a href="Contact.html">Contactos</a></li>
+            <li><a href="AboutUs.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./html/car.html"> <i
+                class="fa-solid fa-cart-shopping icons"></i></a>
+          </ul>
+        </nav>
       </div>
-      <div class="company-name">
-        <h1>GOLDEN HANDS</h1>
-      </div>
-      <div class="button-container">
-        <a href="login.html" class="login-button">Login</a>
-        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
-      </div>
-    </div>
-      <nav class="navegacion container">
-        <ul class="nav-links">
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="AboutUs.html">AboutUs</a></li>
-        </ul>
-      </nav>
-    
     </header>
-      <main class="aboutus">
-        <section class="container">
-            
-            <article class="acercade" id="image-with-text">
-                <img src="../images/imagenes_aboutus/imagen1.jpg" alt="imagen1">
-                <div class="parrafo1">
-                   <h1 class="titulo">Nuestra Pasión por el Bienestar</h1>
-                   <p class="textacercade">
-                    En Manos Doradas, nos dedicamos apasionadamente a proporcionar apoyo integral a nuestros mayores, reconociendo la importancia de su bienestar y comodidad en cada etapa de la vida. Nuestro compromiso es ofrecer servicios de acompañamiento personalizados y productos especializados que mejoren la calidad de vida de quienes han acumulado sabiduría a lo largo de los años.
-                    </p>
-                </div>
-            </article>
 
-            <article class="mision" id="image-with-text">
-                <img src="../images/imagenes_aboutus/imagen2.jpg" alt="imagen2">
-                <div class="parrafo2">
-                    <h1 class="titulo">Nuestra Misión</h1>
-                    <p class="textmision">
-                     Nuestra misión es ser un faro de apoyo y comodidad para la comunidad de personas mayores. Buscamos no solo satisfacer sus necesidades cotidianas, sino también enriquecer sus vidas a través de servicios personalizados y productos de alta calidad, promoviendo un envejecimiento activo y saludable.
-                    </p>
-                </div>
-            </article>
+    <main class="aboutus">
 
-            <article class="razones" id="image-with-text">
-                <img src="../images/imagenes_aboutus/imagen3.jpg" alt="imagen3">
-               <div class="parrafo3">
-                <h1 class="titulo">Razones para Confiar en Nosotros</h1>
-                <p class="textrazones">
-                 En Manos Doradas, nos esforzamos por crear un entorno en el que la atención, el respeto y la empatía son la base de cada interacción. Nuestro equipo está comprometido con brindar un servicio excepcional y productos de calidad, adaptados a las necesidades individuales de cada persona mayor a la que servimos.
-                </p>
-               </div>
-            </article>
-           <div class="botonemail">
-              <form action="/procesar_formulario" method="post">
-                <label for="email">Si deseas más información, envíanos tu:</label>
-                 <input type="email" id="email" name="email" placeholder="Email" required>
-                 <input type="submit" value="Enviar">
-              </form>
-            </div>
-        </section> 
-        <h2 class="agradecimiento">
-          ¡Gracias por confiar en Manos Doradas para cuidar de ti y tus seres queridos!
-        </h2>
-    </main>   
+      <article class="acercade" id="image-with-text">
+        <img src="../images/imagenes_aboutus/imagen1.jpg" alt="imagen1">
+        <div class="parrafo1">
+          <h2 class="titulo">Nuestra Pasión por el Bienestar</h2>
+          <p class="textacercade">
+            En Manos Doradas, nos dedicamos apasionadamente a proporcionar
+            apoyo integral a nuestros mayores, reconociendo la importancia de
+            su bienestar y comodidad en cada etapa de la vida. Nuestro
+            compromiso es ofrecer servicios de acompañamiento personalizados y
+            productos especializados que mejoren la calidad de vida de quienes
+            han acumulado sabiduría a lo largo de los años.
+          </p>
+        </div>
+      </article>
 
+      <article class="mision" id="image-with-text">
+        <img src="../images/imagenes_aboutus/imagen2.jpg" alt="imagen2">
+        <div class="parrafo2">
+          <h2 class="titulo">Nuestra Misión</h2>
+          <p class="textmision">
+            Nuestra misión es ser un faro de apoyo y comodidad para la
+            comunidad de personas mayores. Buscamos no solo satisfacer sus
+            necesidades cotidianas, sino también enriquecer sus vidas a través
+            de servicios personalizados y productos de alta calidad,
+            promoviendo un envejecimiento activo y saludable.
+          </p>
+        </div>
+      </article>
+
+      <article class="razones" id="image-with-text">
+        <img src="../images/imagenes_aboutus/imagen3.jpg" alt="imagen3">
+        <div class="parrafo3">
+          <h2 class="titulo">Razones para confiar en nosotros</h2>
+          <p class="textrazones">
+            En Manos Doradas, nos esforzamos por crear un entorno en el que la
+            atención, el respeto y la empatía son la base de cada interacción.
+            Nuestro equipo está comprometido con brindar un servicio
+            excepcional y productos de calidad, adaptados a las necesidades
+            individuales de cada persona mayor a la que servimos.
+          </p>
+        </div>
+      </article>
+
+      <article >
+        <form action="/procesar_formulario" method="post" class="botonemail">
+          <label for="email">Si deseas más información, envíanos tu: </label>
+          <input type="email" id="email" name="email" placeholder="Email"
+            required>
+          <input type="submit" value="Enviar">
+        </form>
+      </article>
+      <p class="agradecimiento">
+        ¡Gracias por confiar en Manos Doradas para cuidar de ti y tus seres
+        queridos!
+      </p>
+    </main>
 
     <footer class="footer">
       <div class="footer-content container">
-          <div class="link">
-              <h3>&copy; 2023 Golden Hands</h3>
-              <ul>
-                  <li><i class='bx bxl-instagram' ></i></li>
-                  <li><i class='bx bxl-linkedin-square' ></i></li>
-              </ul>
-          </div>
+        <div class="link">
+          <h3>&copy; 2023 Golden Hands</h3>
+          <ul>
+            <li><i class='bx bxl-instagram'></i></li>
+            <li><i class='bx bxl-linkedin-square'></i></li>
+          </ul>
+        </div>
       </div>
-  </footer>
+    </footer>
 
-  
   </body>
 </html>
