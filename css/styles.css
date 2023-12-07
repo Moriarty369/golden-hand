@@ -89,7 +89,7 @@
   }
     
   .background-image {
-    background: url('../images/fondo/acompañamiento.png') no-repeat  fixed transparent;
+    background: url('../images/acompañamiento.png') no-repeat  fixed transparent;
     background-size: cover;
     display: flex;
     align-items: center;
