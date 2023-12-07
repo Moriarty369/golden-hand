@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/styles.css"/>
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="./images/golden-hands.png">
     <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
 
   <body>
@@ -61,15 +62,28 @@
 
 
     <footer class="footer">
-      <div class="footer-content container">
-          <div class="link">
+      <section class="footer-content container">
               <h3>&copy; 2023 Golden Hands</h3>
-              <ul>
-                  <li><i class='bx bxl-instagram' ></i></li>
-                  <li><i class='bx bxl-linkedin-square' ></i></li>
+              <ul class="social-icon">
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a></li>
               </ul>
-          </div>
-      </div>
+      </section>
+      <section  class="contact-footer">
+        <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
+                <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
+                <button type="submit" class="button-send">Enviar</button>
+      </section>
   </footer>
-  </body>
+  </body>  
 </html>
