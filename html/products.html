@@ -3,45 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/logo/Golden_Hands.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
+    <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <header>
       <div class="cabecera container">
-      <div class="logo">
-        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
-
+        <div class="logo">
+          <a href="./index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+  
+        </div>
+        <div class="company-name">
+          <h1>GOLDEN HANDS</h1>
+        </div>
+        <nav class="navegacion">
+          <ul class="nav-links">
+            <li><a href="./html/services.html">Servicios</a></li>
+            <li><a href="./html/products.html">Productos</a></li>
+            <li><a href="./html/contact.html">Contactos</a></li>
+            <li><a href="./html/about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./html/products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+          </ul>
+        </nav>
       </div>
-      <div class="company-name">
-        <h1>GOLDEN HANDS</h1>
-      </div>
-      <div class="button-container">
-        <a href="login.html" class="login-button">Login</a>
-        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
-      </div>
-    </div>
-      <nav class="navegacion container">
-        <ul class="nav-links">
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="AboutUs.html">AboutUs</a></li>
-        </ul>
-      </nav>
-    
     </header>
 
     <section class="secondary-nav container">
@@ -61,7 +55,7 @@
         <h2>Sustitutivos para celíacos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-arroz.jpg" alt="Imagen de bolsa de harina de arroz">
+                <img src="../images/harina-de-arroz.jpg" alt="Imagen de bolsa de harina de arroz">
                 <div class="product-txt">
                     <h3>Harina de Arroz</h3>
                     <p class="precio">0.00€</p>
@@ -69,7 +63,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-avena.jpg" alt="imagen de bolsa de harina de avena">
+                <img src="../images/harina-de-avena.jpg" alt="imagen de bolsa de harina de avena">
                 <div class="product-txt">
                     <h3>Harina de Avena</h3>
                     <p class="precio">0.00€</p>
@@ -77,7 +71,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-coco.webp" alt="imagen de bolsa de harina de coco">
+                <img src="../images/harina-de-coco.webp" alt="imagen de bolsa de harina de coco">
                 <div class="product-txt">
                     <h3>Harina de Coco</h3>
                     <p class="precio">0.00€</p>
@@ -85,7 +79,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/Harina-de-Trigo-Sarraceno.webp" alt="imagen de bolsa de harina de trigo sarraceno">
+                <img src="../images/Harina-de-Trigo-Sarraceno.webp" alt="imagen de bolsa de harina de trigo sarraceno">
                 <div class="product-txt">
                     <h3>Harina de Trigo</h3>
                     <p class="precio">0.00€</p>
@@ -93,7 +87,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-almendra.jpg" alt="imagen de bolsa de harina de almendra">
+                <img src="../images/harina-de-almendra.jpg" alt="imagen de bolsa de harina de almendra">
                 <div class="product-txt">
                     <h3>Harina de Almendra</h3>
                     <p class="precio">0.00€</p>
@@ -101,7 +95,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-garbanzo.jpg" alt="imagen de bolsa de harina de garbanzo">
+                <img src="../images/harina-de-garbanzo.jpg" alt="imagen de bolsa de harina de garbanzo">
                 <div class="product-txt">
                     <h3>Harina de Garbanzo</h3>
                     <p class="precio">0.00€</p>
@@ -117,7 +111,7 @@
         <h2>Sustitutivos para lácteos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-almendras.jpg" alt="imagen de cartón de leche de almendras">
+                <img src="../images/leche-de-almendras.jpg" alt="imagen de cartón de leche de almendras">
                 <div class="product-txt">
                     <h3>Leche de Almendra</h3>
                     <p class="precio">0.00€</p>
@@ -125,7 +119,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-arroz.jpeg" alt="imagen de cartón de leche de arroz">
+                <img src="../images/leche-de-arroz.jpeg" alt="imagen de cartón de leche de arroz">
                 <div class="product-txt">
                     <h3>Leche de <br>Arroz</br></h3>
                     <p class="precio">0.00€</p>
@@ -133,7 +127,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-coco.jpg" alt="imagen de cartón de leche de coco">
+                <img src="../images/leche-de-coco.jpg" alt="imagen de cartón de leche de coco">
                 <div class="product-txt">
                     <h3>Leche de <br>Coco</br></h3>
                     <p class="precio">0.00€</p>
@@ -141,7 +135,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-soja.jpg" alt="imagen de cartón de leche de soja">
+                <img src="../images/leche-de-soja.jpg" alt="imagen de cartón de leche de soja">
                 <div class="product-txt">
                     <h3>Leche de <br>Soja</br></h3>
                     <p class="precio">0.00€</p>
@@ -157,7 +151,7 @@
         <h2>Sustitutivos para frutos secos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/avena.jpg" alt="imagen de bolsa de copos de avena">
+                <img src="../images/avena.jpg" alt="imagen de bolsa de copos de avena">
                 <div class="product-txt">
                     <h3>Avena</h3>
                     <p class="precio">0.00€</p>
@@ -165,7 +159,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/coco-rallado.jpg" alt="imagen de bolsa de coco rallado">
+                <img src="../images/coco-rallado.jpg" alt="imagen de bolsa de coco rallado">
                 <div class="product-txt">
                     <h3>Coco Rallado</h3>
                     <p class="precio">0.00€</p>
@@ -173,7 +167,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-calabaza.jpg" alt="imagen de bolsa de semillas de calabaza">
+                <img src="../images/semillas-de-calabaza.jpg" alt="imagen de bolsa de semillas de calabaza">
                 <div class="product-txt">
                     <h3>Semillas de Calabaza</h3>
                     <p class="precio">0.00€</p>
@@ -181,7 +175,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-chia.jpg" alt="imagen de botella de semillas de chia">
+                <img src="../images/semillas-de-chia.jpg" alt="imagen de botella de semillas de chia">
                 <div class="product-txt">
                     <h3>Semillas de Chia</h3>
                     <p class="precio">0.00€</p>
@@ -189,7 +183,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-girasol.jpg" alt="imagen de bolsa de semillas de girasol">
+                <img src="../images/semillas-de-girasol.jpg" alt="imagen de bolsa de semillas de girasol">
                 <div class="product-txt">
                     <h3>Semillas de Girasol</h3>
                     <p class="precio">0.00€</p>
@@ -197,7 +191,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-linaza.jpg" alt="imagen de bolsa de semillas de linaza">
+                <img src="../images/semillas-de-linaza.jpg" alt="imagen de bolsa de semillas de linaza">
                 <div class="product-txt">
                     <h3>Semillas de Linaza</h3>
                     <p class="precio">0.00€</p>
