@@ -109,6 +109,16 @@
   text-align: center;
   }
 
+  /* -_- ------------ FLIP CARD STYLE ------------ -_- */
+  .flip-container{
+    width: 350px;
+    height: 500px;
+  }
+  .card {
+    
+  }
+  /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
+
  
 /* Fin del estilo de Home*/
 
