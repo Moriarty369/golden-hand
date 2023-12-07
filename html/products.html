@@ -18,29 +18,40 @@
 
   <body>
     <header>
-        <div class="cabecera container">
-          <div class="logo">
-            <a href="../index.html"><img class="logo"
-                src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
-  
+      <nav>
+        <div class="logo-container">
+          <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
           </div>
-          <div class="company-name">
-            <h1>GOLDEN HANDS</h1>
-          </div>
-          <nav class="navegacion">
-            <ul class="nav-links">
-              <li><a href="./services.html">Servicios</a></li>
-              <li><a href="./products.html">Productos</a></li>
-              <li><a href="./contact.html">Contactos</a></li>
-              <li><a href="./about-us.html">Nosotros</a></li>
-              <i class="fa-solid fa-magnifying-glass icons"></i>
-              <a href="./login.html"><i class="fas fa-user icons"></i></a>
-              <a href="./products.html"> <i
-                  class="fa-solid fa-cart-shopping icons"></i></a>
-            </ul>
-          </nav>
+        <div class="company-name">
+          <h1>GOLDEN HANDS</h1>
         </div>
-      </header>
+        <div class="container-nav-list">
+          <ul>
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+          </ul>
+        </div>
+        <div class="show">
+              <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="hidden-container">
+          <ul class="hidden-list">
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+              </ul>
+          </div>
+      </nav>
+  </header>
 
     <section class="secondary-nav container">
       <div class="secondary">
@@ -55,7 +66,7 @@
 
     </section>
     <section>
-      <main class="products container" id="gluten">
+      <article class="products container" id="gluten">
         <h2>Sustitutivos para celíacos</h2>
         <div class="product-content">
             <div class="product">
@@ -107,7 +118,7 @@
                 </div>
             </div>
         </div>
-      </main>
+      </article>
     </section>
 
     <section>
@@ -229,5 +240,6 @@
                   <button type="submit" class="button-send">Enviar</button>
         </section>
     </footer>
+    <script src="../js/hamburguer.js"></script>
   </body>
 </html>
