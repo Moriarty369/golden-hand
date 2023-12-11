@@ -3,46 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>Productos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/logo/Golden_Hands.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
+    <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
 
   <body>
     <header>
-      <div class="cabecera container">
-      <div class="logo">
-        <a href="../index.html"><img class="logo"src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo"/></a>
-
-      </div>
-      <div class="company-name">
-        <h1>GOLDEN HANDS</h1>
-      </div>
-      <div class="button-container">
-        <a href="login.html" class="login-button">Login</a>
-        <button id="cart-button" onclick="addToCart()">Add to Cart</button>
-      </div>
-    </div>
-      <nav class="navegacion container">
-        <ul class="nav-links">
-          <li><a href="Services.html">Services</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="AboutUs.html">AboutUs</a></li>
-        </ul>
+      <nav>
+        <div class="logo-container">
+          <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+          </div>
+        <div class="company-name">
+          <h1>GOLDEN HANDS</h1>
+        </div>
+        <div class="container-nav-list">
+          <ul>
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+          </ul>
+        </div>
+        <div class="show">
+              <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="hidden-container">
+          <ul class="hidden-list">
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+              </ul>
+          </div>
       </nav>
-    
-    </header>
+  </header>
 
     <section class="secondary-nav container">
       <div class="secondary">
@@ -57,11 +66,11 @@
 
     </section>
     <section>
-      <main class="products container" id="gluten">
+      <article class="products container" id="gluten">
         <h2>Sustitutivos para celíacos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-arroz.jpg" alt="Imagen de bolsa de harina de arroz">
+                <img src="../images/harina-de-arroz.jpg" alt="Imagen de bolsa de harina de arroz">
                 <div class="product-txt">
                     <h3>Harina de Arroz</h3>
                     <p class="precio">0.00€</p>
@@ -69,7 +78,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-avena.jpg" alt="imagen de bolsa de harina de avena">
+                <img src="../images/harina-de-avena.jpg" alt="imagen de bolsa de harina de avena">
                 <div class="product-txt">
                     <h3>Harina de Avena</h3>
                     <p class="precio">0.00€</p>
@@ -77,7 +86,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-coco.webp" alt="imagen de bolsa de harina de coco">
+                <img src="../images/harina-de-coco.webp" alt="imagen de bolsa de harina de coco">
                 <div class="product-txt">
                     <h3>Harina de Coco</h3>
                     <p class="precio">0.00€</p>
@@ -85,7 +94,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/Harina-de-Trigo-Sarraceno.webp" alt="imagen de bolsa de harina de trigo sarraceno">
+                <img src="../images/Harina-de-Trigo-Sarraceno.webp" alt="imagen de bolsa de harina de trigo sarraceno">
                 <div class="product-txt">
                     <h3>Harina de Trigo</h3>
                     <p class="precio">0.00€</p>
@@ -93,7 +102,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-almendra.jpg" alt="imagen de bolsa de harina de almendra">
+                <img src="../images/harina-de-almendra.jpg" alt="imagen de bolsa de harina de almendra">
                 <div class="product-txt">
                     <h3>Harina de Almendra</h3>
                     <p class="precio">0.00€</p>
@@ -101,7 +110,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/harina-de-garbanzo.jpg" alt="imagen de bolsa de harina de garbanzo">
+                <img src="../images/harina-de-garbanzo.jpg" alt="imagen de bolsa de harina de garbanzo">
                 <div class="product-txt">
                     <h3>Harina de Garbanzo</h3>
                     <p class="precio">0.00€</p>
@@ -109,7 +118,7 @@
                 </div>
             </div>
         </div>
-      </main>
+      </article>
     </section>
 
     <section>
@@ -117,7 +126,7 @@
         <h2>Sustitutivos para lácteos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-almendras.jpg" alt="imagen de cartón de leche de almendras">
+                <img src="../images/leche-de-almendras.jpg" alt="imagen de cartón de leche de almendras">
                 <div class="product-txt">
                     <h3>Leche de Almendra</h3>
                     <p class="precio">0.00€</p>
@@ -125,25 +134,25 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-arroz.jpeg" alt="imagen de cartón de leche de arroz">
+                <img src="../images/leche-de-arroz.jpeg" alt="imagen de cartón de leche de arroz">
                 <div class="product-txt">
-                    <h3>Leche de <br>Arroz</br></h3>
+                    <h3>Leche de <br>Arroz<br></h3>
                     <p class="precio">0.00€</p>
                     <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-coco.jpg" alt="imagen de cartón de leche de coco">
+                <img src="../images/leche-de-coco.jpg" alt="imagen de cartón de leche de coco">
                 <div class="product-txt">
-                    <h3>Leche de <br>Coco</br></h3>
+                    <h3>Leche de <br>Coco<br></h3>
                     <p class="precio">0.00€</p>
                     <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/leche-de-soja.jpg" alt="imagen de cartón de leche de soja">
+                <img src="../images/leche-de-soja.jpg" alt="imagen de cartón de leche de soja">
                 <div class="product-txt">
-                    <h3>Leche de <br>Soja</br></h3>
+                    <h3>Leche de <br>Soja<br></h3>
                     <p class="precio">0.00€</p>
                     <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar</a>
                 </div>
@@ -157,7 +166,7 @@
         <h2>Sustitutivos para frutos secos</h2>
         <div class="product-content">
             <div class="product">
-                <img src="../images/imagenes_productos/avena.jpg" alt="imagen de bolsa de copos de avena">
+                <img src="../images/avena.jpg" alt="imagen de bolsa de copos de avena">
                 <div class="product-txt">
                     <h3>Avena</h3>
                     <p class="precio">0.00€</p>
@@ -165,7 +174,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/coco-rallado.jpg" alt="imagen de bolsa de coco rallado">
+                <img src="../images/coco-rallado.jpg" alt="imagen de bolsa de coco rallado">
                 <div class="product-txt">
                     <h3>Coco Rallado</h3>
                     <p class="precio">0.00€</p>
@@ -173,7 +182,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-calabaza.jpg" alt="imagen de bolsa de semillas de calabaza">
+                <img src="../images/semillas-de-calabaza.jpg" alt="imagen de bolsa de semillas de calabaza">
                 <div class="product-txt">
                     <h3>Semillas de Calabaza</h3>
                     <p class="precio">0.00€</p>
@@ -181,7 +190,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-chia.jpg" alt="imagen de botella de semillas de chia">
+                <img src="../images/semillas-de-chia.jpg" alt="imagen de botella de semillas de chia">
                 <div class="product-txt">
                     <h3>Semillas de Chia</h3>
                     <p class="precio">0.00€</p>
@@ -189,7 +198,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-girasol.jpg" alt="imagen de bolsa de semillas de girasol">
+                <img src="../images/semillas-de-girasol.jpg" alt="imagen de bolsa de semillas de girasol">
                 <div class="product-txt">
                     <h3>Semillas de Girasol</h3>
                     <p class="precio">0.00€</p>
@@ -197,7 +206,7 @@
                 </div>
             </div>
             <div class="product">
-                <img src="../images/imagenes_productos/semillas-de-linaza.jpg" alt="imagen de bolsa de semillas de linaza">
+                <img src="../images/semillas-de-linaza.jpg" alt="imagen de bolsa de semillas de linaza">
                 <div class="product-txt">
                     <h3>Semillas de Linaza</h3>
                     <p class="precio">0.00€</p>
@@ -207,16 +216,118 @@
         </div>
     </main>
     </section>
-      <footer class="footer">
-      <div class="footer-content container">
-          <div class="link">
-              <h3>&copy; 2023 Golden Hands</h3>
-              <ul>
-                  <li><i class='bx bxl-instagram' ></i></li>
-                  <li><i class='bx bxl-linkedin-square' ></i></li>
-              </ul>
-          </div>
-      </div>
-  </footer>
+    <footer class="footer">
+        <section class="footer-content container">
+                <h3>&copy; 2023 Golden Hands</h3>
+                <ul class="social-icon">
+                  <li class="social-iconitem"><a class="social-iconlink" href="#">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                  <li class="social-iconitem"><a class="social-iconlink" href="#">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                  <li class="social-iconitem"><a class="social-iconlink" href="#">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                  <li class="social-iconitem"><a class="social-iconlink" href="#">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+                </ul>
+        </section>
+        <section  class="contact-footer">
+          <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
+                  <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
+                  <button type="submit" class="button-send">Enviar</button>
+        </section>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Objeto principal que representa el carrito de compras
+        function Carrito() {
+          this.items = [];
+      
+          // Método para cargar los productos desde un archivo JSON
+          this.cargarProductos = function () {
+            fetch('../js/data.json') // Ajusta la ruta según la ubicación de tu archivo JSON
+              .then(response => response.json())
+              .then(shopItemsData => {
+                // Asignar los productos cargados al carrito
+                this.items = shopItemsData.map(item => ({ producto: new Producto(item.id, item.name, item.price), cantidad: 0 }));
+      
+                // Actualizar la interfaz del carrito después de cargar los productos
+                actualizarCarrito();
+              })
+              .catch(error => {
+                console.error('Error al cargar los productos:', error);
+              });
+          };
+      
+          // Método para agregar un producto al carrito
+          this.agregarItem = function(producto) {
+            const itemExistente = this.items.find(item => item.producto.id === producto.id);
+      
+            if (itemExistente) {
+              itemExistente.cantidad += 1;
+            } else {
+              const nuevoItem = { producto: producto, cantidad: 1 };
+              this.items.push(nuevoItem);
+            }
+      
+            actualizarCarrito();
+          };
+      
+          // Método para calcular el total del carrito
+          this.calcularTotal = function() {
+            return this.items.reduce((total, item) => total + item.producto.precio * item.cantidad, 0);
+          };
+      
+          // Función para actualizar la interfaz del carrito
+          function actualizarCarrito() {
+            // Lógica para actualizar el contenido del carrito en la interfaz
+            // Puedes acceder al carrito y sus propiedades aquí
+            console.log(carrito);
+          }
+        }
+      
+        // Objeto para representar un producto
+        function Producto(id, nombre, precio) {
+          this.id = id;
+          this.nombre = nombre;
+          this.precio = precio;
+        }
+      
+        // Crear una instancia del carrito
+        const carrito = new Carrito();
+      
+        // Obtener los botones de agregar al carrito
+        const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+      
+        // Manejar clics en los botones de agregar al carrito
+        botonesAgregarCarrito.forEach(boton => {
+          boton.addEventListener('click', function (event) {
+            event.preventDefault();
+      
+            // Obtener el ID del producto desde el atributo data-id
+            const idProducto = parseInt(boton.getAttribute('data-id'));
+      
+            // Buscar el producto en tu lista de productos (puedes extender esta lista)
+            const productoEncontrado = carrito.items.find(item => item.producto.id === idProducto);
+      
+            // Agregar el producto al carrito
+            if (productoEncontrado) {
+              carrito.agregarItem(productoEncontrado.producto);
+            }
+          });
+        });
+      
+        // Llamar al método para cargar productos cuando se inicie la aplicación
+        carrito.cargarProductos();
+      });
+      </script>
+    <script src="../js/hamburguer.js"></script>
+   
+    
+    
+   
   </body>
 </html>

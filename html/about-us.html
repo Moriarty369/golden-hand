@@ -12,42 +12,54 @@
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
-      href="../images/logo/Golden_Hands.png">
+      href="../images/golden-hands.png">
       <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
 
   <body>
     <header>
-      <div class="cabecera container">
-        <div class="logo">
-          <a href="../index.html"><img class="logo"
-              src="../images/logo/Golden_Hands.png" alt="Golden Hands Logo" /></a>
-
-        </div>
+      <nav>
+        <div class="logo-container">
+          <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+          </div>
         <div class="company-name">
           <h1>GOLDEN HANDS</h1>
         </div>
-        <nav class="navegacion">
-          <ul class="nav-links">
-            <li><a href="Services.html">Servicios</a></li>
-            <li><a href="Products.html">Productos</a></li>
-            <li><a href="Contact.html">Contactos</a></li>
-            <li><a href="AboutUs.html">Nosotros</a></li>
+        <div class="container-nav-list">
+          <ul>
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
             <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./html/car.html"> <i
-                class="fa-solid fa-cart-shopping icons"></i></a>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
           </ul>
-        </nav>
-      </div>
-    </header>
+        </div>
+        <div class="show">
+              <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="hidden-container">
+          <ul class="hidden-list">
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+              </ul>
+          </div>
+      </nav>
+  </header>
 
     <main class="aboutus">
 
       <article class="acercade" id="image-with-text">
-        <img src="../images/imagenes_aboutus/imagen1.jpg" alt="imagen1">
+        <img src="../images/baston.jpg" alt="imagen1">
         <div class="parrafo1">
           <h2 class="titulo">Nuestra Pasión por el Bienestar</h2>
           <p class="textacercade">
@@ -62,7 +74,7 @@
       </article>
 
       <article class="mision" id="image-with-text">
-        <img src="../images/imagenes_aboutus/imagen2.jpg" alt="imagen2">
+        <img src="../images/charla.jpg" alt="imagen2">
         <div class="parrafo2">
           <h2 class="titulo">Nuestra Misión</h2>
           <p class="textmision">
@@ -76,7 +88,7 @@
       </article>
 
       <article class="razones" id="image-with-text">
-        <img src="../images/imagenes_aboutus/imagen3.jpg" alt="imagen3">
+        <img src="../images/pareja.jpg" alt="imagen3">
         <div class="parrafo3">
           <h2 class="titulo">Razones para confiar en nosotros</h2>
           <p class="textrazones">
@@ -104,16 +116,29 @@
     </main>
 
     <footer class="footer">
-      <div class="footer-content container">
-        <div class="link">
-          <h3>&copy; 2023 Golden Hands</h3>
-          <ul>
-            <li><i class='bx bxl-instagram'></i></li>
-            <li><i class='bx bxl-linkedin-square'></i></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-
+      <section class="footer-content container">
+              <h3>&copy; 2023 Golden Hands</h3>
+              <ul class="social-icon">
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li class="social-iconitem"><a class="social-iconlink" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a></li>
+              </ul>
+      </section>
+      <section  class="contact-footer">
+        <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
+                <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
+                <button type="submit" class="button-send">Enviar</button>
+      </section>
+  </footer>
+  <script src="../js/hamburguer.js"></script>
   </body>
 </html>
