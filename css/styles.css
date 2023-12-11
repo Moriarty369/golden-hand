@@ -5,47 +5,138 @@
   font-family: 'Montserrat', sans-serif;
 }
   
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: white;
-  }
-    
+body {
+  background-color: white;
+}
+
+            /*    HEADER    */
+
   header {
     display: flex;
     padding: 10px;
     background-color: #90ccd1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    flex-direction: column;
   }
 
-  .cabecera {
-    display: flex;
-
+  .logo-container{
+    width: auto;
+    flex: 1;
   }
     
-  .logo img {
-    width: 115px;
-    height: 115px;
-    border-radius: 30px;
+  .logo {
     margin: 15px;
     background-color: #90ccd1;
+    width: 6rem;
+    height: auto;
   }
   
-  .company-name{
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translate( -50%, -15% );
-  }
-    
-  .company-name h1 {
-    font-size: 52px;
+  .company-name {
+    font-size: 30px;
     color: #c7af43;
+    flex: 2;
+  } 
+.container-nav-list{
+  flex:2;
+}
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bolder;
   }
-    
+  
+  ul {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex: 6;
+    align-items: center;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  i {
+    color: white;
+    z-index: 2;
+  }
+  
+  .show {
+    display: none !important;
+  }
+  
+  .icons {
+    font-size: 1.6rem;
+    margin-left: 30px;
+  }
+  /* ----------------- ESTILOS MENU HAMBURGUESA ----------------- */
+.hidden-container {
+  position: relative;
+}
+
+.hidden-list {
+  list-style-type: none;
+  background-color: #754515;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  display: none;
+  z-index: 999; 
+}
+
+.hidden-list li {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5em; 
+  font-weight: bold; 
+  position: relative;
+  color: #fff; 
+}
+
+.hidden-list li:hover {
+  background: linear-gradient(to bottom, #c78943, rgba(226, 149, 120, 0.6));
+}
+
+.hidden-list li::before,
+.hidden-list li::after {
+  content: "";
+  position: absolute;
+  height: 5px; /* Grosor de las líneas de sombra */
+  width: calc(100% + 40px); /* Ancho ajustado para extenderse más allá del contenido del li */
+  left: -20px; /* Desplaza a la izquierda la mitad del ancho adicional */
+}
+
+.hidden-list li::before {
+  top: 0;
+}
+
+.hidden-list li::after {
+  bottom: 0;
+}
+
+.show:hover {
+  cursor: pointer;
+  background-color: #83C5BE;
+  padding: 10px;
+  border-radius: 10px;
+}
+/* ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- */
+
+          /*   FIN HEADER    */    
   .button-container {
     display: flex;
     align-items: center;
@@ -66,36 +157,13 @@
     margin: 0 5px; /* Espacio entre los botones */
     cursor: pointer;
   }
-    
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0px 32% 30% 32%;
-    text-align: right;
-    justify-content: flex-start;
-    width: 100px;
-  }
-    
-  .nav-links li {
-     margin: 0 15px;
-  }
-    
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-  }
-    
+        
   .background-image {
-    background: url('../images/acompañamiento.png') no-repeat  fixed transparent;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 82vh;
-  }
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
   .letra{
   margin-top: 0%;  
@@ -114,9 +182,7 @@
     width: 350px;
     height: 500px;
   }
-  .card {
-    
-  }
+
   /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
 
  
@@ -684,7 +750,23 @@ font-size: 35px;
    html {
    font-size: 12px;
   } 
+/* HEADER */
+header {
+  width: auto;
+}
 
+.show {
+  display: block !important;
+  font-size: xx-large;
+}
+
+ul {
+  display: none;
+}
+
+
+
+/* FIN HEADER*/
   .letra {
     font-size: 14px;
     padding-left: 18%;
