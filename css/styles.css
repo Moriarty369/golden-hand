@@ -79,7 +79,7 @@ body {
     font-size: 1.6rem;
     margin-left: 30px;
   }
-  /* -_- ---------------- ESTILOS MENU HAMBURGUESA ----------------- -_- */
+  /* ----------------- ESTILOS MENU HAMBURGUESA ----------------- */
 .hidden-container {
   position: relative;
 }
@@ -93,7 +93,6 @@ body {
   top: 0;
   right: 0;
   width: 50%;
-  height: 50%;
   display: none;
   z-index: 999; 
 }
@@ -134,9 +133,10 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
-/* -_- ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- -_- */
+/* ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- */
 
           /*   FIN HEADER    */    
+/*           
   .button-container {
     display: flex;
     align-items: center;
@@ -149,15 +149,15 @@ body {
     color: #fff;
     text-decoration: none;
     border-radius: 20px;
-    width: 100px; /* Define un ancho fijo para los botones */
-    height: 40px; /* Define una altura fija para los botones */
+    width: 100px; /-* Define un ancho fijo para los botones *-/
+    height: 40px; /-* Define una altura fija para los botones *-/
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px; /* Espacio entre los botones */
+    margin: 0 5px; /* Espacio entre los botones *-/
     cursor: pointer;
-  }
-        /* -_- ---------------- WTF ???? ----------------- -_- */
+  } */
+    
   .background-image {
     z-index: -2;
     position: absolute;
@@ -179,29 +179,9 @@ body {
 
   /* -_- ------------ FLIP CARD STYLE ------------ -_- */
   .flip-container{
-    width: 250px;
-    height: 400px;
-    background-color: red;
-  }
-  .card{
-    width:100%;
-    height: 100%;
-    border-radius: 20px;
-    
-  }
-  .card-front{
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/abuela.jpg);
-    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-  
-  }
-
-  .card-back{
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-  }
+    width: 350px;
+    height: 500px;
+      }
 
   /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
 
@@ -443,17 +423,13 @@ body {
 
 /*Fin productos*/
 
-/* aqui empieza el estilo de la seccion servicios */
+/*      PÁGINA DE SERVICIOS    */
 
-.imageneser {
-  border-radius: 25px;
-  box-shadow: 0 10px 18px #000000;
+.services-section{
+  margin: 5rem 2rem;
+  height: auto;
 }
-.compañia img:hover, .compra img:hover, .limpieza img:hover {
- transform: scale(1.10);
-}
-
-#h1 {
+.title-section {
   color: #fafafa;
   margin: 40px;
   height: 35px;
@@ -463,41 +439,53 @@ body {
   box-shadow: 0 8px 10px #838080;
 }
 
-.compañia  {
+.position-section {
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   justify-content: space-between;
   color: #91422b;
-  height: 350px;
-  margin: 40px;
-  
+  height: auto;
+  margin: 60px; 
+  font-size: 20px;
+  margin-top: 15px;
 }
 
 .compra {
   display: flex;
-  flex-flow: row;
   justify-content: space-between;
   color: #91422b;
-  height: 350px;
+  height: auto;
   margin: 40px;
   flex-direction: row-reverse;
-  
-
+  font-size: 20px;
+  margin-top: 15px;
 }
 
-.limpieza {
- 
-  display: flex;
-  color: #91422b;
-  height: 350px;
-  margin: 40px;
-  flex-flow: row;
-  justify-content: space-between;
+.position-section img:hover, .compra img:hover, img:hover {
+  transform: scale(1.10);
+}
 
+.imageneser {
+  border-radius: 25px;
+  box-shadow: 0 10px 18px #000000;
+  width: 30vw;
+  height: 20rem;
+}
+
+.info-container {
+ 
+  height: 100%;
+  margin: 40px 80px;
+  text-align: justify;
+}
+
+.info-container ul{
+  list-style-type: disc;
+  display: block;
+  margin-left: 2rem;
 }
 
 .butser {
-
   background-color: #c78943;
   margin-left: 240px;
   margin-top:20px;
@@ -506,49 +494,20 @@ body {
   box-shadow: 0 0 10px #754515 inset;
   border-radius: 10px;
   font-weight: bold;
-}
-
-.butser img {
-  
-  height: 40px;
+  cursor: pointer;
 }
 
 .butser:hover {
   color:#c78943;
-  cursor: pointer;
   background-color:#ffff ;
   transform: scale(1.10);
 }
 
-.compañias-container,  .limpiezas-container {
-  width: 900px;
-  height: 50px;
-  margin-left: 80px;
-  margin-top: 40px;
-  
-}
 
-.compras-container {
-  width: 900px;
-  height: 50px;
-  margin-right: 80px;
-  margin-top: 40px;
-}
+/* Fin página de servicios */
 
-.compañias, .compras, .limpiezas  {
-  font-size: 20px;
-  margin-top: 15px;
-  
-}
 
-.compañias ul, .compras ul, .limpiezas ul {
-  margin-top: 25px;
-  
-}
-
-/* Fin de la seccion de servicios */
-
-/* Estilos para la sección contacto */
+/*      PÁGINA DE CONTACTO    */
 .central{
   display: flex;
 }
@@ -605,31 +564,25 @@ textarea{
 }
 /* Fin de la seccion de contacto */
 
-/* Estilos para la sección About Us */
-.acercade, .mision, .razones {
+/*      PÁGINA DE ABOUTUS    */
+
+.article-container {
   background-color: #F3D28A;
   border-radius: 10px;
   padding: 40px;
   margin: 20px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
-  width: center;
   text-align: center;
- 
-}
-
-.acercade, .mision, .razones {
   display: flex;
 }
+.article-container img {
+    border-radius: 10px; /* Añade bordes redondeados si es necesario */
+  }
 
-.parrafo1, .parrafo2, .parrafo3 {
+.parrafo-about-us {
   flex: 1;
   padding: 10px; 
   margin: 15px;
-}
-
-.mision {
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 .titulo {
@@ -640,7 +593,7 @@ textarea{
   border-radius: 10px;
 }
 
-.textacercade, .textmision, .textrazones {
+.text-about-us {
   color: #91422b;
   margin: 30px;
   font-size: 25px;
@@ -655,13 +608,17 @@ textarea{
   margin: 30px;
 }
 
+.botonemail input[type="email"] {
+font-size: 20px;
+margin: 1rem;
+}
+
 .botonemail input[type="submit"] {
-  background-color: #91422b; /* Color #91422b para el fondo del botón */
-  color: #fff; /* Color blanco para el texto dentro del botón */
-  border: none;
+  background-color: #91422b; 
+  color: #fff; 
   padding: 10px 15px;
   cursor: pointer;
-  border-radius: 5px; /* Ajusta el radio del borde según sea necesario */
+  border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 20px;
 }
@@ -670,22 +627,19 @@ textarea{
   background-color: #69311d; /* Cambia el color al pasar el mouse sobre el botón */
 }
 
-.botonemail input[type="email"] {
-font-size: 20px;
-}
-
 .agradecimiento {
 text-align: center;
 color: #c78943;
 font-size: 35px;
 }
+
 /* Fin de la seccion de About */
 
 
 /*Footer*/
 
 .footer {
-  position: relative;
+    position: relative;
   width: 100%;
   background: #90ccd1;
   min-height: 100px;
@@ -694,7 +648,7 @@ font-size: 35px;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-}
+  }
 
 .contact-footer{
   display: flex;
@@ -702,7 +656,7 @@ font-size: 35px;
   width: 31rem; 
   align-items: center;
   gap: 0.7rem;
-}
+  }
 
 .button-send{
   width: 6rem;
@@ -766,7 +720,7 @@ font-size: 35px;
 
 /*Responsive*/ /*con responsabilidad*/
  
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1120px) {
    html {
    font-size: 12px;
   } 
@@ -783,8 +737,6 @@ header {
 ul {
   display: none;
 }
-
-
 
 /* FIN HEADER*/
   .letra {
@@ -843,31 +795,29 @@ ul {
   /* Fin de estilos para la sección de Home */
 
   /* Estilos para la sección de Servicios */
-  .compañia, .compra, .limpieza {
-    flex-wrap: wrap;
-    flex-direction: row;
+  .services-section {
+    height: auto;
+  }
+  .position-section, .compra {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 
-  .imageneser, .imageneser1 {
-    height: 20vh;
-    margin-left: 40px;
-    margin-bottom: 10px;
+  .imageneser {
+    width: 30rem;
+    height: 20rem;
   }
 
-  .compañias-container, .compras-container, .limpiezas-container {
-    margin-left: 10px;
-    height: 10vh;
+  .info-container {
+    margin: 5rem;
   }
 
   .butser {
     margin-left: 80px;
   }
 
-  .com, .compr, .limp {
-    height: 75vh;
-  }
-
-  #h1 {
+  .title-section {
     height: 2rem;
     font-size: 12px;
   }
@@ -925,32 +875,32 @@ ul {
   }
   /* Fin de estilos para la sección de Contacto */
 
-   /* Estilos para la sección de about */
-    .parrafo1,
-    .parrafo2,
-    .parrafo3 {
-      margin: 10px;
-    }
-
-    .acercade,
-    .mision,
-    .razones {
+   /*      PÁGINA DE ABOUTUS    */
+    
+   .article-container {
       flex-direction: column;
+       align-items: center;
     }
 
-    .parrafo1,
-    .parrafo2,
-    .parrafo3 {
+    .article-container img {
+      max-width: 50rem;
+   }
+
+   .parrafo-about-us{
+      margin: 10px;
       width: 100%;
     }
-  
+
+    #image-with-text {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     .titulo {
       font-size: 20px;
     }
   
-    .textacercade,
-    .textmision,
-    .textrazones {
+    .text-about-us {
       font-size: 16px;
     }
   
@@ -958,10 +908,10 @@ ul {
       font-size: 24px;
     }
     
-  /* Fin de estilos para la sección de about */
+  /* FIN       PÁGINA DE ABOUTUS     */
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 767px) {
   html {
     font-size: 10px;
   }
@@ -1031,31 +981,27 @@ ul {
   }
 
   /* Estilos para la sección de Servicios */
-  .compañia, .compra, .limpieza {
+
+  .services-section {
+    height: auto;
+    align-items: center;
+  }
+
+  .position-section, .compra {
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .imageneser, .imageneser1 {
-    height: 20vh;
-    margin-left: 40px;
-    margin-bottom: 10px;
-  }
-
-  .compañias-container, .compras-container, .limpiezas-container {
-    margin-left: 10px;
-    height: 10vh;
-  }
+.info-container{
+  margin-left: 0;
+}
 
   .butser {
     margin-left: 80px;
   }
 
-  .com, .compr, .limp {
-    height: 75vh;
-  }
-
-  #h1 {
+  .title-section {
     height: 2rem;
     font-size: 12px;
   }
@@ -1113,61 +1059,32 @@ ul {
   }
   /* Fin de estilos para la sección de Contacto */
 
-  /* Estilos para la sección de about */
-
-  .acercade,
-  .mision,
-  .razones {
-    flex-direction: column;
-  }
-  
-  .parrafo1,
-  .parrafo2,
-  .parrafo3 {
-    width: 100%;
-  }
+   /*      PÁGINA DE ABOUTUS    */
 
   .titulo {
     font-size: 18px;
   }
 
-  .textacercade,
-  .textmision,
-  .textrazones {
+  .text-about-us {
     font-size: 14px;
   }
 
+  .botonemail{
+    flex-direction: column;
+  }
+  
   .agradecimiento {
     font-size: 20px;
   }
 
-  .acercade img,
-  .mision img,
-  .razones img {
-    max-width: 100%; /* Ajusta el ancho máximo de las imágenes */
-    height: auto;   /* Permite que la altura se ajuste automáticamente */
-    border-radius: 10px; /* Añade bordes redondeados si es necesario */
-  }
+  .article-container img {
+    max-width: 100%;
+    }
 
-  .parrafo1,
-  .parrafo2,
-  .parrafo3 {
-    margin: 5px; /* Reducir el margen en pantallas más pequeñas si es necesario */
-  }
-
-  /* fin estilos para la sección de about */
+  /* FIN      PÁGINA DE ABOUTUS    */
   
   /*Footer*/
 
-  .link h3 {
-    font-size: 16px;
-  }
-
-  .link li {
-    font-size: 16px;
-  }
-
-  
 }
 
-/* Fin del responsive */
+  /* Fin del responsive */

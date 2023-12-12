@@ -19,55 +19,51 @@
   <body>
     <header>
       <nav>
-        <div class="logo-container">
-          <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
-          </div>
-        <div class="company-name">
-          <h1>GOLDEN HANDS</h1>
-        </div>
-        <div class="container-nav-list">
+      <div class="logo-container">
+        <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+      </div>
+      <div class="company-name">
+        <h1>GOLDEN HANDS</h1>
+      </div>
+      <div class="container-nav-list">
           <ul>
             <li><a href="./services.html">Servicios</a></li>
             <li><a href="./products.html">Productos</a></li>
             <li><a href="./contact.html">Contactos</a></li>
             <li><a href="./about-us.html">Nosotros</a></li>
-            <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
+              <i class="fa-solid fa-magnifying-glass icons"></i>
+              <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
           </ul>
-        </div>
-        <div class="show">
-              <i class="fa-solid fa-bars"></i>
+      </div>
+    <div class="show">
+      <i class="fa-solid fa-bars"></i>
         </div>
         <div class="hidden-container">
-          <ul class="hidden-list">
-            <li><a href="./services.html">Servicios</a></li>
-            <li><a href="./products.html">Productos</a></li>
-            <li><a href="./contact.html">Contactos</a></li>
-            <li><a href="./about-us.html">Nosotros</a></li>
-            <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
-              </ul>
-          </div>
+        <ul class="hidden-list">
+          <li><a href="./services.html">Servicios</a></li>
+          <li><a href="./products.html">Productos</a></li>
+          <li><a href="./contact.html">Contactos</a></li>
+          <li><a href="./about-us.html">Nosotros</a></li>
+            <li>  <i class="fa-solid fa-magnifying-glass icons"></i>
+              <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
+        </ul>
+</div>
       </nav>
-    </header>
-    <main>
-    <section id="gluten" class="product-content">
-     
-    </section>
-    <section id="lacteo" class="product-content">
+  </header>
 
-    </section>
-    <section id="frutos" class="product-content">
+<section id="gluten" class="product-content"></section>
+<section id="lacteo" class="product-content"></section>
+<section id="frutos" class="product-content"></section>
 
-    </section>
-    </main>
 
-    <footer class="footer">
-        <section class="footer-content container">
-                <h3>&copy; 2023 Golden Hands</h3>
-                <ul class="social-icon">
+
+
+      <footer class="footer">
+      <section class="footer-content container">
+                        <h3>&copy; 2023 Golden Hands</h3>
+              <ul class="social-icon">
                   <li class="social-iconitem"><a class="social-iconlink" href="#">
                       <ion-icon name="logo-facebook"></ion-icon>
                     </a></li>
@@ -80,101 +76,49 @@
                   <li class="social-iconitem"><a class="social-iconlink" href="#">
                       <ion-icon name="logo-instagram"></ion-icon>
                     </a></li>
-                </ul>
-        </section>
-        <section  class="contact-footer">
+              </ul>
+          </section>
+      <section  class="contact-footer">
           <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
                   <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
                   <button type="submit" class="button-send">Enviar</button>
         </section>
-    </footer>
-    <!-- -_- ------------------ SCRIPT PARA CONSTRUIR DINÁMICAMENTE PRODUCTS ------------------ -_- -->
-  <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Objeto principal que representa el carrito de compras
-        function Carrito() {
-          this.items = [];
-      
-          // Método para cargar los productos desde un archivo JSON
-          this.cargarProductos = function () {
-            fetch('../js/data.json') // Ajusta la ruta según la ubicación de tu archivo JSON
-              .then(response => response.json())
-              .then(shopItemsData => {
-                // Asignar los productos cargados al carrito
-                this.items = shopItemsData.map(item => ({ producto: new Producto(item.id, item.name, item.price), cantidad: 0 }));
-      
-                // Actualizar la interfaz del carrito después de cargar los productos
-                actualizarCarrito();
-              })
-              .catch(error => {
-                console.error('Error al cargar los productos:', error);
-              });
-          };
-      
-          // Método para agregar un producto al carrito
-          this.agregarItem = function(producto) {
-            const itemExistente = this.items.find(item => item.producto.id === producto.id);
-      
-            if (itemExistente) {
-              itemExistente.cantidad += 1;
-            } else {
-              const nuevoItem = { producto: producto, cantidad: 1 };
-              this.items.push(nuevoItem);
-            }
-      
-            actualizarCarrito();
-          };
-      
-          // Método para calcular el total del carrito
-          this.calcularTotal = function() {
-            return this.items.reduce((total, item) => total + item.producto.precio * item.cantidad, 0);
-          };
-      
-          // Función para actualizar la interfaz del carrito
-          function actualizarCarrito() {
-            // Lógica para actualizar el contenido del carrito en la interfaz
-            // Puedes acceder al carrito y sus propiedades aquí
-            console.log(carrito);
-          }
-        }
-      
-        // Objeto para representar un producto
-        function Producto(id, nombre, precio) {
-          this.id = id;
-          this.nombre = nombre;
-          this.precio = precio;
-        }
-      
-        // Crear una instancia del carrito
-        const carrito = new Carrito();
-      
-        // Obtener los botones de agregar al carrito
-        const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
-      
-        // Manejar clics en los botones de agregar al carrito
-        botonesAgregarCarrito.forEach(boton => {
-          boton.addEventListener('click', function (event) {
-            event.preventDefault();
-      
-            // Obtener el ID del producto desde el atributo data-id
-            const idProducto = parseInt(boton.getAttribute('data-id'));
-      
-            // Buscar el producto en tu lista de productos (puedes extender esta lista)
-            const productoEncontrado = carrito.items.find(item => item.producto.id === idProducto);
-      
-            // Agregar el producto al carrito
-            if (productoEncontrado) {
-              carrito.agregarItem(productoEncontrado.producto);
-            }
-          });
-        });
-      
-        // Llamar al método para cargar productos cuando se inicie la aplicación
-        carrito.cargarProductos();
-      });
-  </script> 
+  </footer>
+<script src="../js/hamburguer.js"></script>
+ <script >
+  document.addEventListener('DOMContentLoaded', () => {
+fetch('../js/data.json')
+.then(response => response.json())
+.then(data => {
+  const section1 = document.querySelector('#gluten');
+  const section2 = document.querySelector('#lacteo');
+  const section3 = document.querySelector('#frutos');
 
-    <script src="../js/hamburguer.js"></script>
-    <script src="../js/cart.js"></script>
+  data.forEach(producto => {
+    const nuevoProducto = document.createElement('div');
+    nuevoProducto.classList.add('product');
+    nuevoProducto.innerHTML = `
+      <img src="${producto.img}" alt="Imagen de ${producto.name}">
+      <div class="product-txt">
+        <h3>${producto.name}</h3>
+        <p class="precio">${producto.price}€</p>
+        <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+      </div>
+    `;
+
+    if (producto.id === 4 || producto.id === 5 || producto.id === 6) {
+      section1.appendChild(nuevoProducto);
+    } else if (producto.id === 1 || producto.id === 2 || producto.id === 3 || producto.id === 7) {
+      section2.appendChild(nuevoProducto);
+    } else {
+      section3.appendChild(nuevoProducto);
+    }
+  });
+})
+.catch(error => {
+  console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
+});
+  });
+</script>
   </body>
 </html>
