@@ -556,6 +556,7 @@ margin-left: 5%;
  border-radius: 2%;
  margin-bottom: 2%;
  padding: 1%;
+ justify-content: center;
 }
 .formulario input{
   margin: 2% 2%;
@@ -1151,3 +1152,11 @@ ul {
 }
 
 /* Fin del responsive */
+
+
+/* Estilos de mensaje de validacion de formularios*/
+
+.mensaje-error {
+  color: red;
+
+}
