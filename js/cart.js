@@ -88,4 +88,38 @@ const productos = [
   
   const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
   console.log(`el total a pagar por su compra es de:  ${total}`);  
-      
+
+      /*nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
+
+  function handleAFeedData({element_count, near_earth_objects}, afeedElement, afeedTable){
+
+
+    afeedElement.innerHTML = Object.keys(near_earth_objects).map(date=>{
+        return near_earth_objects[date].map(product=>{
+
+            const img       = product.img
+            const id        = product.id;
+            const name      = product.name;
+            const price     = product.price;
+           
+            return <div class="product">
+                <img src="${path}" alt="imagen de bolsa de semillas de linaza">
+                <div class="product-txt">
+                    <h3>${title}</h3>
+                    <p class="precio">${price}</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
+                </div>
+            </div>
+
+        }).join("");
+
+    }).join("");
+
+    if(afeedElement.innerHTML === ""){
+        afeedTable.className = "striped hide"
+    } else{
+        afeedTable.className = "striped";
+    }
+
+
+}
