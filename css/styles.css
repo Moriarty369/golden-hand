@@ -157,7 +157,7 @@ body {
     margin: 0 5px; /* Espacio entre los botones *-/
     cursor: pointer;
   } */
-        
+    
   .background-image {
     z-index: -2;
     position: absolute;
@@ -181,7 +181,7 @@ body {
   .flip-container{
     width: 350px;
     height: 500px;
-  }
+      }
 
   /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
 
@@ -639,7 +639,7 @@ font-size: 35px;
 /*Footer*/
 
 .footer {
-  position: relative;
+    position: relative;
   width: 100%;
   background: #90ccd1;
   min-height: 100px;
@@ -648,7 +648,7 @@ font-size: 35px;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-}
+  }
 
 .contact-footer{
   display: flex;
@@ -656,7 +656,7 @@ font-size: 35px;
   width: 31rem; 
   align-items: center;
   gap: 0.7rem;
-}
+  }
 
 .button-send{
   width: 6rem;
@@ -1084,7 +1084,7 @@ ul {
   /* FIN      PÁGINA DE ABOUTUS    */
   
   /*Footer*/
-  
+
 }
 
-/* Fin del responsive */
+  /* Fin del responsive */
