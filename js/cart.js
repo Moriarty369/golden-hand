@@ -1,91 +1,82 @@
-const productos = [
-    { nombre: "harina", precio: 50 },
-    { nombre: "galletitas", precio: 100 },
-    { nombre: "pollo", precio: 150 },
-    { nombre: "leche", precio: 400 },
-    { nombre: "gaseosa", precio: 500 },
-  ];
+document.addEventListener('DOMContentLoaded', function () {
+  // Objeto principal que representa el carrito de compras
+  function Carrito() {
+    this.items = [];
 
-  let carrito = [];
-  
-  
-  let seleccion = prompt("hola desea comprar algo si o no")
+    // Método para cargar los productos desde un archivo JSON
+    this.cargarProductos = function () {
+      fetch('../js/data.json') // Ajusta la ruta según la ubicación de tu archivo JSON
+        .then(response => response.json())
+        .then(shopItemsData => {
+          // Asignar los productos cargados al carrito
+          this.items = shopItemsData.map(item => ({ producto: new Producto(item.id, item.name, item.price), cantidad: 0 }));
 
-  /*mientras mi seleccion sea de si o no*/
-  while (seleccion != "si" && seleccion != "no") {
-    alert("por favor ingresa una de las opciones, si o no")
-    seleccion = prompt("hola desea comprar algo si o no")
-  }
-  
-  if (seleccion == "si") {
-    alert("a continuación lista de productos")
-    let todosLosProductos = productos.map((producto) => producto.nombre + " " + producto.precio + "$");
-    
-    /* con el metodo join recorro todo lo que esta dentro del array*/ 
-    alert(todosLosProductos.join(" - "))
-  } else if (seleccion == "no") {
-    alert("gracias por venir al supermecado! hasta luego!")
-  }
-  
-  /*mientas mi seleccion sea no*/
-  while (seleccion != "no"){
-    let producto = prompt("agrega un producto a tu carrito!")
-    let precio = 0;
+          // Actualizar la interfaz del carrito después de cargar los productos
+          actualizarCarrito();
+        })
+        .catch(error => {
+          console.error('Error al cargar los productos:', error);
+        });
+    };
 
-  /*si producto es igual a harina o galletitas o...*/
-    if (
-      producto == "harina" ||
-      producto == "galletitas" ||
-      producto == "pollo" ||
-      producto == "leche" ||
-      producto == "gaseosa"
-    ) {
-   
-      switch (producto) {
-        case "harina":
-          precio = 50;
-          break;
-        case "galletitas":
-          precio = 100;
-          break;
-        case "pollo":
-          precio = 150;
-          break;
-        case "leche":
-          precio = 400;
-          break;
-        case "gaseosa":
-          precio = 500;
-          break;
-        default:
-          break;
+    // Método para agregar un producto al carrito
+    this.agregarItem = function(producto) {
+      const itemExistente = this.items.find(item => item.producto.id === producto.id);
+
+      if (itemExistente) {
+        itemExistente.cantidad += 1;
+      } else {
+        const nuevoItem = { producto: producto, cantidad: 1 };
+        this.items.push(nuevoItem);
       }
-      let unidades = parseInt(prompt("cuantas unidades de ese producto quieres llevar"))
 
-  /*push para que tenga producto unidadesy  */
-      carrito.push({ producto, unidades, precio })
+      actualizarCarrito();
+    };
+
+    // Método para calcular el total del carrito
+    this.calcularTotal = function() {
+      return this.items.reduce((total, item) => total + item.producto.precio * item.cantidad, 0);
+    };
+
+    // Función para actualizar la interfaz del carrito
+    function actualizarCarrito() {
+      // Lógica para actualizar el contenido del carrito en la interfaz
+      // Puedes acceder al carrito y sus propiedades aquí
       console.log(carrito);
-    } else {
-      alert("no tenemos ese prodcto");
-    }
-  
-    
-   seleccion = prompt("quiere seguir comprando si o no");
-  
-  
-   while(seleccion === "no"){
-    alert("Gracias Hasta pronto!")
-    carrito.forEach((carritoFinal) => {
-        console.log(`"producto:" ${carritoFinal.producto}, "unidades:" ${carritoFinal.unidades}, "total a pagar por producto:" ${carritoFinal.unidades * carritoFinal.precio}`)
-      })
-      break;
     }
   }
-  
-  /*reduce -coje todo lo q quiera y me da un resultado
-  acc - acumulador
-  el. - hace referncia a precio, etc..*/
-  
-  const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
-  console.log(`el total a pagar por su compra es de:  ${total}`);  
-      
+
+  // Objeto para representar un producto
+  function Producto(id, nombre, precio) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+
+  // Crear una instancia del carrito
+  const carrito = new Carrito();
+
+  // Obtener los botones de agregar al carrito
+  const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+
+  // Manejar clics en los botones de agregar al carrito
+  botonesAgregarCarrito.forEach(boton => {
+    boton.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      // Obtener el ID del producto desde el atributo data-id
+      const idProducto = parseInt(boton.getAttribute('data-id'));
+
+      // Buscar el producto en tu lista de productos (puedes extender esta lista)
+      const productoEncontrado = carrito.items.find(item => item.producto.id === idProducto);
+
+      // Agregar el producto al carrito
+      if (productoEncontrado) {
+        carrito.agregarItem(productoEncontrado.producto);
+      }
+    });
+  });
+
+  // Llamar al método para cargar productos cuando se inicie la aplicación
+  carrito.cargarProductos();
+});

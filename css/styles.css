@@ -399,7 +399,7 @@ body {
   border-radius: 3px;
 }
 
-.product-content {
+.products-content {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 50% 50%;
@@ -881,7 +881,7 @@ ul {
     padding: 10px;
   }
 
-  .product-content {
+  .products-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 10px;
@@ -1069,7 +1069,7 @@ ul {
     padding: 10px;
   }
 
-  .product-content {
+  .products-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 10px;

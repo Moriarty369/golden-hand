@@ -3,96 +3,112 @@
     "id": 1,
     "name": "Coco rallado",
     "price": 45,
-    "img": "../images/coco-rallado.jpg"
+    "img": "../images/coco-rallado.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 2,
     "name": "Harina de almendra",
     "price": 45,
-    "img": "../images/harina-de-almendra.jpg"
+    "img": "../images/harina-de-almendra.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 3,
     "name": "Harina de arroz",
     "price": 45,
-    "img": "../images/harina-de-arroz.jpg"
+    "img": "../images/harina-de-arroz.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 4,
     "name": "Harina de avena",
     "price": 45,
-    "img": "../images/harina-de-avena.jpg"
+    "img": "../images/harina-de-avena.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 5,
     "name": "Harina de coco",
     "price": 45,
-    "img": "../images/harina-de-coco.jpg"
+    "img": "../images/harina-de-coco.jpg",
+    "category": "Lacteos"
   },
   {
     "id": 6,
     "name": "Harina de garbanzo",
     "price": 45,
-    "img": "../images/hatina-de-garbanzo.jpg"
+    "img": "../images/hatina-de-garbanzo.jpg",
+    "category": "Celiacos"
   },
   {
     "id": 7,
     "name": "Harina de trigo Sarraceno",
     "price": 45,
-    "img": "../images/Harina-de-Trigo-Sarraceno.jpg"
+    "img": "../images/Harina-de-Trigo-Sarraceno.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 8,
     "name": "Leche de almendras",
     "price": 45,
-    "img": "../images/lece-de-almendra.jpg"
+    "img": "../images/lece-de-almendra.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 9,
     "name": "Leche de arroz",
     "price": 45,
-    "img": "../images/leche-de-arroz.jpg"
+    "img": "../images/leche-de-arroz.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 10,
     "name": "Leche de coco",
     "price": 45,
-    "img": "../images/leche-de-coco.jpg"
+    "img": "../images/leche-de-coco.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 11,
     "name": "Leche de soja",
     "price": 45,
-    "img": "../images/leche-de-soja.jpg"
+    "img": "../images/leche-de-soja.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 12,
     "name": "Semillas de calabaza",
     "price": 45,
-    "img": "../images/semillas-de-calabaza.jpg"
+    "img": "../images/semillas-de-calabaza.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 13,
     "name": "Semillas de Chía",
     "price": 45,
-    "img": "../images/semillas-de-chia.jpg"
+    "img": "../images/semillas-de-chia.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 14,
     "name": "Semillas de girasol",
     "price": 45,
-    "img": "../images/semillas-de-girasol.jpg"
+    "img": "../images/semillas-de-girasol.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 15,
     "name": "Semillas de Linaza",
     "price": 45,
-    "img": "../images/semillas-de-linaza.jpg"
+    "img": "../images/semillas-de-linaza.jpg",
+    "category": "Frutos Secos"
   },
   {
     "id": 16,
     "name": "Avena",
     "price": 45,
-    "img": "../images/avena.jpg"
+    "img": "../images/avena.jpg",
+    "category": "Frutos Secos"
   }
 ]
