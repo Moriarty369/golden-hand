@@ -70,19 +70,19 @@
             <div>
               <i class="bx bx-user"></i>
               <input class="nombreUsuario" type="text" placeholder="Nombre y Apellido" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion"></p>
             </div>
             <div>
               <i class="bx bx-envelope"></i>
               <input id="email" type="email" placeholder="Correo Electronico" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion2"></p>
             </div>
             <div>
               <i class="bx bx-lock-alt"></i>
-              <input id="contrasena" type="password" placeholder="Password" required autocomplete="off"/>
+              <input id="contrasena" type="text" placeholder="Password" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion3"></p>
             </div>
             <input onclick="validarNombreUsuario(document.querySelector('.nombreUsuario').value), validarCorreoElectronico(document.getElementById('email').value), validarContraseña(document.getElementById('contrasena').value)" type="submit" value="Registrarse"/>
-            <p id="resultadoValidacion"></p><br>
-            <p id="resultadoValidacion2"></p><br>
-            <p id="resultadoValidacion3"></p>
       </form> 
     </section>
     <!-- formulario de registro -->
@@ -112,8 +112,8 @@
               <input id="contrasena2" type="password" placeholder="Password" required autocomplete="off"/>
             </div>
             <input onclick="validarCorreoElectronico2(document.getElementById('email2').value), validarContraseña2(document.getElementById('contrasena2').value)" type="submit" value="Iniciar Sesión" />
-            <p id="resultadoValidacion4"></p><br>
-            <p id="resultadoValidacion5"></p>
+            <p class="mensaje-error" id="resultadoValidacion4"></p><br>
+            <p class="mensaje-error" id="resultadoValidacion5"></p>
       </form>
     </section>
   </main>

@@ -32,12 +32,13 @@ function validarCorreoElectronico(correo) {
 
 function validarContraseña(contraseña) {
     // Expresión regular para validar la contraseña Requisitos: Al menos una letra mayúscula, una letra minúscula, un número y un símbolo especial Longitud mínima de 8 caracteres
-    const expresionRegular = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const expresionRegular3 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     let resultado3 = "";
 
-    if (!expresionRegular.test(contraseña)) {
+    if (!expresionRegular3.test(contraseña)) {
         resultado3 = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres" ;
+
     } else {
         resultado3 = "";
     }
@@ -66,7 +67,7 @@ function validarContraseña2(contraseña) {
     let resultado5 = "";
 
     if (!expresionRegular5.test(contraseña)) {
-        resultado5 = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres" ;
+        resultado5 = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres";
     } else {
         resultado5 = "";
     }
@@ -101,22 +102,3 @@ function validarEmail(){
         ErrorNombreContact.textContent = "";
     }
   }
-
-
-  /*function validarNombreUsuario(nombre) {
-    const longitudMinima = 6;
-    const longitudMaxima = 20;
-    const expresionRegular = /^[A-Z][a-zA-Z]*(?:\s[A-Z][a-zA-Z]*)+$/; // Solo permite letras y espacios
-
-    let resultado = "";
-
-    if (nombre.length < longitudMinima || nombre.length > longitudMaxima) {
-        resultado = "Debe poner nombre, apellido con la primera letra de cada palabra en mayuscula.";
-    } else if (!expresionRegular.test(nombre)) {
-        resultado = "El nombre solo puede contener letras y espacios.";
-    } else {
-        resultado = "";
-    }
-
-    document.getElementById("resultadoValidacion").innerText = resultado;
-} */
