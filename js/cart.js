@@ -1,125 +1,87 @@
-const productos = [
-    { nombre: "harina", precio: 50 },
-    { nombre: "galletitas", precio: 100 },
-    { nombre: "pollo", precio: 150 },
-    { nombre: "leche", precio: 400 },
-    { nombre: "gaseosa", precio: 500 },
-  ];
-
-  let carrito = [];
+// Espera a que el DOM esté completamente cargado para ejecutar el código
+document.addEventListener('DOMContentLoaded', () => {
+    // Script para cargar productos y manipular el DOM
+    fetch('../js/data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Seleccionar las secciones donde se mostrarán los productos
+        const section1 = document.querySelector('#gluten');
+        const section2 = document.querySelector('#lacteo');
+        const section3 = document.querySelector('#frutos');
   
-  
-  let seleccion = prompt("hola desea comprar algo si o no")
-
-  /*mientras mi seleccion sea de si o no*/
-  while (seleccion != "si" && seleccion != "no") {
-    alert("por favor ingresa una de las opciones, si o no")
-    seleccion = prompt("hola desea comprar algo si o no")
-  }
-  
-  if (seleccion == "si") {
-    alert("a continuación lista de productos")
-    let todosLosProductos = productos.map((producto) => producto.nombre + " " + producto.precio + "$");
-    
-    /* con el metodo join recorro todo lo que esta dentro del array*/ 
-    alert(todosLosProductos.join(" - "))
-  } else if (seleccion == "no") {
-    alert("gracias por venir al supermecado! hasta luego!")
-  }
-  
-  /*mientas mi seleccion sea no*/
-  while (seleccion != "no"){
-    let producto = prompt("agrega un producto a tu carrito!")
-    let precio = 0;
-
-  /*si producto es igual a harina o galletitas o...*/
-    if (
-      producto == "harina" ||
-      producto == "galletitas" ||
-      producto == "pollo" ||
-      producto == "leche" ||
-      producto == "gaseosa"
-    ) {
-   
-      switch (producto) {
-        case "harina":
-          precio = 50;
-          break;
-        case "galletitas":
-          precio = 100;
-          break;
-        case "pollo":
-          precio = 150;
-          break;
-        case "leche":
-          precio = 400;
-          break;
-        case "gaseosa":
-          precio = 500;
-          break;
-        default:
-          break;
-      }
-      let unidades = parseInt(prompt("cuantas unidades de ese producto quieres llevar"))
-
-  /*push para que tenga producto unidadesy  */
-      carrito.push({ producto, unidades, precio })
-      console.log(carrito);
-    } else {
-      alert("no tenemos ese prodcto");
-    }
-  
-    
-   seleccion = prompt("quiere seguir comprando si o no");
-  
-  
-   while(seleccion === "no"){
-    alert("Gracias Hasta pronto!")
-    carrito.forEach((carritoFinal) => {
-        console.log(`"producto:" ${carritoFinal.producto}, "unidades:" ${carritoFinal.unidades}, "total a pagar por producto:" ${carritoFinal.unidades * carritoFinal.precio}`)
-      })
-      break;
-    }
-  }
-  
-  /*reduce -coje todo lo q quiera y me da un resultado
-  acc - acumulador
-  el. - hace referncia a precio, etc..*/
-  
-  const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
-  console.log(`el total a pagar por su compra es de:  ${total}`);  
-
-      /*nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
-
-  function handleAFeedData({element_count, near_earth_objects}, afeedElement, afeedTable){
-
-
-    afeedElement.innerHTML = Object.keys(near_earth_objects).map(date=>{
-        return near_earth_objects[date].map(product=>{
-
-            const img       = product.img
-            const id        = product.id;
-            const name      = product.name;
-            const price     = product.price;
-           
-            return <div class="product">
-                <img src="${path}" alt="imagen de bolsa de semillas de linaza">
-                <div class="product-txt">
-                    <h3>${title}</h3>
-                    <p class="precio">${price}</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
-                </div>
+        // Iterar sobre cada producto en los datos
+        data.forEach(producto => {
+          // Crear un nuevo elemento div para representar el producto
+          const nuevoProducto = document.createElement('div');
+          nuevoProducto.classList.add('product');
+          nuevoProducto.innerHTML = `
+            <img src="${producto.img}" alt="Imagen de ${producto.name}">
+            <div class="product-txt">
+              <h3>${producto.name}</h3>
+              <p class="precio">${producto.price}€</p>
+              <div class="cantidad-controles">
+                <button class="restar-cantidad" data-id="${producto.id}">-</button>
+                <span class="cantidad">0</span>
+                <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+              </div>
+              <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
             </div>
-
-        }).join("");
-
-    }).join("");
-
-    if(afeedElement.innerHTML === ""){
-        afeedTable.className = "striped hide"
-    } else{
-        afeedTable.className = "striped";
-    }
-
-
-}
+          `;
+  
+          // Asignar el producto a la sección correspondiente según su categoría
+          if (producto.id === 4 || producto.id === 5 || producto.id === 6) {
+            section1.appendChild(nuevoProducto);
+          } else if (producto.id === 1 || producto.id === 2 || producto.id === 3 || producto.id === 7) {
+            section2.appendChild(nuevoProducto);
+          } else {
+            section3.appendChild(nuevoProducto);
+          }
+  
+          // Obtener referencias a elementos relevantes dentro del nuevo producto
+          const cantidadSpan = nuevoProducto.querySelector('.cantidad');
+          const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
+          const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
+          const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
+  
+          // Variable para rastrear la cantidad de productos seleccionada
+          let cantidad = 0;
+  
+          // Event listener para reducir la cantidad al hacer clic en el botón de restar
+          restarBtn.addEventListener('click', () => {
+            if (cantidad > 0) {
+              cantidad -= 1;
+              cantidadSpan.textContent = cantidad;
+            }
+          });
+  
+          // Event listener para aumentar la cantidad al hacer clic en el botón de sumar
+          sumarBtn.addEventListener('click', () => {
+            cantidad += 1;
+            cantidadSpan.textContent = cantidad;
+          });
+  
+          // Event listener para agregar el producto al carrito al hacer clic en el botón de agregar
+          agregarBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+  
+            // Verificar que la cantidad seleccionada sea mayor que 0
+            if (cantidad > 0) {
+              // Buscar el producto en la lista de productos
+              const productoEncontrado = data.find(item => item.id === producto.id);
+  
+              // Agregar el producto al carrito
+              if (productoEncontrado) {
+                carrito.agregarItem(productoEncontrado, cantidad);
+              }
+            }
+          });
+        });
+      })
+      .catch(error => {
+        // Manejar errores en caso de que la carga de productos falle
+        console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
+      });
+  
+    // ... (código posterior)
+  });
+  

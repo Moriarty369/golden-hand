@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let showBtn = document.querySelector(".show");
     let hiddenList = document.querySelector(".hidden-list");
-   
  
     showBtn.addEventListener('click', function() {
       if (hiddenList.style.display === 'none') {
@@ -18,3 +17,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
    });
   });
+
+

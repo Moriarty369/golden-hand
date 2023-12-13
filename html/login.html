@@ -61,7 +61,7 @@
           </p>
           <input type="button" value="Iniciar Sesión" id="Sign-IN" />
       </aside>
-      <form class="form-information form form-information-childs" action="https://goldenhands.netlify.app/">
+      <form class="form-information form form-information-childs" action="../index.html">
           <h2>Crear una Cuenta</h2>
           <div class="icons">
             <i class="bx bxl-google"></i>
@@ -69,20 +69,22 @@
           <p>o usa tu mail para registrarte</p>
             <div>
               <i class="bx bx-user"></i>
-              <input type="text" placeholder="Nombre Completo" required />
+              <input class="nombreUsuario" type="text" placeholder="Nombre y Apellido" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion"></p>
             </div>
             <div>
               <i class="bx bx-envelope"></i>
-              <input type="email" placeholder="Correo Electronico" required />
+              <input id="email" type="email" placeholder="Correo Electronico" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion2"></p>
             </div>
             <div>
               <i class="bx bx-lock-alt"></i>
-              <input type="password" placeholder="Password" required />
+              <input id="contrasena" type="text" placeholder="Password" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion3"></p>
             </div>
-            <input type="submit" value="Registrarse" />
-      </form>
+            <input onclick="validarNombreUsuario(document.querySelector('.nombreUsuario').value), validarCorreoElectronico(document.getElementById('email').value), validarContraseña(document.getElementById('contrasena').value)" type="submit" value="Registrarse"/>
+      </form> 
     </section>
-
     <!-- formulario de registro -->
 
     <section class="container-form login hide">
@@ -103,18 +105,21 @@
           <p>o inicia sesión con una cuenta</p>
             <div>
               <i class="bx bx-envelope"></i>
-              <input type="email" placeholder="Correo Electronico" required />
+              <input id="email2" type="email" placeholder="Correo Electronico" required autocomplete="off"/>
             </div>
             <div>
               <i class="bx bx-lock-alt"></i>
-              <input type="password" placeholder="Password" required />
+              <input id="contrasena2" type="password" placeholder="Password" required autocomplete="off"/>
             </div>
-            <input type="submit" value="Iniciar Sesión" />
+            <input onclick="validarCorreoElectronico2(document.getElementById('email2').value), validarContraseña2(document.getElementById('contrasena2').value)" type="submit" value="Iniciar Sesión" />
+            <p class="mensaje-error" id="resultadoValidacion4"></p><br>
+            <p class="mensaje-error" id="resultadoValidacion5"></p>
       </form>
     </section>
   </main>
   <script src="../js/script.js"></script>
   <script src="../js/hamburguer.js"></script>
+  <script src="../js/validaciones.js"></script>
 </body>
 
 </html>
