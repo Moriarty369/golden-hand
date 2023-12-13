@@ -1095,6 +1095,6 @@ ul {
 /* Estilos de mensaje de validacion de formularios*/
 
 .mensaje-error {
-  color: red;
-
+  color: red!important;
+  font-size: 0.7rem;
 }
