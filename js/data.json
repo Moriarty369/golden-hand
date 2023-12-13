@@ -27,31 +27,31 @@
     "id": 5,
     "name": "Harina de coco",
     "price": 45,
-    "img": "../images/harina-de-coco.jpg"
+    "img": "../images/harina-de-coco.webp"
   },
   {
     "id": 6,
     "name": "Harina de garbanzo",
     "price": 45,
-    "img": "../images/hatina-de-garbanzo.jpg"
+    "img": "../images/harina-de-garbanzo.jpg"
   },
   {
     "id": 7,
     "name": "Harina de trigo Sarraceno",
     "price": 45,
-    "img": "../images/Harina-de-Trigo-Sarraceno.jpg"
+    "img": "../images/Harina-de-Trigo-Sarraceno.webp"
   },
   {
     "id": 8,
     "name": "Leche de almendras",
     "price": 45,
-    "img": "../images/lece-de-almendra.jpg"
+    "img": "../images/leche-de-almendras.jpg"
   },
   {
     "id": 9,
     "name": "Leche de arroz",
     "price": 45,
-    "img": "../images/leche-de-arroz.jpg"
+    "img": "../images/leche-de-arroz.jpeg"
   },
   {
     "id": 10,
