@@ -181,7 +181,7 @@ body {
   .flip-container{
     width: 350px;
     height: 500px;
-      }
+  }
 
   /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
 
@@ -833,7 +833,7 @@ ul {
     padding: 10px;
   }
 
-  .product-content {
+  .products-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 10px;
@@ -1017,7 +1017,7 @@ ul {
     padding: 10px;
   }
 
-  .product-content {
+  .products-content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 10px;
