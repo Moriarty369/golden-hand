@@ -52,15 +52,13 @@
 </div>
       </nav>
   </header>
-
-<section id="gluten" class="product-content"></section>
+<main>
+<section id="gluten" class="product-content products container"></section>
 <section id="lacteo" class="product-content"></section>
 <section id="frutos" class="product-content"></section>
+</main>
 
-
-
-
-      <footer class="footer">
+  <footer class="footer">
       <section class="footer-content container">
                         <h3>&copy; 2023 Golden Hands</h3>
               <ul class="social-icon">
@@ -84,41 +82,9 @@
                   <button type="submit" class="button-send">Enviar</button>
         </section>
   </footer>
+
+
+<script src="../js/cart.js"></script> 
 <script src="../js/hamburguer.js"></script>
- <script >
-  document.addEventListener('DOMContentLoaded', () => {
-fetch('../js/data.json')
-.then(response => response.json())
-.then(data => {
-  const section1 = document.querySelector('#gluten');
-  const section2 = document.querySelector('#lacteo');
-  const section3 = document.querySelector('#frutos');
-
-  data.forEach(producto => {
-    const nuevoProducto = document.createElement('div');
-    nuevoProducto.classList.add('product');
-    nuevoProducto.innerHTML = `
-      <img src="${producto.img}" alt="Imagen de ${producto.name}">
-      <div class="product-txt">
-        <h3>${producto.name}</h3>
-        <p class="precio">${producto.price}€</p>
-        <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
-      </div>
-    `;
-
-    if (producto.id === 4 || producto.id === 5 || producto.id === 6) {
-      section1.appendChild(nuevoProducto);
-    } else if (producto.id === 1 || producto.id === 2 || producto.id === 3 || producto.id === 7) {
-      section2.appendChild(nuevoProducto);
-    } else {
-      section3.appendChild(nuevoProducto);
-    }
-  });
-})
-.catch(error => {
-  console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
-});
-  });
-</script>
   </body>
 </html>
