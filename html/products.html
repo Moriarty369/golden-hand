@@ -53,15 +53,36 @@
       </nav>
   </header>
 <main>
+  <section class="secondary-nav container">
+    <div class="secondary">
+      <nav class="product-nav">
+        <ul>
+          <li><a href="#gluten">Sin Gluten</a></li>
+          <li><a href="#lacteo">Sin Lactosa</a></li>
+          <li><a href="#frutos">Sin Frutos Secos</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </section>
+ <h2 class="products-h2">Sustitutivos para celíacos</h2><br>
 <section id="gluten" class="product-content products container">
+ 
 
 </section>
-<section id="lacteo" class="product-content">
+ <h2 class="products-h2">Sustitutivos para lácteos</h2><br>
+<section id="lacteo" class="product-content products container">
+ 
+
 
 </section>
-<section id="frutos" class="product-content">
+<h2 class="products-h2">Sustitutivos para frutos secos</h2><br>
+<section id="frutos" class="product-content products container">
   
+
 </section>
+
+
 </main>
 
   <footer class="footer">
@@ -92,5 +113,42 @@
 
 <script src="../js/cart.js"></script> 
 <script src="../js/hamburguer.js"></script>
+
+ <script >
+  document.addEventListener('DOMContentLoaded', () => {
+fetch('../js/data.json')
+.then(response => response.json())
+.then(data => {
+  const section1 = document.querySelector('#gluten');
+  const section2 = document.querySelector('#lacteo');
+  const section3 = document.querySelector('#frutos');
+
+  data.forEach(producto => {
+    const nuevoProducto = document.createElement('div');
+    nuevoProducto.classList.add('product');
+    nuevoProducto.innerHTML = `
+      <img src="${producto.img}" alt="Imagen de ${producto.name}">
+      <div class="product-txt">
+        <h3>${producto.name}</h3>
+        <p class="precio">${producto.price}€</p>
+        <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+      </div>
+    `;
+
+    if (producto.id === 4 || producto.id === 5 || producto.id === 6) {
+      section1.appendChild(nuevoProducto);
+    } else if (producto.id === 1 || producto.id === 2 || producto.id === 3 || producto.id === 7) {
+      section2.appendChild(nuevoProducto);
+    } else {
+      section3.appendChild(nuevoProducto);
+    }
+  });
+})
+.catch(error => {
+  console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
+});
+  });
+</script>
+<script src="../js/cart.js"></script>
   </body>
 </html>
