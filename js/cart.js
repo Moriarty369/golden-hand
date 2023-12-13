@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
   
           // Asignar el producto a la sección correspondiente según su categoría
-          if (producto.id === 4 || producto.id === 5 || producto.id === 6) {
+          if (producto.category === "celiaco" ) {
             section1.appendChild(nuevoProducto);
-          } else if (producto.id === 1 || producto.id === 2 || producto.id === 3 || producto.id === 7) {
+          } else if (producto.category === "lacteos" )  {
             section2.appendChild(nuevoProducto);
           } else {
             section3.appendChild(nuevoProducto);
@@ -84,4 +84,31 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // ... (código posterior)
   });
+
+
+  // Añadir al carrito
+  document.addEventListener('DOMContentLoaded', () => {
+    // ...
+
+    // Event listener para agregar el producto al carrito al hacer clic en el botón de agregar
+    agregarBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Verificar que la cantidad seleccionada sea mayor que 0
+        if (cantidad > 0) {
+            // Buscar el producto en la lista de productos
+            const productoEncontrado = data.find(item => item.id === producto.id);
+
+            // Agregar el producto al carrito
+            if (productoEncontrado) {
+                carrito.agregarItem(productoEncontrado, cantidad);
+
+                // Actualizar el carrito en localStorage
+                localStorage.setItem('carrito', JSON.stringify(carrito.getItems()));
+            }
+        }
+    });
+});
+
+  
   
