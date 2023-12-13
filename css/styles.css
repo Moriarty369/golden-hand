@@ -136,27 +136,6 @@ body {
 /* ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- */
 
           /*   FIN HEADER    */    
-/*           
-  .button-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-    
-  .login-button,
-  #cart-button {
-    background-color: #203048;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-    width: 100px; /-* Define un ancho fijo para los botones *-/
-    height: 40px; /-* Define una altura fija para los botones *-/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px; /* Espacio entre los botones *-/
-    cursor: pointer;
-  } */
     
   .background-image {
     z-index: -2;
@@ -380,14 +359,14 @@ body {
 }
 
 .product-content {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 50% 50%;
+  display: flex;
   gap: 25px;
   justify-content: space-evenly;
   align-items: center;
   justify-items: center;
   height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .product {
@@ -411,6 +390,10 @@ body {
   margin: 0;
   color:#203048;
   font-weight: 600;
+}
+
+.container-products{
+  height: 100%;
 }
 
 .btn-2 {
