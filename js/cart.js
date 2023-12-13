@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const nuevoProducto = document.createElement('div');
           nuevoProducto.classList.add('product');
           nuevoProducto.innerHTML = `
-            <img src="${producto.img}" alt="Imagen de ${producto.name}">
+            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
             <div class="product-txt">
               <h3>${producto.name}</h3>
               <p class="precio">${producto.price}€</p>
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
             </div>
           `;
+          conts
   
           // Asignar el producto a la sección correspondiente según su categoría
           if (producto.category === "celiaco" ) {
