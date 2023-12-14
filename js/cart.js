@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
             </div>
           `;
-          conts
   
           // Asignar el producto a la sección correspondiente según su categoría
           if (producto.category === "celiaco" ) {
