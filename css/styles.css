@@ -79,6 +79,10 @@ body {
     font-size: 1.6rem;
     margin-left: 30px;
   }
+  .space-icons{
+    display: flex;
+    justify-content: space-around;
+  }
   /* ----------------- ESTILOS MENU HAMBURGUESA ----------------- */
 .hidden-container {
   position: relative;
@@ -260,6 +264,8 @@ body {
  
  .icons i {
     cursor: pointer;
+    width: 5rem;
+    height: 5rem;
  }
  .icons i:hover {
      background-color: #c7c7f3;
@@ -360,6 +366,8 @@ body {
 
 .product-content {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 25px;
   justify-content: space-evenly;
   align-items: center;
