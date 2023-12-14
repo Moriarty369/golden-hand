@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="cantidad">0</span>
                 <button class="sumar-cantidad" data-id="${producto.id}">+</button>
               </div>
-              <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+              <a href="#" class="agregar-carrito btn-2 btn-add-cart" data-id="${producto.id}">Agregar</a>
             </div>
           `;
           
