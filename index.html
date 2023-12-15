@@ -20,8 +20,85 @@
     <script type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
-
+  <style>
+    .floating-section {
+        height: 30vh;
+        margin: 0;
+        padding: 0;
+        background: rgb(26, 188, 156);
+        background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+        background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+        background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+    }
+    .floating-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+  }
+    
+    .floating-title {
+        font-size: 24px;
+        margin: 10px 0 0 0;
+        font-weight: lighter;
+        color: #eeeeee;
+    }
+    
+    .floating-p {
+        font-size: 12px;
+        font-weight: light;
+        color: #333333;
+    }
+    .ul-index{
+      flex-direction: column;
+    }
+    
+ 
+    
+    @keyframes float {
+        0% {
+            box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+            transform: translatey(0px);
+        }
+        50% {
+            box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+            transform: translatey(-20px);
+        }
+        100% {
+            box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+            transform: translatey(0px);
+        }
+    }
+    
+   
+    
+    .avatar {
+        width: 250px;
+        height: 250px;
+        box-sizing: border-box;
+        border: 5px white solid;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+        img { width: 100%; height: auto; }
+    }
+    
+    .content {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    /* ESTILOS WISH LIST BUTTON */
+    
+  </style>
   <body>
+
     <header>
       <nav>
         <div class="logo-container">
@@ -60,26 +137,98 @@
           </div>
       </nav>
     </header>
-
-    <main id="home" class>
-      <img src="./images/acompañamiento.png"
-        alt="dos personas mayores de espaldas" class="background-image">
-      <p class="letra">TE ACOMPAÑAMOS EN TU DÍA A DÍA.<br>Contáctanos</p>
-             <div class="flip-container">
-          <div class="card">
-            <div class="front">
-              
-              <h2>Parte Delantera</h2>
-            </div>
-            <div class="back">
-              <h2>Parte trasera</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              id esse impedit. Alias quisquam similique illo consequuntur magnam
-              dolorem sequi, tempore cumque voluptatum mollitia ad sapiente
-              architecto deserunt porro nobis?</p>
-                      </div>
+    <main id="home" class="main-index">
+      <section class="floating-section">
+        <div class="floating-container">
+          <div class="avatar">
+              <a href="#">
+                  <img src="../images/limpieza.jpg" alt="Skytsunami" />
+              </a>
+          </div>
+          <div class="content">
+            <h2 class="floating-title">Golden Hands es la solución elegida por más de 10.000 familias para contar con los cuidadores a domicilio mejor preparados.</h2>  
+            <p class="floating-p">Testimonio: Rosa Melano</p>
+          </div>
         </div>
+      </section>
+      <div class="promo-container">
+      <h2>Recibe hasta 747€ al mes en ayudas de la Ley de Dependencia. <a class="floating-a" href="./html/contact.html">Más información.</a></h2>
       </div>
+      <div class="font-custom-container">
+        <h2>Personaliza el tamaño de la letra para leer mejor!</h2>
+        <!-- Controles de interfaz -->
+        <input type="radio" name="font-size" id="small" onclick="changeFontSize('small')">
+        <label for="small">Pequeño</label>
+        <input type="radio" name="font-size" id="medium" onclick="changeFontSize('medium')"> 
+        <label for="medium">Mediano</label>
+        <input type="radio" name="font-size" id="large" onclick="changeFontSize('large')">
+        <label for="large">Grande</label>
+        <button onclick="resetFontSize()">Restablecer</button>
+      </div>
+      <section class="flipcard-container">
+        <div class="flipcard">
+          <div class="flipcard-inner">
+            <div class="flipcard-front">
+              <img src="imagen1.jpg" alt="Imagen 1">
+              <h3>Título 1</h3>
+            </div>
+            <div class="flipcard-back">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="flipcard">
+          <div class="flipcard-inner">
+            <div class="flipcard-front">
+              <img src="../images/abuela.jpg" alt="Imagen 2">
+              <h3>Título 2</h3>
+            </div>
+            <div class="flipcard-back">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="flipcard">
+          <div class="flipcard-inner">
+            <div class="flipcard-front">
+              <img src="imagen3.jpg" alt="Imagen 3">
+              <h3>Título 3</h3>
+            </div>
+            <div class="flipcard-back">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <ul class="ul-index">
+          <li>
+            ¿Te preocupas por la seguridad y el bienestar de tu madre mientras está sola en casa?
+          </li>
+          <li>
+            ¿Tu padre vive lejos y quieres tener a alguien cerca en el caso de una emergencia?
+          </li>
+          <li>
+            ¿Tienes un familiar con Alzhéimer o Parkinson que ya no puede cuidar de si mismo?
+          </li>
+          <li>
+            ¿Sabes que tu madre necesita ayuda en casa, pero que le cuesta aceptarlo?
+            Con Cuideo tus padres estarán bien cuidados, incluso cuando tú no puedes estar.
+          </li>
+        </ul>
+        <h2>Con Golden Hands tus padres estarán bien cuidados, incluso cuando tú no puedes estar.</h2>
+    </section>
+     
+     
+  
+      
+    
+    
+    
+     
+     
 
     </main>
 
@@ -109,6 +258,25 @@
                 <button type="submit" class="button-send">Enviar</button>
       </section>
   </footer>
+  <script>
+    function changeFontSize(size) {
+        switch(size) {
+            case 'small':
+                document.body.style.fontSize = '14px';
+                break;
+            case 'medium':
+                document.body.style.fontSize = '16px';
+                break;
+            case 'large':
+                document.body.style.fontSize = '18px';
+                break;
+        }
+    }
+
+    function resetFontSize() {
+        document.body.style.fontSize = '16px'; // Tamaño de fuente predeterminado
+    }
+</script>
   <script src="./js/hamburguer.js"></script>
   </body>  
 </html>
