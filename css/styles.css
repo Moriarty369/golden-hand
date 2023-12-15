@@ -9,7 +9,7 @@ body {
   background-color: white;
 }
 
-            /*    HEADER    */
+   /* ----------------- ESTILOS HEADER ----------------- */
 
   header {
     display: flex;
@@ -34,9 +34,11 @@ body {
     color: #c7af43;
     flex: 2;
   } 
+
 .container-nav-list{
   flex:2;
 }
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -133,57 +135,118 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
-/* ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- */
+/* ----------------- FINAL ESTILOS HEADER ----------------- */ 
 
-          /*   FIN HEADER    */    
-/*           
-  .button-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+/* -_- ------------ ESTILOS INDEX ------------ -_- */      
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+  
+.login-button,
+#cart-button {
+  background-color: #203048;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 100px; 
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px; 
+  cursor: pointer;
+} 
+
+.main-index {
+height: 150vh;
+/* background-image: url(../images/acompañamiento.png); */
+background-size: cover;
+}
+.floating-a {
+  font-size: 18px;
+  color: #cccccc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+      color: #ffffff;
   }
-    
-  .login-button,
-  #cart-button {
-    background-color: #203048;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-    width: 100px; /-* Define un ancho fijo para los botones *-/
-    height: 40px; /-* Define una altura fija para los botones *-/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px; /* Espacio entre los botones *-/
-    cursor: pointer;
-  } */
-    
-  .background-image {
-    z-index: -2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
 }
 
-  .letra{
-  margin-top: 0%;  
-  margin-bottom: 10%;
-  margin-right: 2%;
-  margin-left: 2%;
-  color: #203048;
-  font-size: 19px; 
-  font-weight: bold;
-  font-style: oblique;
+.flipcard-container {
+  display: flex;
+  justify-content: space-around; /* Cambiado de space-around a space-between */
+  align-items: center;
+  height: 50vh;
+  padding: 20px; /* Agregado espacio entre las tarjetas */
+}
+
+.flipcard {
+  perspective: 1000px;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  border-radius: 15px; /* Agregado borde redondeado */
+  overflow: hidden; /* Para asegurar que los bordes redondeados se apliquen correctamente */
+}
+
+.flipcard-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+  background-color: red;
+}
+
+.flipcard:hover .flipcard-inner {
+  transform: rotateX(180deg);
+}
+
+.flipcard-front,
+.flipcard-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 15px; /* Agregado borde redondeado */
+}
+
+.flipcard-front {
+  transform: rotateX(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipcard-back {
+  transform: rotateX(180deg);
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipcard img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15px; /* Agregado borde redondeado */
+}
+
+.flipcard h3 {
+  margin-top: 10px;
+}
+
+.flipcard p {
   text-align: center;
-  }
+}   
 
-  /* -_- ------------ FLIP CARD STYLE ------------ -_- */
-  .flip-container{
-    width: 350px;
-    height: 500px;
-  }
+ 
 
-  /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
+
+  /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
 
  
 /* Fin del estilo de Home*/
@@ -1088,15 +1151,6 @@ ul {
   
   /*Footer*/
 
-  .link h3 {
-    font-size: 16px;
-  }
-
-  .link li {
-    font-size: 16px;
-  }
-
-  
 }
 
 /* Fin del responsive */

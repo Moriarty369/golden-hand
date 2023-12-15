@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <!-- Enlaza tu archivo CSS si lo tienes -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor para mostrar productos en el carrito -->
+    <div id="contenedor-carrito">
+       <!-- Aquí se mostrarán los productos en el carrito -->
+    </div>
+    <script src="../js/cart.js"></script>
+    <script>
+        // Espera a que el DOM esté completamente cargado para ejecutar el código
+        document.addEventListener('DOMContentLoaded', () => {
+            // Recuperar el carrito almacenado en localStorage
+            const storedCart = localStorage.getItem('carrito');
+            const cesta = new Map(JSON.parse(storedCart) || []);
+        
+            // Iterar sobre las entradas del carrito para construir el contenido en cart.html
+            cesta.forEach((productoEnCarrito, productId) => {
+                const producto = productoEnCarrito.producto;
+                const cantidad = productoEnCarrito.cantidad;
+        
+                // Crear elementos HTML para mostrar la información del producto en cart.html
+                const nuevoProductoEnCarrito = document.createElement('div');
+                nuevoProductoEnCarrito.innerHTML = `
+                    <p>${producto.name} - Cantidad: ${cantidad}</p>
+                    <!-- Puedes agregar más información o estilos según tus necesidades -->
+                `;
+        
+                // Agregar el elemento al contenedor en cart.html
+                const contenedorCarrito = document.querySelector('#contenedor-carrito');
+                contenedorCarrito.appendChild(nuevoProductoEnCarrito);
+            });
+        });
+    </script>
+ </body>   
+</html>
+
