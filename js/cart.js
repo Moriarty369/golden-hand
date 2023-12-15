@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           `;
           
+
+
   
           // Asignar el producto a la sección correspondiente según su categoría
           if (producto.category === "celiaco" ) {
@@ -77,6 +79,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
         });
+
+       // PRINCIPIO CONTADOR DE CESTA EL NUMERO
+          // Seleccionar todos los botones de "agregar al carrito"
+          const btnContador = document.querySelectorAll('.agregar-carrito');
+          const contadorProductos = document.querySelector('#contador-productos');
+          
+          // Inicializar el contador
+          let cantidadProductos = 0;
+          contadorProductos.textContent = cantidadProductos;
+          
+          // Agregar un event listener a cada botón para escuchar los clics
+          btnContador.forEach(boton => {
+            boton.addEventListener('click', () => {
+            
+              // Incrementar la cantidad de productos
+              cantidadProductos++;
+              // Actualizar el contador con la nueva cantidad
+              contadorProductos.textContent = cantidadProductos;
+               console.log(cantidadProductos)
+            });
+             
+          });
+         console.log(btnContador)
+        // FIN CONTADOR DE CESTA EL NUMERO 
+
+
       })
       .catch(error => {
         // Manejar errores en caso de que la carga de productos falle
@@ -111,6 +139,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-  
-
-  
