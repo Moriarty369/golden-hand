@@ -1,3 +1,5 @@
+const carrito = new Map();
+
 // Espera a que el DOM esté completamente cargado para ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
     // Script para cargar productos y manipular el DOM
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const section1 = document.querySelector('#gluten');
         const section2 = document.querySelector('#lacteo');
         const section3 = document.querySelector('#frutos');
+        
   
         // Iterar sobre cada producto en los datos
         data.forEach(producto => {
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const nuevoProducto = document.createElement('div');
           nuevoProducto.classList.add('product');
           nuevoProducto.innerHTML = `
-            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+            <img id="modal" src="${producto.img}" alt="Imagen de ${producto.name}">
             <div class="product-txt">
               <h3>${producto.name}</h3>
               <p class="precio">${producto.price}€</p>
@@ -25,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="sumar-cantidad" data-id="${producto.id}">+</button>
               </div>
               <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
-            </div>
-          `;
-          conts
+            </div> `
+          ;
+          
   
           // Asignar el producto a la sección correspondiente según su categoría
           if (producto.category === "celiaco" ) {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
           const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
           const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
+          
   
           // Variable para rastrear la cantidad de productos seleccionada
           let cantidad = 0;
@@ -61,21 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
             cantidadSpan.textContent = cantidad;
           });
   
-          // Event listener para agregar el producto al carrito al hacer clic en el botón de agregar
           agregarBtn.addEventListener('click', (event) => {
             event.preventDefault();
-  
+          
             // Verificar que la cantidad seleccionada sea mayor que 0
             if (cantidad > 0) {
-              // Buscar el producto en la lista de productos
-              const productoEncontrado = data.find(item => item.id === producto.id);
-  
-              // Agregar el producto al carrito
-              if (productoEncontrado) {
-                carrito.agregarItem(productoEncontrado, cantidad);
-              }
+              // Utilizar un objeto para representar el producto en el carrito
+              const productoEnCarrito = {
+                producto: producto,
+                cantidad: cantidad,
+              };
+          
+              // Agregar el producto al carrito utilizando el ID como clave
+              carrito.set(producto.id, productoEnCarrito);
+              // Puedes imprimir el carrito en la consola para verificar
+              console.log('Carrito actualizado:', carrito);
             }
+             localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
           });
+          
+
+          
         });
       })
       .catch(error => {
@@ -86,30 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... (código posterior)
   });
 
-
-  // Añadir al carrito
-  document.addEventListener('DOMContentLoaded', () => {
-    // ...
-
-    // Event listener para agregar el producto al carrito al hacer clic en el botón de agregar
-    agregarBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        // Verificar que la cantidad seleccionada sea mayor que 0
-        if (cantidad > 0) {
-            // Buscar el producto en la lista de productos
-            const productoEncontrado = data.find(item => item.id === producto.id);
-
-            // Agregar el producto al carrito
-            if (productoEncontrado) {
-                carrito.agregarItem(productoEncontrado, cantidad);
-
-                // Actualizar el carrito en localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito.getItems()));
-            }
-        }
-    });
-});
 
   
   

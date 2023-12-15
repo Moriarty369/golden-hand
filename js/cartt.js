@@ -1,3 +1,5 @@
+// const carrito = JSON.parse(localStorage.getItem('carrito')) || { items: [], total: 0 };
+
 document.addEventListener('DOMContentLoaded', () => {
     const carroLista = document.querySelector('#carro-lista');
 
