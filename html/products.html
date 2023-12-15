@@ -57,35 +57,27 @@
       <section class="secondary-nav container">
         <div class="secondary">
           <nav class="product-nav">
-            <ul>
-              <li><a href="#gluten">Sin Gluten</a></li>
-              <li><a href="#lacteo">Sin Lactosa</a></li>
-              <li><a href="#frutos">Sin Frutos Secos</a></li>
-            </ul>
+              <button class="buttonfondo" id="verTodo"  >Ver Todo</button>
+              <button class="buttonfondo" id="btnCeliaco">Celíacos</button>
+              <button class="buttonfondo" id="btnLacteos">Lácteos</button>
+              <button class="buttonfondo" id="btnFrutos">Frutos</button>
           </nav>
         </div>
 
       </section>
-      <h2 class="products-h2">Sustitutivos para celíacos</h2><br>
-      <section id="gluten" class="product-content products container">
       
+      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2> 
+      <section id="gluten" class="product-content products container" ></section>
+      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+      <section id="lacteo" class="product-content products container"></section>
+      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+      <section id="frutos" class="product-content products container"></section>
 
-      </section>
-      <h2 class="products-h2">Sustitutivos para lácteos</h2><br>
-      <section id="lacteo" class="product-content products container">
-      
-
-
-      </section>
-      <h2 class="products-h2">Sustitutivos para frutos secos</h2><br>
-      <section id="frutos" class="product-content products container">
-        
-
-      </section>
-
+      <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
+      <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
 
     </main>
-
+    
   <footer class="footer">
       <section class="footer-content">
                         <h3>&copy; 2023 Golden Hands</h3>
@@ -112,7 +104,8 @@
   </footer>
 
 
-<script src="../js/cart.js"></script> 
+<!--<script src="../js/cart.js"></script> -->
+<script src="../js/pages.js"></script>
 <script src="../js/hamburguer.js"></script>
   </body>
 </html>
