@@ -15,7 +15,147 @@
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
+  <style>
+    @-webkit-keyframes extend {
+      0% {
+          width: 120px;
+          height: 40px;
+          border-radius: 20px;
+          left: 50%;
+      } 
+      10% {
+          width: 122px;
+          height: 42px;
+          background: #fff;
+          margin-left: -6px;
+          margin-top: -6px;
+      } 
+      20% {
+          width: 120px;
+          height: 40px;
+          background: #6fb07f;
+          margin-left: 0px;
+          margin-top: 0px;
+      } 
+      100% {
+          width: 40px;
+          height: 40px;
+          border-radius: 0;
+          margin-left: 38px;
+          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+      }
+  }
+  
+  @keyframes extend {
+      0% {
+          width: 120px;
+          height: 40px;
+          border-radius: 20px;
+          left: 50%;
+      } 
+      10% {
+          width: 122px;
+          height: 42px;
+          background: #fff;
+          margin-left: -6px;
+          margin-top: -6px;
+      } 
+      20% {
+          width: 120px;
+          height: 40px;
+          background: #6fb07f;
+          margin-left: 0px;
+          margin-top: 0px;
+      } 
+      100% {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          margin-left: 38px;
+          background: #6fb07f;
+          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+      }
+  }
+  
+  /* Resto de tu estilo... */
+  
+  
+  @-webkit-keyframes disappear {
+      0% {
+          opacity: 1;
+      } 
+      100% {
+          opacity: 0;
+      }
+  }
+  
+  @keyframes disappear {
+      0% {
+          opacity: 1;
+      } 
+      100% {
+          opacity: 0;
+      }
+  }
+  
+  .wishlist-container {
+      width: 100%;
+      height: 40px;
+      margin-top: 15px;
+      background-color: red;
+      position: relative; /* Agrega position: relative; al contenedor padre */
+      text-align: center; /* Para centrar el contenido horizontalmente */
+    
+  }
+  
+  .wishlist-button {
+      border-width: 1px;
+      width: 120px;
+      height: 40px;
+      border-radius: 20px;
+      background: #fff;
+      position: absolute;
+      border: 1px solid #6fb07f;
+      transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
 
+  }
+  
+  .wishlist-text {
+      font-size: 9.6px;
+      color: #6fb07f;
+  }
+  
+  .wishlist-button:focus {
+      -webkit-animation: extend 1s ease-in-out;
+      -ms-animation: extend 1s ease-in-out;
+      animation: extend 1s ease-in-out;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+  }
+  
+  .wishlist-button:focus > .wishlist-text {
+      -webkit-animation: disappear 1s ease-in-out;
+      -ms-animation: disappear 1s ease-in-out;
+      animation: disappear 1s ease-in-out;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+  }
+  
+  .heart-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 20%;
+      max-height: 20%;
+      display: none;
+  }
+  
+  .wishlist-button:focus > .heart-icon {
+      display: block;
+  }
+  
+</style>
   <body>
     <header>
       <nav>
@@ -96,6 +236,8 @@
       <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
       <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
 
+
+      
     </main>
     
   <footer class="footer">
@@ -125,8 +267,8 @@
   </footer>
 
 
-<!--<script src="../js/cart.js"></script> -->
-<script src="../js/pages.js"></script>
 <script src="../js/hamburguer.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/modal.js"></script>
   </body>
 </html>
