@@ -97,11 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
               cantidadProductos++;
               // Actualizar el contador con la nueva cantidad
               contadorProductos.textContent = cantidadProductos;
-               console.log(cantidadProductos)
             });
-             
           });
-         console.log(btnContador)
+
         // FIN CONTADOR DE CESTA EL NUMERO 
 
 
