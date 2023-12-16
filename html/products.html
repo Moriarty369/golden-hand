@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/mio.css" />
-    <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
-    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    
-  </head>
-  <style>
-  
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/mio.css" />
+  <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+</head>
+<style>
   /* -_- ----------- ESTILOS VENTANA MODAL ----------- -_- */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+
+  /* Modal */
+
+  .window-background {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
-.modal-content {
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
+  .window-container {
     position: relative;
+    background-color: #fff;
+    width: 550px;
+    height: auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    animation-name: modal;
+    animation-duration: .5s;
+    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 4);
+    z-index: 10;
   }
 
-.close {
-    color: #fff;
+  @keyframes modal {
+    from {
+      transform: translateY(50vh);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .close {
+    transition: transform 1s cubic-bezier(0, -0.42, 1, -0.41);
+    transform: translateY(60vh);
+  }
+
+  .close-modal {
     position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 30px;
-    font-weight: bold;
+    border-radius: 50%;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    border: 1px solid #eeeeee;
     cursor: pointer;
   }
-  
 </style>
-  <body>
-    <header>
-      <nav>
+
+<body>
+  <header>
+    <nav>
       <div class="logo-container">
         <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
       </div>
@@ -64,130 +96,112 @@
           <li><a href="./products.html">Productos</a></li>
           <li><a href="./contact.html">Contactos</a></li>
           <li><a href="./about-us.html">Nosotros</a></li>
-            <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+          <i class="fa-solid fa-magnifying-glass icons"></i>
+          <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
       </div>
       <div class="show">
         <i class="fa-solid fa-bars"></i>
-          </div>
-          <div class="hidden-container">
-          <ul class="hidden-list">
-            <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
-              <li><a href="./services.html">Servicios</a></li>
-              <li><a href="./products.html">Productos</a></li>
-              <li><a href="./contact.html">Contactos</a></li>
-              <li><a href="./about-us.html">Nosotros</a></li>
-              <li class="space-icons">  
-                <a href="./login.html"><i class="fas fa-user icons"></i></a>
-              </li>
-          </ul>
-  </div>
+      </div>
+      <div class="hidden-container">
+        <ul class="hidden-list">
+          <li><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
+          <li><a href="./services.html">Servicios</a></li>
+          <li><a href="./products.html">Productos</a></li>
+          <li><a href="./contact.html">Contactos</a></li>
+          <li><a href="./about-us.html">Nosotros</a></li>
+          <li class="space-icons">
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="secondary-nav container">
+      <div class="secondary">
+        <nav class="product-nav">
+          <button class="buttonfondo" id="verTodo"> Ver Todo</button>
+          <button class="buttonfondo" id="btnCeliaco">Celíacos</button>
+          <button class="buttonfondo" id="btnLacteos">Lácteos</button>
+          <button class="buttonfondo" id="btnFrutos">Frutos</button>
+          <a href="./cart.html">
+            <div class="container-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="icon-cart">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+              <!--contador-productos-->
+              <div class="count-products">
+                <span id="contador-productos">0</span>
+              </div>
+
+            </div>
+          </a>
         </nav>
-    </header>
-    <main>
-      <section class="secondary-nav container">
-        <div class="secondary">
-          <nav class="product-nav">
-              <button class="buttonfondo" id="verTodo"> Ver Todo</button>
-              <button class="buttonfondo" id="btnCeliaco">Celíacos</button>
-              <button class="buttonfondo" id="btnLacteos">Lácteos</button>
-              <button class="buttonfondo" id="btnFrutos">Frutos</button>
-              <a href="./cart.html"> <div class="container-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="icon-cart"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                      />
-                    </svg>
-                    <!--contador-productos-->
-                    <div class="count-products">
-                      <span id="contador-productos">0</span>
-                    </div>
-                 
-                </div></a>
-          </nav>
+      </div>
+
+    </section>
+
+    <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
+    <section id="gluten" class="product-content products container"></section>
+    <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+    <section id="lacteo" class="product-content products container"></section>
+    <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+    <section id="frutos" class="product-content products container"></section>
+
+    <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
+    <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
+
+    <!-- Modal -->
+    <section>
+      <div class="window-background" id="window-background">
+        <div class="window-container" id="window-container">
+          <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+          <h1>Hola 👋</h1>
+          <p> Lorem ipsum dolor, provident est iusto quibusdam fugiat laboriosam nostrum quisquam doloribus, non facilis
+            consequuntur molestias? Repellat numquam repellendus commodi exercitationem iure?</p>
         </div>
+    </section>
 
-      </section>
-      
-      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2> 
-      <section id="gluten" class="product-content products container" ></section>
-      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
-      <section id="lacteo" class="product-content products container"></section>
-      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
-      <section id="frutos" class="product-content products container"></section>
+  </main>
 
-      <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
-      <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modalImage" src="" alt="Modal Image">
-      <p id="modalDescription"></p>
-  </div>
-</div>
-      
-    </main>
-    
   <footer class="footer">
-      <section class="footer-content">
-                        <h3>&copy; 2023 Golden Hands</h3>
-              <ul class="social-icon">
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-twitter"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-linkedin"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                    </a></li>
-              </ul>
-          </section>
-      <section  class="contact-footer">
-          <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
-                  <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
-                  <button type="submit" class="button-send">Enviar</button>
-      </section>
+    <section class="footer-content">
+      <h3>&copy; 2023 Golden Hands</h3>
+      <ul class="social-icon">
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+    </section>
+    <section class="contact-footer">
+      <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
+      <input type="email" id="email" class="input-email-footer" placeholder="Ingrese su correo electrónico">
+      <button type="submit" class="button-send">Enviar</button>
+    </section>
 
   </footer>
-<script>
-  function openModal(imageSrc, description) {
-    $("#myModal").css("display", "block");
-    $("#modalImage").attr("src", imageSrc);
-    $("#modalDescription").text(description);
-}
-
-function closeModal() {
-    $("#myModal").css("display", "none");
-}
-
-// Cierra el modal si el usuario hace clic fuera del contenido del modal
-$(window).on("click", function(event) {
-    var modal = $("#myModal")[0];
-    if (event.target === modal) {
-        closeModal();
-    }
-});
-
-
-</script>
+  <script>
 
  
-<script src="../js/hamburguer.js"></script>
-<script src="../js/cart.js"></script>
-  </body>
+
+  </script>
+
+
+  <script src="../js/hamburguer.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+
 </html>

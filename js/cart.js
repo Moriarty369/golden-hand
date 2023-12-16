@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+        <img src="${producto.img}" alt="Imagen de ${producto.name}">
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div class="wishlist-container">
-            <button class="wishlist-button" onclick="addToWishlist()">
+            <button class="wishlist-button">
               <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
               <img class="heart-icon" src="../images/heart-solid.svg" alt="">
             </button>
@@ -229,5 +229,34 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
+
+   //Modal
+  //Modal
+document.addEventListener('DOMContentLoaded', function () {
+  const windowBackground = document.getElementById('window-background');
+  const windowContainer = document.getElementById('window-container');
+  const openModals = nuevoProducto.getElementsByClassName('open-modal');
+  const closeModal = document.getElementById('close-modal');
+
+  openModals.forEach(openModal => {
+    openModal.addEventListener('click', () => {
+      windowBackground.style.display = 'flex';
+    });
+  });
+
+  const closeWindow = () => {
+    windowContainer.classList.add('close');
+
+    setTimeout(() => {
+      windowContainer.classList.remove('close');
+      windowBackground.style.display = 'none';
+    }, 1000);
+  };
+
+  closeModal.addEventListener('click', () => closeWindow());
+
+  window.addEventListener('click', e => e.target == windowBackground && closeWindow());
+});
+
 
 });
