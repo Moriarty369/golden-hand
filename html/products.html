@@ -17,206 +17,37 @@
     
   </head>
   <style>
-    @-webkit-keyframes extend {
-      0% {
-          width: 120px;
-          height: 40px;
-          border-radius: 20px;
-          left: 50%;
-      } 
-      10% {
-          width: 122px;
-          height: 42px;
-          background: #fff;
-          margin-left: -6px;
-          margin-top: -6px;
-      } 
-      20% {
-          width: 120px;
-          height: 40px;
-          background: #6fb07f;
-          margin-left: 0px;
-          margin-top: 0px;
-      } 
-      100% {
-          width: 40px;
-          height: 40px;
-          border-radius: 0;
-          margin-left: 38px;
-          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
-      }
+  
+  /* -_- ----------- ESTILOS VENTANA MODAL ----------- -_- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  
-  @keyframes extend {
-      0% {
-          width: 120px;
-          height: 40px;
-          border-radius: 20px;
-          left: 50%;
-      } 
-      10% {
-          width: 122px;
-          height: 42px;
-          background: #fff;
-          margin-left: -6px;
-          margin-top: -6px;
-      } 
-      20% {
-          width: 120px;
-          height: 40px;
-          background: #6fb07f;
-          margin-left: 0px;
-          margin-top: 0px;
-      } 
-      100% {
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          margin-left: 38px;
-          background: #6fb07f;
-          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
-      }
-  }
-  
-  /* Resto de tu estilo... */
-  
-  
-  @-webkit-keyframes disappear {
-      0% {
-          opacity: 1;
-      } 
-      100% {
-          opacity: 0;
-      }
-  }
-  
-  @keyframes disappear {
-      0% {
-          opacity: 1;
-      } 
-      100% {
-          opacity: 0;
-      }
-  }
-  
-  .wishlist-container {
-      width: 100%;
-      height: 40px;
-      margin-top: 15px;
-      background-color: red;
-      position: relative; /* Agrega position: relative; al contenedor padre */
-      text-align: center; /* Para centrar el contenido horizontalmente */
-    
-  }
-  
-  .wishlist-button {
-      border-width: 1px;
-      width: 120px;
-      height: 40px;
-      border-radius: 20px;
-      background: #fff;
-      position: absolute;
-      border: 1px solid #6fb07f;
-      transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
 
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    position: relative;
   }
-  
-  .wishlist-text {
-      font-size: 9.6px;
-      color: #6fb07f;
-  }
-  
-  .wishlist-button:focus {
-      -webkit-animation: extend 1s ease-in-out;
-      -ms-animation: extend 1s ease-in-out;
-      animation: extend 1s ease-in-out;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .wishlist-button:focus > .wishlist-text {
-      -webkit-animation: disappear 1s ease-in-out;
-      -ms-animation: disappear 1s ease-in-out;
-      animation: disappear 1s ease-in-out;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .heart-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 20%;
-      max-height: 20%;
-      display: none;
-  }
-  
-  .wishlist-button:focus > .heart-icon {
-      display: block;
-  }
-  
-  /* Modal */
-  .open-modal:active{
-  transform: scale(0.95);
-}
-
-.window-background {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.3);
-  z-index: 1;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.window-container {
-  position: relative;
-  background-color: #fff;
-  width: 550px;
-  height: auto;
-  padding: 1.5rem;
-  border-radius: 8px;
-  animation-name: modal;
-  animation-duration: .5s;
-  box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 4);
-  z-index: 10;
-}
-
-@keyframes modal {
-from {
-transform: translateY(50vh);
-}
-to {
-transform: translateY(0);
-}
-}
 
 .close {
-transition: transform 1s cubic-bezier(0, -0.42, 1, -0.41);
-transform: translateY(60vh);
-}
-
-.close-modal {
-position: absolute;
-border-radius: 50%;
-top: -15px;
-right: -15px;
-width: 40px;
-height: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: aqua;
-border: 1px solid #eeeeee;
-cursor: pointer;
-}
-
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
 </style>
   <body>
     <header>
@@ -228,139 +59,86 @@ cursor: pointer;
         <h1>GOLDEN HANDS</h1>
       </div>
       <div class="container-nav-list">
-          <ul>
-            <li><a href="./services.html">Servicios</a></li>
-            <li><a href="./products.html">Productos</a></li>
-            <li><a href="./contact.html">Contactos</a></li>
-            <li class="space-icons">  
-              <a href="./login.html"><i class="fas fa-user icons"></i></a>
-<<<<<<< HEAD
-              <a href="./cart.html"> <i class="fa-solid fa-cart-shopping icons"><span id="cuenta-articulos">0</span></i></a>
-            </ul>
-=======
-             <a href="./cart.html"> <div class="container-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="icon-cart"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                    />
-                  </svg>
-                  <!--contador-productos-->
-                  <div class="count-products">
-                    <span id="contador-productos">0</span>
-                  </div>
-               
-              </div></a>
-            </li>
->>>>>>> origin/natalia
-      </div>
-    <div class="show">
-      <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="hidden-container">
-        <ul class="hidden-list">
-          <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
-            <li><a href="./services.html">Servicios</a></li>
-            <li><a href="./products.html">Productos</a></li>
-            <li><a href="./contact.html">Contactos</a></li>
-            <li><a href="./about-us.html">Nosotros</a></li>
-            <li class="space-icons">  
-              <a href="./login.html"><i class="fas fa-user icons"></i></a>
-             <a href="./cart.html"> <div class="container-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="icon-cart"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                    />
-                  </svg>
-                  <!--contador-productos-->
-                  <div class="count-products">
-                    <span id="contador-productos">0</span>
-                  </div>
-               
-              </div></a>
-            </li>
-        </ul>
-</div>
-      </nav>
-  </header>
-<<<<<<< HEAD
-<main>
-  <section class="secondary-nav container">
-    <div class="secondary">
-      <nav class="product-nav">
         <ul>
-          <li><a href="#gluten">Sin Gluten</a></li>
-          <li><a href="#lacteo">Sin Lactosa</a></li>
-          <li><a href="#frutos">Sin Frutos Secos</a></li>
+          <li><a href="./services.html">Servicios</a></li>
+          <li><a href="./products.html">Productos</a></li>
+          <li><a href="./contact.html">Contactos</a></li>
+          <li><a href="./about-us.html">Nosotros</a></li>
+            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
-      </nav>
-    </div>
-  </section>
- <h2 class="products-h2">Sustitutivos para celíacos</h2><br>
-<section id="gluten" class="product-content products container">
- 
-=======
+      </div>
+      <div class="show">
+        <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="hidden-container">
+          <ul class="hidden-list">
+            <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
+              <li><a href="./services.html">Servicios</a></li>
+              <li><a href="./products.html">Productos</a></li>
+              <li><a href="./contact.html">Contactos</a></li>
+              <li><a href="./about-us.html">Nosotros</a></li>
+              <li class="space-icons">  
+                <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              </li>
+          </ul>
+  </div>
+        </nav>
+    </header>
     <main>
       <section class="secondary-nav container">
         <div class="secondary">
           <nav class="product-nav">
-            <ul>
-              <li><a href="#gluten">Sin Gluten</a></li>
-              <li><a href="#lacteo">Sin Lactosa</a></li>
-              <li><a href="#frutos">Sin Frutos Secos</a></li>
-            </ul>
+              <button class="buttonfondo" id="verTodo"> Ver Todo</button>
+              <button class="buttonfondo" id="btnCeliaco">Celíacos</button>
+              <button class="buttonfondo" id="btnLacteos">Lácteos</button>
+              <button class="buttonfondo" id="btnFrutos">Frutos</button>
+              <a href="./cart.html"> <div class="container-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="icon-cart"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                      />
+                    </svg>
+                    <!--contador-productos-->
+                    <div class="count-products">
+                      <span id="contador-productos">0</span>
+                    </div>
+                 
+                </div></a>
           </nav>
         </div>
 
       </section>
       
-      <h2 class="products-h2">Sustitutivos para celíacos</h2><br>
-      <section id="gluten" class="product-content products container container-items">
-      
->>>>>>> origin/natalia
+      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2> 
+      <section id="gluten" class="product-content products container" ></section>
+      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+      <section id="lacteo" class="product-content products container"></section>
+      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+      <section id="frutos" class="product-content products container"></section>
 
-      </section>
-      <h2 class="products-h2">Sustitutivos para lácteos</h2><br>
-      <section id="lacteo" class="product-content products container container-items">
-      
+      <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
+      <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
 
-
-      </section>
-      <h2 class="products-h2">Sustitutivos para frutos secos</h2><br>
-      <section id="frutos" class="product-content products container container-items">
-        
-
-      </section>
-
-<!-- Modal -->
-<section>
-  <div class="window-background" id="window-background">
-    <div class="window-container" id="window-container">
-      <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-      <h1>Hola 👋</h1>
-      <p> Lorem ipsum dolor, provident est iusto quibusdam fugiat laboriosam nostrum quisquam doloribus, non facilis consequuntur molestias? Repellat numquam repellendus commodi exercitationem iure?</p>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Modal Image">
+      <p id="modalDescription"></p>
   </div>
-</section>
-
+</div>
+      
     </main>
-
+    
   <footer class="footer">
       <section class="footer-content">
                         <h3>&copy; 2023 Golden Hands</h3>
@@ -386,7 +164,27 @@ cursor: pointer;
       </section>
 
   </footer>
+<script>
+  function openModal(imageSrc, description) {
+    $("#myModal").css("display", "block");
+    $("#modalImage").attr("src", imageSrc);
+    $("#modalDescription").text(description);
+}
 
+function closeModal() {
+    $("#myModal").css("display", "none");
+}
+
+// Cierra el modal si el usuario hace clic fuera del contenido del modal
+$(window).on("click", function(event) {
+    var modal = $("#myModal")[0];
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+
+</script>
 
  
 <script src="../js/hamburguer.js"></script>
