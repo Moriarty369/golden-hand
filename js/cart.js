@@ -13,18 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-          <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
-          <div class="product-txt">
-            <h3>${producto.name}</h3>
-            <p class="precio">${producto.price}€</p>
-            <div class="cantidad-controles">
-              <button class="restar-cantidad" data-id="${producto.id}">-</button>
-              <span class="cantidad">0</span>
-              <button class="sumar-cantidad" data-id="${producto.id}">+</button>
-            </div>
-            <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+        <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+        <div class="product-txt">
+          <h3>${producto.name}</h3>
+          <p class="precio">${producto.price}€</p>
+          <div class="cantidad-controles">
+            <button class="restar-cantidad" data-id="${producto.id}">-</button>
+            <span class="cantidad">0</span>
+            <button class="sumar-cantidad" data-id="${producto.id}">+</button>
           </div>
-        `;
+        </div>
+        <div class="wishlist-container">
+            <button class="wishlist-button" onclick="addToWishlist()">
+              <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
+              <img class="heart-icon" src="../images/heart-solid.svg" alt="">
+            </button>
+          </div>
+          <div>
+          <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+          </div>
+      `;
 
         if (producto.category === "celiaco" ) {
           section1.appendChild(nuevoProducto);
