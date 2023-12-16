@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
 
-
       data.forEach(producto => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
@@ -224,9 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
         // FIN CONTADOR DE CESTA EL NUMERO 
-
-
-
 
 
     })

@@ -11,7 +11,7 @@
       rel="stylesheet" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-            rel="stylesheet" />
+      rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
       href="./images/golden-hands.png">
@@ -21,80 +21,74 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
   <style>
-    .floating-section {
-        height: 30vh;
-        margin: 0;
-        padding: 0;
-        background: rgb(26, 188, 156);
-        background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
-        background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
-        background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
-    }
-    .floating-container {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
+    /* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+    .parallax {
+      display: grid;
       align-items: center;
-  }
-    
-    .floating-title {
-        font-size: 24px;
-        margin: 10px 0 0 0;
-        font-weight: lighter;
-        color: #eeeeee;
     }
     
-    .floating-p {
-        font-size: 12px;
-        font-weight: light;
-        color: #333333;
-    }
-    .ul-index{
-      flex-direction: column;
-    }
-    
- 
-    
-    @keyframes float {
-        0% {
-            box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-            transform: translatey(0px);
-        }
-        50% {
-            box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-            transform: translatey(-20px);
-        }
-        100% {
-            box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-            transform: translatey(0px);
-        }
+    .parallax > * {
+      grid-area: stack;
+      animation: parallax linear;
+      animation-timeline: scroll();
     }
     
    
     
-    .avatar {
-        width: 250px;
-        height: 250px;
-        box-sizing: border-box;
-        border: 5px white solid;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-        transform: translatey(0px);
-        animation: float 6s ease-in-out infinite;
-        img { width: 100%; height: auto; }
+    .parallax__bg {
+      --parallax-speed: -10;
+      min-height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
     
-    .content {
-        width: 100%;
-        max-width: 600px;
-        padding: 20px 40px;
-        box-sizing: border-box;
-        text-align: center;
+    .parallax__dust {
+      --parallax-speed: -20;
     }
-    /* ESTILOS WISH LIST BUTTON */
+
+    @keyframes parallax {
+      to {
+        transform: 
+          translateY(calc(var(--parallax-speed) * 150px));
+      }
+    }
+    
+   
+   
+    .text-section{
+      width: 80%;
+      margin: auto;
+      margin-top: 50px;
+      height: 100vh;
+        
+    }
+   
+    .parallax-img {
+      display: block;
+      max-width: 80%;
+      margin: auto;
+      border-radius: 20px;
+    }
+    
+ 
+    
+    .parallax-inner {
+      display: flex;
+      height: 60vh;
+      background-color: red;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: center;
+    }
+  
+   
+    .root-text-parallax{
+      font-size: xx-large;
+    }
+   
+  
+   
+     
     
   </style>
   <body>
@@ -104,7 +98,7 @@
         <div class="logo-container">
           <a href="./index.html"><img class="logo"
               src="./images/golden-hands.png" alt="Golden Hands Logo" /></a>
-          </div>
+        </div>
         <div class="company-name">
           <h1>GOLDEN HANDS</h1>
         </div>
@@ -120,7 +114,7 @@
           </ul>
         </div>
         <div class="show">
-              <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
         <div class="hidden-container">
           <ul class="hidden-list">
@@ -129,42 +123,117 @@
             <li><a href="./html/products.html">Productos</a></li>
             <li><a href="./html/contact.html">Contactos</a></li>
             <li><a href="./html/about-us.html">Nosotros</a></li>
-            <li class="space-icons">  
-              <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
+            <li> <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
               </li>
-              </ul>
-          </div>
+          </ul>
+        </div>
       </nav>
     </header>
     <main id="home" class="main-index">
+      <div class="promo-container">
+        <h2>Recibe hasta 747€ al mes en ayudas de la Ley de Dependencia. <a
+            class="info-a" href="./html/contact.html">Más información.</a></h2>
+      </div>
       <section class="floating-section">
         <div class="floating-container">
           <div class="avatar">
-              <a href="#">
-                  <img src="../images/limpieza.jpg" alt="Skytsunami" />
-              </a>
+            <a href="#">
+              <img src="./images/acompañamiento.png" alt="Skytsunami" />
+            </a>
           </div>
           <div class="content">
-            <h2 class="floating-title">Golden Hands es la solución elegida por más de 10.000 familias para contar con los cuidadores a domicilio mejor preparados.</h2>  
+            <h2 class="floating-title">Golden Hands es la solución elegida por
+              más de 10.000 familias para contar con los cuidadores a domicilio
+              mejor preparados.</h2>
             <p class="floating-p">Testimonio: Rosa Melano</p>
           </div>
         </div>
       </section>
-      <div class="promo-container">
-      <h2>Recibe hasta 747€ al mes en ayudas de la Ley de Dependencia. <a class="floating-a" href="./html/contact.html">Más información.</a></h2>
-      </div>
+     
       <div class="font-custom-container">
-        <h2>Personaliza el tamaño de la letra para leer mejor!</h2>
+        <h2 class="font-custom-title">Personaliza el tamaño de la letra para leer mejor!</h2>
         <!-- Controles de interfaz -->
-        <input type="radio" name="font-size" id="small" onclick="changeFontSize('small')">
-        <label for="small">Pequeño</label>
-        <input type="radio" name="font-size" id="medium" onclick="changeFontSize('medium')"> 
-        <label for="medium">Mediano</label>
-        <input type="radio" name="font-size" id="large" onclick="changeFontSize('large')">
-        <label for="large">Grande</label>
-        <button onclick="resetFontSize()">Restablecer</button>
+        <div class="font-controls-container">
+          <input type="radio" name="font-size" id="small"
+            onclick="changeFontSize('small')">
+          <label for="small">Pequeño</label>
+          <input type="radio" name="font-size" id="medium"
+            onclick="changeFontSize('medium')">
+          <label for="medium">Mediano</label>
+          <input type="radio" name="font-size" id="large"
+            onclick="changeFontSize('large')">
+          <label for="large">Grande</label>
+          <button onclick="resetFontSize()">Restablecer</button>
       </div>
-      <section class="flipcard-container">
+      </div>
+      <section>
+        <ul class="ul-index">
+          <li>
+            ¿Te preocupas por la seguridad y el bienestar de tu madre mientras
+            está sola en casa?
+          </li>
+          <li>
+            ¿Tu padre vive lejos y quieres tener a alguien cerca en el caso de
+            una emergencia?
+          </li>
+          <li>
+            ¿Tienes un familiar con Alzhéimer o Parkinson que ya no puede cuidar
+            de si mismo?
+          </li>
+          <li>
+            ¿Sabes que tu madre necesita ayuda en casa, pero que le cuesta
+            aceptarlo?
+          </li>
+        </ul>
+      </section>
+      
+      <section class="text-section">
+        <p>
+         <h3>ELEMENTO HTML TIPO SECTION</h3>  <br><br><br>     voluptatibus blanditiis deleniti
+          distinctio! Officia a, porro nobis provident illum deleniti nulla
+          consequuntur voluptatum enim repellat, architecto quas mollitia
+          consectetur assumenda rem magnam maiores ad nostrum.
+        </p>
+        <p>
+          Sequi laudantium quaerat necessitatibus voluptates voluptatem maiores
+          animi asperiores tempore error dolore minima autem modi esse sed et
+          pariatur quas, beatae fugit, earum eligendi tenetur! Doloremque
+          consequuntur voluptatem ratione fugiat.
+        </p>
+        <p>
+          Dolor tenetur error similique, voluptatibus blanditiis deleniti
+          distinctio! Officia a, porro nobis provident illum deleniti nulla
+          consequuntur voluptatum enim repellat, architecto quas mollitia
+          consectetur assumenda rem magnam maiores ad nostrum.
+        </p>
+        <p>
+          Sequi laudantium quaerat necessitatibus voluptates voluptatem maiores
+          animi asperiores tempore error dolore minima autem modi esse sed et
+          pariatur quas, beatae fugit, earum eligendi tenetur! Doloremque
+          consequuntur voluptatem ratione fugiat.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem voluptatem accusamus? Possimus quae beatae dicta veniam distinctio assumenda!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem voluptatem accusamus? Possimus quae beatae dicta veniam distinctio assumenda!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem voluptatem accusamus? Possimus quae beatae dicta veniam distinctio assumenda!</p>
+      </section>
+      <div class="parallax">
+              <div class="parallax-inner">
+                <p class="root-text-parallax">
+                  SHOW ME THE MONEY
+                </p>
+              </div>
+          <img class="parallax__dust parallax-img" src="./assets/dust.webp"/>
+          <img class="parallax__bg parallax-img" src="./images/abuela.jpg"/>
+        </div>
+      <div class="flip-card-title-container">
+        <h2 class="">
+          TESTIMONIOS ACOJONANTES CON TARJETAS CHULAS
+        </h2>
+      </div>
+      
+      <section class="flip-card-section">
+  
+      <div class="flipcard-container">
         <div class="flipcard">
           <div class="flipcard-inner">
             <div class="flipcard-front">
@@ -172,11 +241,14 @@
               <h3>Título 1</h3>
             </div>
             <div class="flipcard-back">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                sint repellat nobis quo earum. Expedita dicta, voluptatem
+                quisquam nulla earum dolorem quis harum dolor alias ipsam!
+                Reiciendis vero architecto possimus.</p>
             </div>
           </div>
         </div>
-      
+
         <div class="flipcard">
           <div class="flipcard-inner">
             <div class="flipcard-front">
@@ -184,11 +256,14 @@
               <h3>Título 2</h3>
             </div>
             <div class="flipcard-back">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                sint repellat nobis quo earum. Expedita dicta, voluptatem
+                quisquam nulla earum dolorem quis harum dolor alias ipsam!
+                Reiciendis vero architecto possimus.</p>
             </div>
           </div>
         </div>
-      
+
         <div class="flipcard">
           <div class="flipcard-inner">
             <div class="flipcard-front">
@@ -196,86 +271,61 @@
               <h3>Título 3</h3>
             </div>
             <div class="flipcard-back">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sint repellat nobis quo earum. Expedita dicta, voluptatem quisquam nulla earum dolorem quis harum dolor alias ipsam! Reiciendis vero architecto possimus.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                sint repellat nobis quo earum. Expedita dicta, voluptatem
+                quisquam nulla earum dolorem quis harum dolor alias ipsam!
+                Reiciendis vero architecto possimus.</p>
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <ul class="ul-index">
-          <li>
-            ¿Te preocupas por la seguridad y el bienestar de tu madre mientras está sola en casa?
-          </li>
-          <li>
-            ¿Tu padre vive lejos y quieres tener a alguien cerca en el caso de una emergencia?
-          </li>
-          <li>
-            ¿Tienes un familiar con Alzhéimer o Parkinson que ya no puede cuidar de si mismo?
-          </li>
-          <li>
-            ¿Sabes que tu madre necesita ayuda en casa, pero que le cuesta aceptarlo?
-            Con Cuideo tus padres estarán bien cuidados, incluso cuando tú no puedes estar.
-          </li>
-        </ul>
-        <h2>Con Golden Hands tus padres estarán bien cuidados, incluso cuando tú no puedes estar.</h2>
+      </div>
     </section>
-     
-     
-  
-      
-    
-    
-    
-     
-     
+      <footer class="footer">
+        <section class="footer-content container">
+          <h3>&copy; 2023 Golden Hands</h3>
+          <ul class="social-icon">
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a></li>
+          </ul>
+        </section>
+        <section class="contact-footer">
+          <label for="email">Manténgase en contacto para ofertas, noticias y
+            mucho
+            más</label>
+          <input type="email" id="email" class="input-email-footer"
+            placeholder="Ingrese su correo electrónico">
+          <button type="submit" class="button-send">Enviar</button>
+        </section>
+      </footer>
+      <script>
+      function changeFontSize(size) {
+          switch(size) {
+              case 'small':
+                  document.body.style.fontSize = '14px';
+                  break;
+              case 'medium':
+                  document.body.style.fontSize = '16px';
+                  break;
+              case 'large':
+                  document.body.style.fontSize = '18px';
+                  break;
+          }
+      }
 
-    </main>
-
-    <footer class="footer">
-      <section class="footer-content container">
-              <h3>&copy; 2023 Golden Hands</h3>
-              <ul class="social-icon">
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a></li>
-              </ul>
-      </section>
-      <section class="contact-footer">
-        <label for="email">Manténgase en contacto para ofertas, noticias y mucho
-          más</label>
-                <input type="email" id="email" class="input-email-footer"
-          placeholder="Ingrese su correo electrónico">
-                <button type="submit" class="button-send">Enviar</button>
-      </section>
-  </footer>
-  <script>
-    function changeFontSize(size) {
-        switch(size) {
-            case 'small':
-                document.body.style.fontSize = '14px';
-                break;
-            case 'medium':
-                document.body.style.fontSize = '16px';
-                break;
-            case 'large':
-                document.body.style.fontSize = '18px';
-                break;
-        }
-    }
-
-    function resetFontSize() {
-        document.body.style.fontSize = '16px'; // Tamaño de fuente predeterminado
-    }
-</script>
-  <script src="./js/hamburguer.js"></script>
-  </body>  
-</html>
+      function resetFontSize() {
+          document.body.style.fontSize = '16px'; // Tamaño de fuente predeterminado
+      }
+    </script>
+      <script src="./js/hamburguer.js"></script>
+    </body>
+  </html>
