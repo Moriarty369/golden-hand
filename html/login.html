@@ -40,13 +40,14 @@
       </div>
       <div class="hidden-container">
         <ul class="hidden-list">
-          <li><a href="./services.html">Servicios</a></li>
-          <li><a href="./products.html">Productos</a></li>
-          <li><a href="./contact.html">Contactos</a></li>
-          <li><a href="./about-us.html">Nosotros</a></li>
-          <li>  <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
+          <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
+            <li><a href="./services.html">Servicios</a></li>
+            <li><a href="./products.html">Productos</a></li>
+            <li><a href="./contact.html">Contactos</a></li>
+            <li><a href="./about-us.html">Nosotros</a></li>
+            <li class="space-icons">  
+              <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -106,14 +107,14 @@
             <div>
               <i class="bx bx-envelope"></i>
               <input id="email2" type="email" placeholder="Correo Electronico" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion4"></p>
             </div>
             <div>
               <i class="bx bx-lock-alt"></i>
               <input id="contrasena2" type="password" placeholder="Password" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion5"></p>
             </div>
             <input onclick="validarCorreoElectronico2(document.getElementById('email2').value), validarContraseña2(document.getElementById('contrasena2').value)" type="submit" value="Iniciar Sesión" />
-            <p class="mensaje-error" id="resultadoValidacion4"></p><br>
-            <p class="mensaje-error" id="resultadoValidacion5"></p>
       </form>
     </section>
   </main>
