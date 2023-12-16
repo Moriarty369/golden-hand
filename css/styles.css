@@ -1,3 +1,4 @@
+/* -_- -----------------  ----------------- -_- */
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +15,8 @@ body {
   header {
     display: flex;
     padding: 10px;
-    background-color: #90ccd1;
+    background-color: #203048;
+    height: 15vh;
   }
 
   .logo-container{
@@ -24,7 +26,6 @@ body {
     
   .logo {
     margin: 15px;
-    background-color: #90ccd1;
     width: 6rem;
     height: auto;
   }
@@ -160,11 +161,15 @@ body {
 } 
 
 .main-index {
-height: 150vh;
+height: 300vh;
 /* background-image: url(../images/acompañamiento.png); */
 background-size: cover;
 }
-.floating-a {
+.promo-container{
+  margin: 20px auto 20px 240px
+}
+
+.info-a {
   font-size: 18px;
   color: #cccccc;
   text-decoration: none;
@@ -174,19 +179,122 @@ background-size: cover;
       color: #ffffff;
   }
 }
+.font-custom-container{
+ padding: 10px;
+background-color: #83C5BE;
+ margin-bottom: 2em;
+
+}
+.font-custom-title{
+  margin-left: 29%;
+}
+.font-controls-container{
+  margin-left: 37%;
+}
+.ul-index{
+  flex-direction: column;
+  font-size: x-large;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+/* -_- ----------------- ESTILOS FLOATING SECTION ----------------- -_- */
+.floating-section {
+  height: 31vh;
+  margin: 0;
+  padding: 0;
+  background: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(199, 175, 67, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(255, 255, 255,0.8) 0%, rgba(199, 175, 67, 1) 100%);
+  background: linear-gradient(-135deg, rgba(255, 255, 255,0.8) 0%, rgba(199, 175, 67, 1) 100%);
+}
+.floating-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-title {
+  font-size: 24px;
+  margin: 10px 0 0 0;
+  font-weight: lighter;
+  color: #eeeeee;
+}
+
+.floating-p {
+    font-size: 12px;
+    font-weight: light;
+    color: #333333;
+}
+
+@keyframes float {
+  0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+  }
+  50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px);
+  }
+  100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+  }
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+  img { width: 100%; height: auto; }
+ 
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+
+/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+
+
+
+
+
+/* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
+.flip-card-title-container{
+margin-left: 25%;
+margin-bottom: 10px;
+background-color: gold;
+width: 80%;
+}
+.flip-card-section{
+
+}
 
 .flipcard-container {
   display: flex;
   justify-content: space-around; /* Cambiado de space-around a space-between */
-  align-items: center;
-  height: 50vh;
-  padding: 20px; /* Agregado espacio entre las tarjetas */
+  height: 30vh;
+  margin-bottom: 200px;
 }
 
 .flipcard {
   perspective: 1000px;
-  width: 200px;
-  height: 300px;
+  width: 300px;
+  height: 400px;
   position: relative;
   border-radius: 15px; /* Agregado borde redondeado */
   overflow: hidden; /* Para asegurar que los bordes redondeados se apliquen correctamente */
@@ -243,13 +351,11 @@ background-size: cover;
   text-align: center;
 }   
 
- 
+
+
 
 
   /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
-
- 
-/* Fin del estilo de Home*/
 
 /*Estilo Login*/
 
@@ -395,7 +501,7 @@ background-size: cover;
 
 /* Fin del login*/
 
-/*Estilos para la sección de Productos*/
+/*Estilos para la página de Products*/
 
 
 .product-nav ul{
@@ -481,9 +587,142 @@ background-size: cover;
   display: inline-block;
   margin-top: 15px;
   padding: 7px 25px;
-  border-radius: 5px;
+  border-radius: 25px;
   color: azure;
-  background-color: #c78943;
+  background-color: #91422B;
+}
+@-webkit-keyframes extend {
+  0% {
+      width: 120px;
+      height: 40px;
+  
+      left: 50%;
+  } 
+  10% {
+      width: 122px;
+      height: 42px;
+      background: #fff;
+      margin-left: -6px;
+      margin-top: -6px;
+  } 
+  20% {
+      width: 120px;
+      height: 40px;
+      background: #C78943;
+      margin-left: 0px;
+      margin-top: 0px;
+  } 
+  100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 0;
+      margin-left: 38px;
+      transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+  }
+}
+
+@keyframes extend {
+  0% {
+      width: 120px;
+      height: 40px;
+      border-radius: 20px;
+      left: 50%;
+  } 
+  10% {
+      width: 122px;
+      height: 42px;
+      background: #fff;
+      margin-left: -6px;
+      margin-top: -6px;
+  } 
+  20% {
+      width: 120px;
+      height: 40px;
+      background: #C78943;
+      margin-left: 0px;
+      margin-top: 0px;
+  } 
+  100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      margin-left: 38px;
+      background: red;
+      transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+      opacity: 1;
+  } 
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+      opacity: 1;
+  } 
+  100% {
+      opacity: 0;
+  }
+}
+
+.wishlist-container {
+width: 100%;
+height: 40px;
+margin-top: 15px;
+position: relative; /* Agrega position: relative; al contenedor padre */
+text-align: center; /* Para centrar el contenido horizontalmente */
+}
+
+.wishlist-button {
+border-width: 1px;
+width: 120px;
+height: 40px;
+border-radius: 20px;
+background: #fff;
+position: absolute;
+border: 1px solid #C78943;
+transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
+
+}
+
+.wishlist-text {
+font-size: 9.6px;
+color: #C78943;
+}
+
+.wishlist-button:focus {
+-webkit-animation: extend 1s ease-in-out;
+-ms-animation: extend 1s ease-in-out;
+animation: extend 1s ease-in-out;
+-webkit-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+
+.wishlist-button:focus > .wishlist-text {
+-webkit-animation: disappear 1s ease-in-out;
+-ms-animation: disappear 1s ease-in-out;
+animation: disappear 1s ease-in-out;
+-webkit-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+
+.heart-icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 20%;
+max-height: 20%;
+display: none;
+}
+
+.wishlist-button:focus > .heart-icon {
+display: block;
 }
 
 /*Fin productos*/
@@ -707,8 +946,8 @@ font-size: 35px;
 .footer {
     position: relative;
   width: 100%;
-  background: #90ccd1;
-  min-height: 100px;
+  background-color: #203048;
+  height: 15vh;
   padding: 20px 50px;
   display: flex;
   justify-content: space-around;
@@ -816,22 +1055,7 @@ ul {
     height: 90px;
   }
 
-  header{
-    padding: 10px;
-    background-color: #90ccd1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-  .cabecera {
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+  
   .company-name h1 {
     text-align: center;
     font-size: 25px;
@@ -997,21 +1221,8 @@ ul {
     border-bottom-right-radius: 0px;
   }
 
-  header{
-    padding: 10px;
-    background-color: #90ccd1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
 
-  .cabecera {
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+
 
   .letra {
     font-size: 14px;

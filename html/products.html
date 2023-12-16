@@ -16,143 +16,35 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
   <style>
-    @-webkit-keyframes extend {
-      0% {
-          width: 120px;
-          height: 40px;
-          border-radius: 20px;
-          left: 50%;
-      } 
-      10% {
-          width: 122px;
-          height: 42px;
-          background: #fff;
-          margin-left: -6px;
-          margin-top: -6px;
-      } 
-      20% {
-          width: 120px;
-          height: 40px;
-          background: #6fb07f;
-          margin-left: 0px;
-          margin-top: 0px;
-      } 
-      100% {
-          width: 40px;
-          height: 40px;
-          border-radius: 0;
-          margin-left: 38px;
-          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
-      }
+  
+  /* -_- ----------- ESTILOS VENTANA MODAL ----------- -_- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  
-  @keyframes extend {
-      0% {
-          width: 120px;
-          height: 40px;
-          border-radius: 20px;
-          left: 50%;
-      } 
-      10% {
-          width: 122px;
-          height: 42px;
-          background: #fff;
-          margin-left: -6px;
-          margin-top: -6px;
-      } 
-      20% {
-          width: 120px;
-          height: 40px;
-          background: #6fb07f;
-          margin-left: 0px;
-          margin-top: 0px;
-      } 
-      100% {
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          margin-left: 38px;
-          background: #6fb07f;
-          transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
-      }
-  }
-  
-  /* Resto de tu estilo... */
-  
-  
-  @-webkit-keyframes disappear {
-      0% {
-          opacity: 1;
-      } 
-      100% {
-          opacity: 0;
-      }
-  }
-  
-  @keyframes disappear {
-      0% {
-          opacity: 1;
-      } 
-      100% {
-          opacity: 0;
-      }
-  }
-  
-  .wishlist-container {
-      width: 100%;
-      height: 40px;
-      margin-top: 15px;
-      background-color: red;
-      position: relative; /* Agrega position: relative; al contenedor padre */
-      text-align: center; /* Para centrar el contenido horizontalmente */
-    
-  }
-  
-  .wishlist-button {
-      border-width: 1px;
-      width: 120px;
-      height: 40px;
-      border-radius: 20px;
-      background: #fff;
-      position: absolute;
-      border: 1px solid #6fb07f;
-      transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
 
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    position: relative;
   }
-  
-  .wishlist-text {
-      font-size: 9.6px;
-      color: #6fb07f;
-  }
-  
-  .wishlist-button:focus {
-      -webkit-animation: extend 1s ease-in-out;
-      -ms-animation: extend 1s ease-in-out;
-      animation: extend 1s ease-in-out;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .wishlist-button:focus > .wishlist-text {
-      -webkit-animation: disappear 1s ease-in-out;
-      -ms-animation: disappear 1s ease-in-out;
-      animation: disappear 1s ease-in-out;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-  }
-  
-  .heart-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 20%;
-      max-height: 20%;
-      display: none;
-  }
-  
-  .wishlist-button:focus > .heart-icon {
-      display: block;
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
   }
   
 </style>
@@ -221,7 +113,13 @@
   
 
 </section>
-
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Modal Image">
+      <p id="modalDescription"></p>
+  </div>
+</div>
 
 </main>
 
@@ -249,7 +147,27 @@
                   <button type="submit" class="button-send">Enviar</button>
         </section>
   </footer>
+<script>
+  function openModal(imageSrc, description) {
+    $("#myModal").css("display", "block");
+    $("#modalImage").attr("src", imageSrc);
+    $("#modalDescription").text(description);
+}
 
+function closeModal() {
+    $("#myModal").css("display", "none");
+}
+
+// Cierra el modal si el usuario hace clic fuera del contenido del modal
+$(window).on("click", function(event) {
+    var modal = $("#myModal")[0];
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+
+</script>
 
  
 <script src="../js/hamburguer.js"></script>

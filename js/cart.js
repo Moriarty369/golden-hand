@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="wishlist-container">
             <button class="wishlist-button" onclick="addToWishlist()">
-              <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
+              <span class="wishlist-text" id="wishlist-text">Añadir a Favoritos</span>
               <img class="heart-icon" src="../images/heart-solid.svg" alt="">
             </button>
           </div>
           <div>
-          <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+          <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar al carrito</a>
           </div>
       `;
 
