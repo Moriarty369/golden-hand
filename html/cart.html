@@ -58,9 +58,22 @@
         </nav>
     </header>
   <!-- Contenedor para mostrar productos en el carrito -->
-  <div id="contenedor-carrito">
-    <!-- Aquí se mostrarán los productos en el carrito -->
- </div>
+  <main>
+    <section class="section-carrito">
+      <div id="contenedor-carrito">
+      
+        <!-- Aquí se mostrarán los productos en el carrito -->
+     </div>
+<div id="precio-total"></div>
+    </section>
+<section>
+  Envio
+</section>
+<section>
+  pasarela de pago
+</section>
+
+  </main>
  <script src="../js/cart.js"></script>
  <script>
      // Espera a que el DOM esté completamente cargado para ejecutar el código
@@ -76,15 +89,21 @@
      
              // Crear elementos HTML para mostrar la información del producto en cart.html
              const nuevoProductoEnCarrito = document.createElement('div');
+             nuevoProductoEnCarrito.classList.add('product-cart');
              nuevoProductoEnCarrito.innerHTML = `
+             <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}" class="img-cart">
                  <p>${producto.name} - Cantidad: ${cantidad}</p>
+                 <p class="precio">${producto.price}€</p>
                  <!-- Puedes agregar más información o estilos según tus necesidades -->
              `;
      
              // Agregar el elemento al contenedor en cart.html
              const contenedorCarrito = document.querySelector('#contenedor-carrito');
              contenedorCarrito.appendChild(nuevoProductoEnCarrito);
+             
          });
+        //  let total= producto.price * cantidad; PARA EL TOTAL
+        //      const contenedorTotal = document.querySelector ('#precio-total')
      });
  </script>
 

@@ -5,6 +5,7 @@
   box-sizing: border-box; 
   font-family: 'Montserrat', sans-serif;
 }
+
   
 body {
   background-color: white;
@@ -1024,6 +1025,22 @@ font-size: 35px;
   font-size: 1rem;
   font-weight: 300;
 }
+
+/*            PAGE CART         */
+
+#contenedor-carrito{
+  display: flex;
+  flex-direction: column;
+}
+.product-cart{
+  display: flex;
+  flex-direction: row;
+}
+.img-cart{
+  width: 200px;
+}
+
+/*          FIN PAGE CART          */
 
 /*Responsive*/ /*con responsabilidad*/
  
