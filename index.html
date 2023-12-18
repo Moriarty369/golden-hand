@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
       href="./images/golden-hands.png">
+    <link rel="stylesheet" href="nombre-de-tu-archivo.css">
+
     <script src="https://kit.fontawesome.com/60be6c00de.js"
       crossorigin="anonymous"></script>
     <script type="module"
@@ -171,6 +173,56 @@
       cursor: pointer;
     }
     
+    /* Estilos para los logos de la pag index */
+
+    .text-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: auto;
+      margin-top: 0;
+      height: 100vh;
+    }
+    
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .cifras {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .cifra-item {
+      text-align: center;
+      margin: 10px;
+      width: 200px; /* Ajusta el ancho según tus preferencias */
+    }
+    
+
+    
+    h2 {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    .cifras-fotos{
+      width: 222px;
+      height: 186px;
+    }
+    
+    
   </style>
   <body>
 
@@ -287,46 +339,41 @@
           </li>
         </ul>
       </section>
-
       <section class="text-section">
-        <p>
-          <h3>ELEMENTO HTML TIPO SECTION</h3> <br><br><br> voluptatibus
-          blanditiis deleniti
-          distinctio! Officia a, porro nobis provident illum deleniti nulla
-          consequuntur voluptatum enim repellat, architecto quas mollitia
-          consectetur assumenda rem magnam maiores ad nostrum.
-        </p>
-        <p>
-          Sequi laudantium quaerat necessitatibus voluptates voluptatem maiores
-          animi asperiores tempore error dolore minima autem modi esse sed et
-          pariatur quas, beatae fugit, earum eligendi tenetur! Doloremque
-          consequuntur voluptatem ratione fugiat.
-        </p>
-        <p>
-          Dolor tenetur error similique, voluptatibus blanditiis deleniti
-          distinctio! Officia a, porro nobis provident illum deleniti nulla
-          consequuntur voluptatum enim repellat, architecto quas mollitia
-          consectetur assumenda rem magnam maiores ad nostrum.
-        </p>
-        <p>
-          Sequi laudantium quaerat necessitatibus voluptates voluptatem maiores
-          animi asperiores tempore error dolore minima autem modi esse sed et
-          pariatur quas, beatae fugit, earum eligendi tenetur! Doloremque
-          consequuntur voluptatem ratione fugiat.
-        </p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum,
-          nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem
-          voluptatem accusamus? Possimus quae beatae dicta veniam distinctio
-          assumenda!</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum,
-          nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem
-          voluptatem accusamus? Possimus quae beatae dicta veniam distinctio
-          assumenda!</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum,
-          nobis nemo quaerat animi sed est veniam rem qui, pariatur quam autem
-          voluptatem accusamus? Possimus quae beatae dicta veniam distinctio
-          assumenda!</p>
+        <div class="cifras">
+          <div class="cifra-item">
+            <img src="./logos/mayores.png" alt="logos de mayores" class="cifras-fotos">
+            <h2>9.479.010</h2>
+            <p>Nos encontraron</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/pensionista.png" alt="logo de pensionistas" class="cifras-fotos">
+            <h2>8.237.199</h2>
+            <p>Pensionistas</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/mano corazon.png" alt="logo de mano y corazon" class="cifras-fotos">
+            <h2>9.479.010</h2>
+            <p>Con prestación de dependencia</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/edificio.png" alt="logo de edifio" class="cifras-fotos">
+            <h2>1.128.152</h2>
+            <p>Empresas colaboradoras</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/socios.png" alt="logo de socios" class="cifras-fotos">
+            <h2>15.079</h2>
+            <p>Empresas Colaboradoras</p>
+          </div>
+          
+        </div>
       </section>
+      
       <div class="map-title">
         <h2 class="root-text-parallax">
           UBICANOS:
