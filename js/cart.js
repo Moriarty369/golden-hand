@@ -19,111 +19,111 @@ document.addEventListener('DOMContentLoaded', () => {
       const tituloLacteos = document.querySelector("#tituloLacteo")
       const tituloFrutos = document.querySelector("#tituloFrutos")
 
-      verTodo.addEventListener('click', () =>{
-          if (section1.style.display === 'none') {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'flex';
-              section2.style.display = 'flex';
-              section3.style.display = 'flex';
-          } else {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'flex';
-              section2.style.display = 'flex';
-              section3.style.display = 'flex';
-          }
-          const productosPorPagina = 3;
-          let paginaActual = 1;
-          
-          function mostrarProductos() {
-            const inicio = (paginaActual - 1) * productosPorPagina;
-            const fin = inicio + productosPorPagina;
-            const productosPagina = productos.slice(inicio, fin);
-          
-            // Mostrar los productos en la página
-            const productosContainer = document.querySelector('.productos');
-            productosContainer.innerHTML = '';
-            productosPagina.forEach(producto => {
-              // Aquí debes mostrar cada producto en la página
-            });
-          }
-          
-          function irPaginaAnterior() {
-            if (paginaActual > 1) {
-              paginaActual--;
-              mostrarProductos();
-            }
-          }
-          function irPaginaSiguiente() {
-              if (paginaActual < Math.ceil(productos.length / productosPorPagina)) {
-                paginaActual++;
-                mostrarProductos();
-              }
-            }
-            
-            // Agregar event listeners a los botones de paginación
-            document.querySelector('.pagina-anterior').addEventListener('click', irPaginaAnterior);
-            document.querySelector('.pagina-siguiente').addEventListener('click', irPaginaSiguiente);
-            
-            // Mostrar los productos en la página al cargar
+      verTodo.addEventListener('click', () => {
+        if (section1.style.display === 'none') {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'flex';
+          section2.style.display = 'flex';
+          section3.style.display = 'flex';
+        } else {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'flex';
+          section2.style.display = 'flex';
+          section3.style.display = 'flex';
+        }
+        const productosPorPagina = 3;
+        let paginaActual = 1;
+
+        function mostrarProductos() {
+          const inicio = (paginaActual - 1) * productosPorPagina;
+          const fin = inicio + productosPorPagina;
+          const productosPagina = productos.slice(inicio, fin);
+
+          // Mostrar los productos en la página
+          const productosContainer = document.querySelector('.productos');
+          productosContainer.innerHTML = '';
+          productosPagina.forEach(producto => {
+            // Aquí debes mostrar cada producto en la página
+          });
+        }
+
+        function irPaginaAnterior() {
+          if (paginaActual > 1) {
+            paginaActual--;
             mostrarProductos();
-      });
-      
-      btnCeliaco.addEventListener('click', () => {
-          if (section1.style.display === 'none') {
-              tituloCeliaco.style.display ='flex'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'flex';
-              section2.style.display = 'none';
-              section3.style.display = 'none';
-          } else {
-              tituloCeliaco.style.display ='flex'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'flex';
-              section2.style.display = 'none';
-              section3.style.display = 'none';
           }
+        }
+        function irPaginaSiguiente() {
+          if (paginaActual < Math.ceil(productos.length / productosPorPagina)) {
+            paginaActual++;
+            mostrarProductos();
+          }
+        }
+
+        // Agregar event listeners a los botones de paginación
+        document.querySelector('.pagina-anterior').addEventListener('click', irPaginaAnterior);
+        document.querySelector('.pagina-siguiente').addEventListener('click', irPaginaSiguiente);
+
+        // Mostrar los productos en la página al cargar
+        mostrarProductos();
+      });
+
+      btnCeliaco.addEventListener('click', () => {
+        if (section1.style.display === 'none') {
+          tituloCeliaco.style.display = 'flex'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'flex';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        } else {
+          tituloCeliaco.style.display = 'flex'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'flex';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        }
       });
 
       btnLacteos.addEventListener('click', () => {
-          if (section2.style.display === 'none') {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='flex'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'none';
-              section2.style.display = 'flex';
-              section3.style.display = 'none';
-          } else {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='flex'
-              tituloFrutos.style.display ='none'
-              section1.style.display = 'none';
-              section2.style.display = 'flex';
-              section3.style.display = 'none';
-          }
+        if (section2.style.display === 'none') {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'flex'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'flex';
+          section3.style.display = 'none';
+        } else {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'flex'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'flex';
+          section3.style.display = 'none';
+        }
       });
 
       btnFrutos.addEventListener('click', () => {
-          if (section3.style.display === 'none') {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='flex'
-              section1.style.display = 'none';
-              section2.style.display = 'none';
-              section3.style.display = 'flex';
-          } else {
-              tituloCeliaco.style.display ='none'
-              tituloLacteos.style.display ='none'
-              tituloFrutos.style.display ='flex'
-              section1.style.display = 'none';
-              section2.style.display = 'none';
-              section3.style.display = 'flex';
-          }
+        if (section3.style.display === 'none') {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'flex'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'flex';
+        } else {
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'flex'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'flex';
+        }
       });
 
 
@@ -152,18 +152,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
       `;
 
-      
 
-      if (producto.category === "celiaco" ) {
-        section1.appendChild(nuevoProducto);
-        section1.style.display = 'flex'
-      } else if (producto.category === "lacteos" )  {
-        section2.appendChild(nuevoProducto);
-        section2.style.display = 'flex'
-      } else {
-        section3.appendChild(nuevoProducto);
-        section3.style.display = 'flex'
-      }
+
+        if (producto.category === "celiaco") {
+          section1.appendChild(nuevoProducto);
+          section1.style.display = 'flex'
+        } else if (producto.category === "lacteos") {
+          section2.appendChild(nuevoProducto);
+          section2.style.display = 'flex'
+        } else {
+          section3.appendChild(nuevoProducto);
+          section3.style.display = 'flex'
+        }
 
         const cantidadSpan = nuevoProducto.querySelector('.cantidad');
         const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (productoEncontrado) {
               carrito.set(productoEncontrado.id, { producto: productoEncontrado, cantidad });
-               // Actualizar localStorage
+              // Actualizar localStorage
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
               console.log(carrito);
             }
@@ -202,27 +202,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-       // PRINCIPIO CONTADOR DE CESTA EL NUMERO
-          // Seleccionar todos los botones de "agregar al carrito"
-          const btnContador = document.querySelectorAll('.agregar-carrito');
-          const contadorProductos = document.querySelector('#contador-productos');
-          
-          // Inicializar el contador
-          let cantidadProductos = 0;
-          contadorProductos.textContent = cantidadProductos;
-          
-          // Agregar un event listener a cada botón para escuchar los clics
-          btnContador.forEach(boton => {
-            boton.addEventListener('click', () => {
-            
-              // Incrementar la cantidad de productos
-              cantidadProductos++;
-              // Actualizar el contador con la nueva cantidad
-              contadorProductos.textContent = cantidadProductos;
-            });
-          });
+      // PRINCIPIO CONTADOR DE CESTA EL NUMERO
+      // Seleccionar todos los botones de "agregar al carrito"
+      const btnContador = document.querySelectorAll('.agregar-carrito');
+      const contadorProductos = document.querySelector('#contador-productos');
 
-        // FIN CONTADOR DE CESTA EL NUMERO 
+      // Inicializar el contador
+      let cantidadProductos = 0;
+      contadorProductos.textContent = cantidadProductos;
+
+      // Agregar un event listener a cada botón para escuchar los clics
+      btnContador.forEach(boton => {
+        boton.addEventListener('click', () => {
+
+          // Incrementar la cantidad de productos
+          cantidadProductos++;
+          // Actualizar el contador con la nueva cantidad
+          contadorProductos.textContent = cantidadProductos;
+        });
+      });
+
+      // FIN CONTADOR DE CESTA EL NUMERO 
 
 
     })

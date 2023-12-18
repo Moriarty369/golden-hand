@@ -274,14 +274,15 @@ background-color: #83C5BE;
 
 
 /* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
-.flip-card-title-container{
-margin-left: 20%;
-margin-bottom: 10px;
-background-color: gold;
-width: 80%;
-}
 .flip-card-section{
 
+}
+
+.flip-card-title-container{
+margin-left: 20%;
+margin-bottom: 60px;
+background-color: gold;
+width: 80%;
 }
 
 .flipcard-container {
@@ -305,7 +306,7 @@ width: 80%;
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 1.5s;
-  background-color: red;
+  background-color:#83C5BE;
 }
 
 .flipcard:hover .flipcard-inner {
@@ -331,17 +332,22 @@ width: 80%;
 
 .flipcard-back {
   transform: rotateX(180deg);
-  background-color: #f0f0f0;
+  background-color: #83C5BE;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flipcard img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 15px; /* Agregado borde redondeado */
+.flipcard-image{
+  height: 85%;
+
 }
+.flipcard-title{
+  height: 15%;
+  background-color:#83C5BE;
+  width: 100%;
+}
+
 
 .flipcard h3 {
   margin-top: 10px;
