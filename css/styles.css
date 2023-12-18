@@ -346,6 +346,7 @@ width: 80%;
   height: 15%;
   background-color:#83C5BE;
   width: 100%;
+  text-align: center;
 }
 
 
@@ -357,6 +358,9 @@ width: 80%;
   text-align: center;
 }   
 
+.image-flipcard{
+  height: 300px;
+}
 
   /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
 
