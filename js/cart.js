@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <img src="${producto.img}" alt="Imagen de ${producto.name}">
+        <img class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -196,33 +196,33 @@ document.addEventListener('DOMContentLoaded', () => {
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
               console.log(carrito);
             }
+
           }
-        });
-      });
-
-
-
-       // PRINCIPIO CONTADOR DE CESTA EL NUMERO
+           // PRINCIPIO CONTADOR DE CESTA EL NUMERO
           // Seleccionar todos los botones de "agregar al carrito"
           const btnContador = document.querySelectorAll('.agregar-carrito');
           const contadorProductos = document.querySelector('#contador-productos');
           
-          // Inicializar el contador
-          let cantidadProductos = 0;
-          contadorProductos.textContent = cantidadProductos;
+          contadorProductos.textContent = cantidad;
           
-          // Agregar un event listener a cada botón para escuchar los clics
+          // Agregar un e ent listener a cada botón para escuchar los clics
           btnContador.forEach(boton => {
             boton.addEventListener('click', () => {
             
               // Incrementar la cantidad de productos
-              cantidadProductos++;
-              // Actualizar el contador con la nueva cantidad
-              contadorProductos.textContent = cantidadProductos;
+              productoEncontrado;
+               
+              contadorProductos.textContent = productoEncontrado;
             });
           });
 
         // FIN CONTADOR DE CESTA EL NUMERO 
+        });
+        
+        
+      });
+
+      
 
 
     })
@@ -230,33 +230,51 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
 
-   //Modal
   //Modal
-document.addEventListener('DOMContentLoaded', function () {
-  const windowBackground = document.getElementById('window-background');
-  const windowContainer = document.getElementById('window-container');
-  const openModals = nuevoProducto.getElementsByClassName('open-modal');
-  const closeModal = document.getElementById('close-modal');
-
-  openModals.forEach(openModal => {
-    openModal.addEventListener('click', () => {
-      windowBackground.style.display = 'flex';
+  document.addEventListener('DOMContentLoaded', function () {
+    const windowBackground = document.getElementById('window-background');
+    const windowContainer = document.getElementById('window-container');
+    const closeModal = document.getElementById('close-modal');
+    const modalContent = document.getElementById('modal-content');
+  
+    // Reemplaza esta parte con tu propia lógica para obtener la información del producto
+    const obtenerInformacionProducto = (producto) => {
+      const imagen = producto.querySelector('img').src;
+      const nombre = producto.querySelector('h3').textContent;
+      const cantidad = producto.querySelector('.cantidad').textContent;
+      return { imagen, nombre, cantidad };
+    };
+  
+    const mostrarInformacionProducto = (producto) => {
+      const { imagen, nombre, cantidad } = obtenerInformacionProducto(producto);
+      modalContent.innerHTML = `
+        <img src="${producto.img}" alt="${producto.name}">
+        <h2>${producto.name}</h2>
+        <p>Cantidad seleccionada: ${producto.price}</p>
+      `;
+    };
+  
+    const openModals = document.querySelectorAll('.product .open-modal');
+  
+    openModals.forEach(openModal => {
+      openModal.addEventListener('click', (event) => {
+        event.preventDefault();
+        windowBackground.style.display = 'flex';
+        mostrarInformacionProducto(event.currentTarget.closest('.product'));
+      });
     });
+  
+    const closeWindow = () => {
+      windowContainer.classList.add('close');
+      setTimeout(() => {
+        windowContainer.classList.remove('close');
+        windowBackground.style.display = 'none';
+      }, 1000);
+    };
+  
+    closeModal.addEventListener('click', () => closeWindow());
+    window.addEventListener('click', e => e.target == windowBackground && closeWindow());
   });
-
-  const closeWindow = () => {
-    windowContainer.classList.add('close');
-
-    setTimeout(() => {
-      windowContainer.classList.remove('close');
-      windowBackground.style.display = 'none';
-    }, 1000);
-  };
-
-  closeModal.addEventListener('click', () => closeWindow());
-
-  window.addEventListener('click', e => e.target == windowBackground && closeWindow());
-});
 
 
 });

@@ -510,10 +510,13 @@ width: 80%;
   align-items: center;
   justify-content: space-evenly;
   justify-items: center;
-  margin: 20px 120px 20px 120px;
+  margin: auto;
+  margin-top: 2vh;
   border-radius: 5px;
-  width: 65rem;
+  width: 80%;
 }
+
+
 
 .buttonfondo {
   font-size: 15px;
@@ -690,7 +693,8 @@ transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
 }
 
 .wishlist-text {
-font-size: 9.6px;
+font-weight: bold ;
+font-size: 12px;
 color: #C78943;
 }
 
@@ -1045,6 +1049,7 @@ font-size: 35px;
    html {
    font-size: 12px;
   } 
+ 
 /* HEADER */
 header {
   width: auto;
@@ -1220,6 +1225,11 @@ ul {
 @media screen and (max-width: 767px) {
   html {
     font-size: 10px;
+  }
+
+  .buttonfondo {
+    font-weight: bold;
+    font-size: 14.5px;
   }
 
   .container-form {
