@@ -388,6 +388,7 @@ width: 80%;
      background-color: #c7eef3;
      border-top-left-radius: 20px;
      border-bottom-left-radius: 20px;
+     font-size: 20px;
  }
  
  .info-childs {
@@ -437,6 +438,7 @@ width: 80%;
  
  .form-information-childs {
      padding: 0 30px;
+     font-size: 15px;
  }
  
  .form-information-childs h2 {
@@ -596,6 +598,83 @@ width: 80%;
   color: azure;
   background-color: #91422B;
 }
+
+
+
+
+#precio-total{
+  font-size: 30px;
+  margin: 3rem;
+}
+
+/* PAGINA PAGAR*/
+table, th, td {
+  border: 1px solid black; /* Establece un borde de 1 píxel de ancho y color negro */
+}
+.table-product{
+  width: auto;
+}
+.table-product tr th{
+  width: 20rem;
+}
+hr {
+  width: 80%; /* Establece el ancho al 80% del contenedor */
+  margin: auto; /* Centra el elemento horizontalmente */
+}
+.table-bordered{
+  border-color: #000000;
+}
+.section-carrito{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  align-items: center;
+}
+.section-send{
+  height: auto;
+  margin: 4rem;
+}
+.section-send-sub-tittle{
+  margin: 2rem 0;
+  font-weight:bold;
+}
+
+.text-area-package{
+  border-radius: 0;
+  height: 70px;
+}
+
+/*Inicio payment method*/
+.section-payment-method {
+  height: auto;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+.form-payment-method {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-payment-method div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-payment-method div figure {
+  margin-left: 5rem;
+}
+
+#input-payment-method {
+  margin-top: 3rem;
+  width: 100px;
+  margin-bottom: 4rem;
+}
+
+
+/* FIN PAGINA PAGAR */
+
 @-webkit-keyframes extend {
   0% {
       width: 120px;
@@ -746,6 +825,7 @@ display: block;
   background-color: #c78943;
   padding-left:12px;
   box-shadow: 0 8px 10px #838080;
+  font-size: 25px;
 }
 
 .position-section {
@@ -952,7 +1032,7 @@ font-size: 35px;
     position: relative;
   width: 100%;
   background-color: #203048;
-  height: 15vh;
+  height: auto;
   padding: 20px 50px;
   display: flex;
   justify-content: space-around;
@@ -967,6 +1047,7 @@ font-size: 35px;
   width: 31rem; 
   align-items: center;
   gap: 0.7rem;
+  font-size: 25px;
   }
 
 .button-send{
@@ -1131,7 +1212,7 @@ ul {
 
   .title-section {
     height: 2rem;
-    font-size: 12px;
+    font-size: 20px;
   }
   /* Fin de estilos para la sección de Servicios */
 
@@ -1175,6 +1256,7 @@ ul {
   .formulario {
     margin: 5% 10%;
     width: 80%;
+    font-size: 15px;
   }
 
   textarea {
@@ -1221,6 +1303,19 @@ ul {
     }
     
   /* FIN       PÁGINA DE ABOUTUS     */
+  /*Footer*/
+
+.footer {
+height: auto;
+}
+
+.social-icon{
+  display: flex;
+  flex-direction: column;
+}
+.contact-footer{
+  font-size: 20px;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -1302,7 +1397,7 @@ ul {
 
   .title-section {
     height: 2rem;
-    font-size: 12px;
+    font-size: 18px;
   }
   /* Fin de estilos para la sección de Servicios */
 
@@ -1346,6 +1441,7 @@ ul {
   .formulario {
     margin: 5% 10%;
     width: 80%;
+    font-size: 15px;
   }
 
   textarea {
@@ -1384,7 +1480,33 @@ ul {
   
   /*Footer*/
 
+
+/*PAGINA PAGAR */
+
+table, thead, tbody, th, td, tr {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+th {
+  height: auto; /* Establece la altura de las celdas de encabezado */
+}
+
+td {
+  height: 60px; /* Establece la altura de las celdas de datos */
+ align-items: center;
+}
+.img-cart{
+  width: 100px;
+}
+}
+#img-payment-methods{
+  width: 100px;
+}
+/* FIN PAGINA PAGAR */
+
+
 
 /* Fin del responsive */
 
