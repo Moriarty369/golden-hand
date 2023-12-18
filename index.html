@@ -463,7 +463,7 @@
           // imprimiendo json de productos para supervisar sugerencias dinámicas
           // console.log(productos)
           const resultados = productos.filter(producto =>
-            producto.name.toLowerCase().includes(searchTerm)
+            producto.name.toLowerCase().startsWith(searchTerm)
           );
           // OJO imprimiendo dinamicamente json comparado con busqueda (por cualquier caracter) 
           console.log(resultados)
@@ -539,7 +539,7 @@
       <script src="./js/abel.js"></script>
          <!-- Carga asincrónica de la API de Google Maps -->
          <script async defer
-         src="https://maps.googleapis.com/maps/api/js?key=YOUR_ID&map_ids=YOUR_ID=initMap">
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA16kpoV8rEzXPIr8pW5cgloqK-3EnLL9I&map_ids=47dafbb6434643c7&callback=initMap">
          </script>
       <script src="./js/hamburguer.js"></script>
       

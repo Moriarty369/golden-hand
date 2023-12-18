@@ -2,9 +2,9 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('parallax-map'), {
         center: { lat: 40.39680634551337, lng: -3.6995415288354443 },
         zoom: 18,
-        mapId: 'YOUR-ID'
+        mapId: '47dafbb6434643c7'
     });
-
+    
 
     const mapIcon = {
         url: "../images/golden-hands.png",
@@ -26,8 +26,8 @@ function initMap() {
         panel: document.getElementById('directions-panel'),
         suppressMarkers: true // Oculta los marcadores predeterminados de Google Maps
     });
-
-    // ...
+    
+  // ...
 
     userLocationMarker = new google.maps.Marker({
         position: null, // Se actualizará con la ubicación del usuario
@@ -39,7 +39,7 @@ function initMap() {
         },
     });
 
-    // ...
+// ...
 
 
     // Obtiene la ubicación del usuario
@@ -98,5 +98,7 @@ function calculateRoute(travelMode) {
         }
     });
 }
+
+
 
 
