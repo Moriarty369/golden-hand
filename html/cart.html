@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden Hands</title>
+    <title>Carrito de Compras</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,44 +24,71 @@
   <body>
     <header>
       <nav>
-        <div class="logo-container">
-          <a href="./index.html"><img class="logo"
-              src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
-          </div>
-        <div class="company-name">
-          <h1>GOLDEN HANDS</h1>
-        </div>
-        <div class="container-nav-list">
-          <ul>
-            <li><a href="./html/services.html">Servicios</a></li>
-            <li><a href="./html/products.html">Productos</a></li>
-            <li><a href="./html/contact.html">Contactos</a></li>
-            <li><a href="./html/about-us.html">Nosotros</a></li>
+      <div class="logo-container">
+        <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+      </div>
+      <div class="company-name">
+        <h1>GOLDEN HANDS</h1>
+      </div>
+      <div class="container-nav-list">
+        <ul>
+          <li><a href="./services.html">Servicios</a></li>
+          <li><a href="./products.html">Productos</a></li>
+          <li><a href="./contact.html">Contactos</a></li>
+          <li><a href="./about-us.html">Nosotros</a></li>
             <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./html/products.html"> <i
-                class="fa-solid fa-cart-shopping icons"></i></a>
-          </ul>
-        </div>
-        <div class="show">
-              <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="hidden-container">
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+        </ul>
+      </div>
+      <div class="show">
+        <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="hidden-container">
           <ul class="hidden-list">
             <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
-            <li><a href="./services.html">Servicios</a></li>
-            <li><a href="./products.html">Productos</a></li>
-            <li><a href="./contact.html">Contactos</a></li>
-            <li><a href="./about-us.html">Nosotros</a></li>
-            <li class="space-icons">  
-              <a href="./login.html"><i class="fas fa-user icons"></i></a>
-              <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
-              </ul>
-          </div>
-      </nav>
+              <li><a href="./services.html">Servicios</a></li>
+              <li><a href="./products.html">Productos</a></li>
+              <li><a href="./contact.html">Contactos</a></li>
+              <li><a href="./about-us.html">Nosotros</a></li>
+              <li class="space-icons">  
+                <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              </li>
+          </ul>
+  </div>
+        </nav>
     </header>
-    <h1>Carro de Compras</h1>
-    <div id="carro-lista"></div>
+  <!-- Contenedor para mostrar productos en el carrito -->
+  <div id="contenedor-carrito">
+    <!-- Aquí se mostrarán los productos en el carrito -->
+ </div>
+ <script src="../js/cart.js"></script>
+ <script>
+     // Espera a que el DOM esté completamente cargado para ejecutar el código
+     document.addEventListener('DOMContentLoaded', () => {
+         // Recuperar el carrito almacenado en localStorage
+         const storedCart = localStorage.getItem('carrito');
+         const cesta = new Map(JSON.parse(storedCart) || []);
+     
+         // Iterar sobre las entradas del carrito para construir el contenido en cart.html
+         cesta.forEach((productoEnCarrito, productId) => {
+             const producto = productoEnCarrito.producto;
+             const cantidad = productoEnCarrito.cantidad;
+     
+             // Crear elementos HTML para mostrar la información del producto en cart.html
+             const nuevoProductoEnCarrito = document.createElement('div');
+             nuevoProductoEnCarrito.innerHTML = `
+                 <p>${producto.name} - Cantidad: ${cantidad}</p>
+                 <!-- Puedes agregar más información o estilos según tus necesidades -->
+             `;
+     
+             // Agregar el elemento al contenedor en cart.html
+             const contenedorCarrito = document.querySelector('#contenedor-carrito');
+             contenedorCarrito.appendChild(nuevoProductoEnCarrito);
+         });
+     });
+ </script>
+
+
   
     <footer class="footer">
       <section class="footer-content container">

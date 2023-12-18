@@ -14,31 +14,37 @@
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
   <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
 </head>
+<style>
+.captcha{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+</style>
 
 <body>
   <header>
     <nav>
-      <div class="logo-container">
-        <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+    <div class="logo-container">
+      <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
+    </div>
+    <div class="company-name">
+      <h1>GOLDEN HANDS</h1>
+    </div>
+    <div class="container-nav-list">
+      <ul>
+        <li><a href="./services.html">Servicios</a></li>
+        <li><a href="./products.html">Productos</a></li>
+        <li><a href="./contact.html">Contactos</a></li>
+        <li><a href="./about-us.html">Nosotros</a></li>
+          <i class="fa-solid fa-magnifying-glass icons"></i>
+          <a href="./login.html"><i class="fas fa-user icons"></i></a>
+      </ul>
+    </div>
+    <div class="show">
+      <i class="fa-solid fa-bars"></i>
         </div>
-      <div class="company-name">
-        <h1>GOLDEN HANDS</h1>
-      </div>
-      <div class="container-nav-list">
-        <ul>
-          <li><a href="./services.html">Servicios</a></li>
-          <li><a href="./products.html">Productos</a></li>
-          <li><a href="./contact.html">Contactos</a></li>
-          <li><a href="./about-us.html">Nosotros</a></li>
-            <i class="fa-solid fa-magnifying-glass icons"></i>
-            <a href="./login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a>
-        </ul>
-      </div>
-      <div class="show">
-            <i class="fa-solid fa-bars"></i>
-      </div>
-      <div class="hidden-container">
+        <div class="hidden-container">
         <ul class="hidden-list">
           <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
             <li><a href="./services.html">Servicios</a></li>
@@ -47,11 +53,11 @@
             <li><a href="./about-us.html">Nosotros</a></li>
             <li class="space-icons">  
               <a href="./login.html"><i class="fas fa-user icons"></i></a>
-              <a href="./products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+            </li>
+        </ul>
+</div>
+      </nav>
+  </header>
   <main class="login-container">
     <section class="container-form register">
       <aside class="information info-childs">
@@ -62,7 +68,7 @@
           </p>
           <input type="button" value="Iniciar Sesión" id="Sign-IN" />
       </aside>
-      <form class="form-information form form-information-childs" action="../index.html">
+      <form class="form-information form form-information-childs" action="../captcha.php" method="post">
           <h2>Crear una Cuenta</h2>
           <div class="icons">
             <i class="bx bxl-google"></i>
@@ -87,6 +93,9 @@
       </form> 
     </section>
     <!-- formulario de registro -->
+    <div class="captcha" id="captcha">
+
+    </div>
 
     <section class="container-form login hide">
       <aside class="information info-childs">
@@ -107,20 +116,33 @@
             <div>
               <i class="bx bx-envelope"></i>
               <input id="email2" type="email" placeholder="Correo Electronico" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion4"></p>
             </div>
             <div>
               <i class="bx bx-lock-alt"></i>
               <input id="contrasena2" type="password" placeholder="Password" required autocomplete="off"/>
+              <p class="mensaje-error" id="resultadoValidacion5"></p>
             </div>
             <input onclick="validarCorreoElectronico2(document.getElementById('email2').value), validarContraseña2(document.getElementById('contrasena2').value)" type="submit" value="Iniciar Sesión" />
-            <p class="mensaje-error" id="resultadoValidacion4"></p><br>
-            <p class="mensaje-error" id="resultadoValidacion5"></p>
       </form>
     </section>
   </main>
   <script src="../js/script.js"></script>
   <script src="../js/hamburguer.js"></script>
   <script src="../js/validaciones.js"></script>
+  <script>
+    function generateCaptcha() {
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var captcha = num1 + " + " + num2 + " = ?";
+        document.getElementById("captcha").innerHTML = captcha;
+        document.getElementById("captchaInput").value = num1 + num2; // Almacena el resultado esperado
+    }
+</script>
+
 </body>
+
+
+
 
 </html>

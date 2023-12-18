@@ -269,23 +269,19 @@ background-color: #83C5BE;
   text-align: center;
 }
 
-
-
 /* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
 
 
-
-
-
 /* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
-.flip-card-title-container{
-margin-left: 25%;
-margin-bottom: 10px;
-background-color: gold;
-width: 80%;
-}
 .flip-card-section{
 
+}
+
+.flip-card-title-container{
+margin-left: 20%;
+margin-bottom: 60px;
+background-color: gold;
+width: 80%;
 }
 
 .flipcard-container {
@@ -309,7 +305,7 @@ width: 80%;
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 1.5s;
-  background-color: red;
+  background-color:#83C5BE;
 }
 
 .flipcard:hover .flipcard-inner {
@@ -335,17 +331,22 @@ width: 80%;
 
 .flipcard-back {
   transform: rotateX(180deg);
-  background-color: #f0f0f0;
+  background-color: #83C5BE;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flipcard img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 15px; /* Agregado borde redondeado */
+.flipcard-image{
+  height: 85%;
+
 }
+.flipcard-title{
+  height: 15%;
+  background-color:#83C5BE;
+  width: 100%;
+}
+
 
 .flipcard h3 {
   margin-top: 10px;
@@ -354,9 +355,6 @@ width: 80%;
 .flipcard p {
   text-align: center;
 }   
-
-
-
 
 
   /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
@@ -510,34 +508,28 @@ width: 80%;
 /*Estilos para la página de Products*/
 
 
-.product-nav ul{
+.product-nav{
   list-style: none;
   font-size: 15px;
   background-color: #90ccd1;
-  display: grid;
-  grid-template-columns: 20% 20% 20%;
-  grid-template-rows: 1fr;
   align-items: center;
   justify-content: space-evenly;
   justify-items: center;
-  margin: 20px 5% 10px 5%;
+  margin: 20px 120px 20px 120px;
   border-radius: 5px;
-
+  width: 65rem;
 }
 
-.product-nav li{
-  list-style: none;
+.buttonfondo {
   font-size: 15px;
   background-color: #90ccd1;
-}
-
-.product-nav a{
+  border: none;
   color: black;
-  text-decoration: none;
   font-weight: 600;
   font-size: 20px;
-
+  cursor: pointer;
 }
+
 
 .products {
   padding: 0 0 100px 0;
@@ -547,7 +539,7 @@ width: 80%;
 .products-h2 {
   font-size: 20px;
   color: #203048;
-  margin: 20px 80px 20px 10px;
+  margin: 20px 80px 20px 80px;
   background-color: #f3d28a;
   text-align: left;
   padding-left: 8px;
@@ -563,6 +555,8 @@ width: 80%;
   align-items: center;
   justify-items: center;
   height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .product {
@@ -587,6 +581,10 @@ width: 80%;
   margin: 0;
   color:#203048;
   font-weight: 600;
+}
+
+.container-products{
+  height: 100%;
 }
 
 .btn-2 {
@@ -959,6 +957,7 @@ font-size: 35px;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  color: white;
   }
 
 .contact-footer{
