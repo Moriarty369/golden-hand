@@ -37,20 +37,25 @@
     position: relative;
   }
 
-.close {
-    color: #fff;
+  .close-modal {
     position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 30px;
-    font-weight: bold;
+    border-radius: 50%;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    border: 1px solid #eeeeee;
     cursor: pointer;
   }
-  
 </style>
-  <body>
-    <header>
-      <nav>
+
+<body>
+  <header>
+    <nav>
       <div class="logo-container">
         <a href="../index.html"><img class="logo" src="../images/golden-hands.png" alt="Golden Hands Logo" /></a>
       </div>
@@ -114,51 +119,57 @@
           </nav>
         </div>
 
-      </section>
-      
-      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2> 
-      <section id="gluten" class="product-content products container" ></section>
-      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
-      <section id="lacteo" class="product-content products container"></section>
-      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
-      <section id="frutos" class="product-content products container"></section>
+    </section>
 
-      <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
-      <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
+    <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
+    <section id="gluten" class="product-content products container"></section>
+    <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+    <section id="lacteo" class="product-content products container"></section>
+    <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+    <section id="frutos" class="product-content products container"></section>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img id="modalImage" src="" alt="Modal Image">
-      <p id="modalDescription"></p>
-  </div>
-</div>
-      
-    </main>
-    
+    <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
+    <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
+
+    <!-- Modal -->
+    <section>
+      <div class="window-background" id="window-background">
+        <div class="window-container" id="window-container">
+          <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+          <h1>Hola 👋</h1>
+          <p> Lorem ipsum dolor, provident est iusto quibusdam fugiat laboriosam nostrum quisquam doloribus, non facilis
+            consequuntur molestias? Repellat numquam repellendus commodi exercitationem iure?</p>
+      </div>
+          </div>
+    </section>
+<!-- Fin del modal -->
+
+  </main>
+
+
   <footer class="footer">
-      <section class="footer-content">
-                        <h3>&copy; 2023 Golden Hands</h3>
-              <ul class="social-icon">
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-twitter"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-linkedin"></ion-icon>
-                    </a></li>
-                  <li class="social-iconitem"><a class="social-iconlink" href="#">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                    </a></li>
-              </ul>
-          </section>
-      <section  class="contact-footer">
-          <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
-                  <input type="email" id="email"  class="input-email-footer" placeholder="Ingrese su correo electrónico">
-                  <button type="submit" class="button-send">Enviar</button>
-      </section>
+    <section class="footer-content">
+      <h3>&copy; 2023 Golden Hands</h3>
+      <ul class="social-icon">
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+    </section>
+    <section class="contact-footer">
+      <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
+      <input type="email" id="email" class="input-email-footer" placeholder="Ingrese su correo electrónico">
+      <button type="submit" class="button-send">Enviar</button>
+    </section>
 
   </footer>
 <!-- <script>
