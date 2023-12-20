@@ -11,23 +11,222 @@
       rel="stylesheet" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-            rel="stylesheet" />
+      rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
       href="./images/golden-hands.png">
+    <link rel="stylesheet" href="nombre-de-tu-archivo.css">
+
     <script src="https://kit.fontawesome.com/60be6c00de.js"
       crossorigin="anonymous"></script>
     <script type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
+  <style>
+    /* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+    .parallax {
+      display: grid;
+      align-items: center;
+    }
+    
+    .parallax > * {
+      grid-area: stack;
+      animation: parallax linear;
+      animation-timeline: scroll();
+    }
+     
+    .parallax__bg {
+      --parallax-speed: -10;
+      min-height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .parallax__dust {
+      --parallax-speed: -20;
+      background-color:#C7AF43;
+      opacity: 0.3;
+    }
 
+    @keyframes parallax {
+      to {
+        transform: 
+          translateY(calc(var(--parallax-speed) * 150px));
+      }
+    }
+    
+    .text-section{
+      width: 80%;
+      margin: auto;
+      margin-top: 50px;
+      height: 100vh;
+        
+    }
+   
+    .parallax-img {
+      display: block;
+      max-width: 80%;
+      margin: auto;
+      border-radius: 20px;
+    }
+    
+    .parallax-map {
+      display: flex;
+      height: 60vh;
+      background-color: red;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    #directions-panel {
+      margin-top: 10px; /* Espaciado superior */
+      padding: 10px;
+      border: 1px solid #ccc; /* Borde para resaltar el área */
+      background-color: aqua;
+    }
+
+    #directions-controls {
+    margin-top: 10px; /* Espaciado superior */
+    background-color: red;
+    height: 40px;
+
+    
+    }
+    
+    .btn-map{
+      height: 100%;
+      width: auto;
+      background-color: blue;
+      font-size: x-large;
+    }
+
+/* Estilos para los botones de los controles */
+.root-text-parallax{
+      font-size: xx-large;
+}
+   /* -_- ----------------- ESTILOS SEARCH BAR ----------------- -_- */
+    
+   #search-container {
+      display: none;
+      margin-top: 40px;
+      background-color:red;
+      height: 60px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      z-index: 1;
+    }
+    #search-results {
+      display: none;
+      position: absolute;
+      top: 90;
+      right: -300px; /* Inicialmente fuera de la pantalla */
+      width: 300px;
+      height: 100%;
+      background-color: #fff; /* Color de fondo */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+      transition: right 0.3s ease; /* Animación suave de la posición */
+      overflow-y: auto; /* Añadir desplazamiento si es necesario */
+    }
+    
+    #search-results.show-search {
+      right: 0; /* Muestra la barra lateral cuando se agrega la clase 'show' */
+      display: block;
+    }
+    
+    .search-result {
+      padding: 10px;
+      border-bottom: 1px solid #ccc; /* Línea de separación entre resultados */
+    }
+    
+    .search-img-container {
+      width: 50px; /* Ajusta el ancho de la imagen según tus necesidades */
+      height: 50px; /* Ajusta la altura de la imagen según tus necesidades */
+      overflow: hidden; /* Recorta la imagen si es más grande que el contenedor */
+      margin-right: 10px; /* Espacio a la derecha de la imagen */
+    }
+    
+    .search-img-container img {
+      width: 100%; /* Haz que la imagen ocupe el 100% del contenedor */
+      height: auto; /* Mantén la proporción de aspecto original */
+    }
+    
+    .search-name {
+      font-weight: bold; /* Hace que el nombre sea más llamativo */
+    }
+    
+    /* Agrega estos estilos si quieres que la barra lateral sea desplazable */
+    #search-results {
+      overflow-y: auto;
+    }
+    
+    /* Estilos para el botón de cerrar la barra lateral */
+    #close-search-results {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    
+    /* Estilos para los logos de la pag index */
+
+    .text-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: auto;
+      margin-top: 0;
+      height: 100vh;
+    }
+    
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .cifras {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .cifra-item {
+      text-align: center;
+      margin: 10px;
+      width: 200px; /* Ajusta el ancho según tus preferencias */
+    }
+    
+
+    
+    h2 {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    .cifras-fotos{
+      width: 222px;
+      height: 186px;
+    }
+    
+    
+  </style>
   <body>
+
     <header>
       <nav>
         <div class="logo-container">
           <a href="./index.html"><img class="logo"
               src="./images/golden-hands.png" alt="Golden Hands Logo" /></a>
-          </div>
+        </div>
         <div class="company-name">
           <h1>GOLDEN HANDS</h1>
         </div>
@@ -37,78 +236,358 @@
             <li><a href="./html/products.html">Productos</a></li>
             <li><a href="./html/contact.html">Contactos</a></li>
             <li><a href="./html/about-us.html">Nosotros</a></li>
-            <i class="fa-solid fa-magnifying-glass icons"></i>
+            <i></i>
             <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
-            <a href="./html/products.html"> <i
-                class="fa-solid fa-cart-shopping icons"></i></a>
+            <li class="search-button"> <button type="button"
+                onclick="toggleSearch()">🔎</button></li>
+
           </ul>
         </div>
         <div class="show">
-              <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
         <div class="hidden-container">
           <ul class="hidden-list">
-            <li ><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
+            <li><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
             <li><a href="./html/services.html">Servicios</a></li>
             <li><a href="./html/products.html">Productos</a></li>
             <li><a href="./html/contact.html">Contactos</a></li>
             <li><a href="./html/about-us.html">Nosotros</a></li>
-            <li class="space-icons">  
-              <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
-              <a href="./html/products.html"> <i class="fa-solid fa-cart-shopping icons"></i></a></li>
-              </ul>
-          </div>
-      </nav>
-    </header>
+            <li> <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
+            </li>
+            <li> <button type="button" onclick="toggleSearch()">🔎</button></li>
+          </ul>
+        </div>
 
-    <main id="home" class>
-      <img src="./images/acompañamiento.png"
-        alt="dos personas mayores de espaldas" class="background-image">
-      <p class="letra">TE ACOMPAÑAMOS EN TU DÍA A DÍA.<br>Contáctanos</p>
-             <div class="flip-container">
-          <div class="card">
-            <div class="front">
-              
-              <h2>Parte Delantera</h2>
-            </div>
-            <div class="back">
-              <h2>Parte trasera</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              id esse impedit. Alias quisquam similique illo consequuntur magnam
-              dolorem sequi, tempore cumque voluptatum mollitia ad sapiente
-              architecto deserunt porro nobis?</p>
-                      </div>
+      </nav>
+      <!-- SEARCH -->
+      <div id="search-container">
+        <form id="search-form"
+          onsubmit="event.preventDefault(); searchProducts();">
+          <input type="text" id="search-input" name="search-input"
+            placeholder="Buscar productos...">
+
+        </form>
+      </div>
+      <div id="search-results" class="search-results">
+
+      </div>
+      <!-- FIN SEARCH -->
+    </header>
+    <main id="home" class="main-index">
+
+      <div class="promo-container">
+        <h2>Recibe hasta 747€ al mes en ayudas de la Ley de Dependencia. <a
+            class="info-a" href="./html/contact.html">Más información.</a></h2>
+      </div>
+      
+      <section class="floating-section">
+        <div class="floating-container">
+          <div class="avatar">
+            <a href="#">
+              <img src="./images/acompañamiento.png" alt="Skytsunami" />
+            </a>
+          </div>
+          <div class="content">
+            <h2 class="floating-title">Golden Hands es la solución elegida por
+              más de 10.000 familias para contar con los cuidadores a domicilio
+              mejor preparados.</h2>
+            <p class="floating-p">Testimonio: Andrés Trozado</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="font-custom-container">
+        <h2 class="font-custom-title">Personaliza el tamaño de la letra para
+          leer mejor!</h2>
+        <!-- Controles de interfaz -->
+        <div class="font-controls-container">
+          <input type="radio" name="font-size" id="small"
+            onclick="changeFontSize('small')">
+          <label for="small">Pequeño</label>
+          <input type="radio" name="font-size" id="medium"
+            onclick="changeFontSize('medium')">
+          <label for="medium">Mediano</label>
+          <input type="radio" name="font-size" id="large"
+            onclick="changeFontSize('large')">
+          <label for="large">Grande</label>
         </div>
       </div>
 
-    </main>
+      <section>
+        <ul class="ul-index">
+          <li>
+            ¿Te preocupas por la seguridad y el bienestar de tu madre mientras
+            está sola en casa?
+          </li>
+          <li>
+            ¿Tu padre vive lejos y quieres tener a alguien cerca en el caso de
+            una emergencia?
+          </li>
+          <li>
+            ¿Tienes un familiar con Alzhéimer o Parkinson que ya no puede cuidar
+            de si mismo?
+          </li>
+          <li>
+            ¿Sabes que tu madre necesita ayuda en casa, pero que le cuesta
+            aceptarlo?
+          </li>
+        </ul>
+      </section>
 
-    <footer class="footer">
-      <section class="footer-content container">
-              <h3>&copy; 2023 Golden Hands</h3>
-              <ul class="social-icon">
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a></li>
-                <li class="social-iconitem"><a class="social-iconlink" href="#">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a></li>
-              </ul>
+      <section class="text-section">
+        <div class="cifras">
+          <div class="cifra-item">
+            <img src="./logos/mayores.png" alt="logos de mayores" class="cifras-fotos">
+            <h2>9.479.010</h2>
+            <p>Nos encontraron</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/pensionista.png" alt="logo de pensionistas" class="cifras-fotos">
+            <h2>8.237.199</h2>
+            <p>Pensionistas</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/mano corazon.png" alt="logo de mano y corazon" class="cifras-fotos">
+            <h2>9.479.010</h2>
+            <p>Con prestación de dependencia</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/edificio.png" alt="logo de edifio" class="cifras-fotos">
+            <h2>1.128.152</h2>
+            <p>Empresas colaboradoras</p>
+          </div>
+          
+          <div class="cifra-item">
+            <img src="./logos/socios.png" alt="logo de socios" class="cifras-fotos">
+            <h2>15.079</h2>
+            <p>Empresas Colaboradoras</p>
+          </div>
+          
+        </div>
       </section>
-      <section class="contact-footer">
-        <label for="email">Manténgase en contacto para ofertas, noticias y mucho
-          más</label>
-                <input type="email" id="email" class="input-email-footer"
-          placeholder="Ingrese su correo electrónico">
-                <button type="submit" class="button-send">Enviar</button>
+      
+      <section class="map-title">
+        <h2 class="root-text-parallax">
+          UBICANOS:
+        </h2>
+        <!-- Contenedor vacío para inyectar las indicaciones -->
+        <div id="directions-panel">
+
+        </div>
+        <div id="directions-controls">
+          <!-- botones para cambiar el modo de transporte,  -->
+          <button  class="btn-map"id="btnDriving" onclick="calculateRoute('DRIVING')">🚙</button>
+          <button 
+          class="btn-map" id="btnWalking" onclick="calculateRoute('WALKING')">🧑🏿‍🦼</button>
+          <button class="btn-map" id="btnBicicle" onclick="calculateRoute('BICYCLING')">🚴🏼‍♀️</button>
+          <button class="btn-map" id="btnTransport" onclick="calculateRoute('TRANSIT')">🚆</button>
+      </div>
+
       </section>
-  </footer>
-  <script src="./js/hamburguer.js"></script>
-  </body>  
-</html>
+
+      <section class="parallax">
+
+        
+        <div class="parallax-map" id="parallax-map">
+          
+
+        </div>
+        <img class="parallax__dust parallax-img" src="./images/frase-paradax.png" />
+        <img class="parallax__bg parallax-img" src="./images/abuela.jpg" />
+      </section>
+
+      <section class="flip-card-title-container">
+        <h2 class>
+          TESTIMONIOS ACOJONANTES CON TARJETAS CHULAS
+        </h2>
+      </section>
+
+      <section class="flip-card-section">
+
+        <div class="flipcard-container">
+          <div class="flipcard">
+            <div class="flipcard-inner">
+              <div class="flipcard-front">
+                <div class="flipcard-image">
+                  <img src="./images/abuela1.jpg" alt="Señora anciana" class="image-flipcard">
+                </div>
+                <div class="flipcard-title">
+                  <h3>Dolores Fuertes de Barriga</h3>
+                </div>
+              </div>
+              <div class="flipcard-back">
+                <p>Los productos de Golden Hands han transformado mi rutina diaria. Desde las deliciosas comidas hasta los servicios personalizados, mi bienestar ha mejorado notablemente. ¡Una experiencia excepcional y nutritiva que recomendaría a todos!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flipcard">
+            <div class="flipcard-inner">
+              <div class="flipcard-front">
+                <div class="flipcard-image">
+                  <img src="./images/abuelo2.jpg" alt="Hombre mayor de tercera edad" class="image-flipcard">
+                </div>
+                <div class="flipcard-title">
+                  <h3>Rosa Cortada del Rosal</h3>
+                </div>
+              </div>
+              <div class="flipcard-back">
+                <p>Golden Hands ha sido mi elección para servicios alimenticios para adultos mayores. La calidad de los productos, la atención personalizada y el enfoque en la salud han marcado una diferencia positiva en mi vida diaria. ¡Una elección saludable y deliciosa!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flipcard">
+            <div class="flipcard-inner">
+              <div class="flipcard-front">
+                <div class="flipcard-image">
+                  <img src="./images/abuelo3.jpg" alt="Hombre mayor de tercera edad" class="image-flipcard">
+                </div>
+                <div class="flipcard-title">
+                  <h3>Juan Estan Camino</h3>
+                </div>
+              </div>
+              <div class="flipcard-back">
+                <p>La gama de servicios y productos de Golden Hands ha mejorado significativamente mi calidad de vida. La atención meticulosa a la nutrición y el sabor excepcional hacen que cada comida sea un placer saludable. ¡Recomendaría Golden Hands a cualquiera en busca de bienestar y satisfacción!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <section class="footer-content container">
+          <h3>&copy; 2023 Golden Hands</h3>
+          <ul class="social-icon">
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a></li>
+            <li class="social-iconitem"><a class="social-iconlink" href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a></li>
+          </ul>
+        </section>
+        <section class="contact-footer">
+          <label for="email">Manténgase en contacto para ofertas, noticias y
+            mucho
+            más</label>
+          <input type="email" id="email" class="input-email-footer"
+            placeholder="Ingrese su correo electrónico">
+          <button type="submit" class="button-send">Enviar</button>
+        </section>
+      </footer>
+
+  
+      
+   
+      <!--  BUSCADOR -->
+      <script>
+              // SCRIPT SEARCH BUTTON 
+        
+        // desplegando y escondiendo el div contenedor search input      
+        function toggleSearch() {
+          const searchContainer = document.getElementById('search-container');
+            // imprimiendo div contenedor del searchbar
+          // console.log(searchContainer);
+          searchContainer.style.display = (searchContainer.style.display === 'block') ? 'none' : 'block';
+        }
+
+        async function searchProducts() {
+          const searchTerm = document.getElementById('search-input').value.toLowerCase();
+          // imprimiendo dinamicamente el input
+          // console.log(searchTerm);
+          const response = await fetch('./js/data.json');
+          const productos = await response.json();
+          // imprimiendo json de productos para supervisar sugerencias dinámicas
+          // console.log(productos)
+          const resultados = productos.filter(producto =>
+            producto.name.toLowerCase().startsWith(searchTerm)
+          );
+          // OJO imprimiendo dinamicamente json comparado con busqueda (por cualquier caracter) 
+          console.log(resultados)
+          displaySearchResults(resultados);
+        }
+
+        function displaySearchResults(results) {
+          const resultsContainer = document.getElementById('search-results');
+          resultsContainer.classList.add('show-search');
+          // Limpiamos el contenido actual
+          resultsContainer.innerHTML = '';
+        
+          // Iterando sobre los resultados
+          results.forEach(result => {
+            //  un elemento div para contener cada resultado
+            const resultContainer = document.createElement('div');
+            resultContainer.classList.add('search-result'); // Agregamos una clase para aplicar estilos si es necesario
+        
+           
+            //  div para la imagen y le aplicamos una clase
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('search-img-container');
+            resultsContainer.appendChild(imageContainer);
+            //  elemento img para la imagen
+            const imageElement = document.createElement('img');
+            imageElement.classList.add('search-img'); 
+            imageElement.src = result.img; // Supongo que tienes una propiedad img en tu objeto resultado
+            imageElement.alt = result.name; // Asignamos el nombre como el texto alternativo de la imagen
+            imageContainer.appendChild(imageElement);
+            // Creamos un elemento para el nombre
+            const nameElement = document.createElement('div');
+            nameElement.classList.add('search-name'); 
+            nameElement.textContent = result.name;
+            resultContainer.appendChild(nameElement);
+        
+            // Creamos un elemento para el precio
+            const priceElement = document.createElement('div');
+            priceElement.classList.add('search-price'); 
+            priceElement.textContent = `Precio: $${result.price}`;
+            resultContainer.appendChild(priceElement);
+        
+            // Añadimos el contenedor de resultados al contenedor principal
+            resultsContainer.appendChild(resultContainer);
+          });
+        }
+        
+
+        // Agregar un evento al input de búsqueda para llamar a searchProducts cuando haya cambios
+        document.getElementById('search-input').addEventListener('input', searchProducts);
+
+      </script>
+      <!-- FONT SIZE -->
+      <script>
+        // SCRIPT FONT SIZE 
+        function changeFontSize(size) {
+            switch(size) {
+                case 'small':
+                    document.body.style.fontSize = '14px';
+                    break;
+                case 'medium':
+                    document.body.style.fontSize = '16px';
+                    break;
+                case 'large':
+                    document.body.style.fontSize = '18px';
+                    break;
+            }
+        }
+        
+      </script>
+      <script src="./js/abel.js"></script>
+         <!-- Carga asincrónica de la API de Google Maps -->
+         <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA16kpoV8rEzXPIr8pW5cgloqK-3EnLL9I&map_ids=47dafbb6434643c7&callback=initMap">
+         </script>
+      <script src="./js/hamburguer.js"></script>
+    </main> 
+    </body>
+  </html>
+  

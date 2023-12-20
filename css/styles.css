@@ -1,20 +1,23 @@
+/* -_- -----------------  ----------------- -_- */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box; 
   font-family: 'Montserrat', sans-serif;
 }
+
   
 body {
   background-color: white;
 }
 
-            /*    HEADER    */
+   /* ----------------- ESTILOS HEADER ----------------- */
 
   header {
     display: flex;
     padding: 10px;
-    background-color: #90ccd1;
+    background-color: #203048;
+    height: 15vh;
   }
 
   .logo-container{
@@ -24,7 +27,6 @@ body {
     
   .logo {
     margin: 15px;
-    background-color: #90ccd1;
     width: 6rem;
     height: auto;
   }
@@ -34,9 +36,11 @@ body {
     color: #c7af43;
     flex: 2;
   } 
+
 .container-nav-list{
   flex:2;
 }
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -137,39 +141,227 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
-/* ----------------- FINAL ESTILOS MENU HAMBURGUESA ----------------- */
+/* ----------------- FINAL ESTILOS HEADER ----------------- */ 
 
-          /*   FIN HEADER    */    
-    
-  .background-image {
-    z-index: -2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+/* -_- ------------ ESTILOS INDEX ------------ -_- */      
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+  
+.login-button,
+#cart-button {
+  background-color: #203048;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 100px; 
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px; 
+  cursor: pointer;
+} 
+
+.main-index {
+height: 300vh;
+
+}
+.promo-container{
+  margin: 20px auto 20px 240px
 }
 
-  .letra{
-  margin-top: 0%;  
-  margin-bottom: 10%;
-  margin-right: 2%;
-  margin-left: 2%;
-  color: #203048;
-  font-size: 19px; 
-  font-weight: bold;
-  font-style: oblique;
-  text-align: center;
+.info-a {
+  font-size: 18px;
+  color: #cccccc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+      color: #ffffff;
   }
+}
+.font-custom-container{
+ padding: 10px;
+background-color: #83C5BE;
+ margin-bottom: 2em;
 
-  /* -_- ------------ FLIP CARD STYLE ------------ -_- */
-  .flip-container{
-    width: 350px;
-    height: 500px;
+}
+.font-custom-title{
+  margin-left: 29%;
+}
+.font-controls-container{
+  margin-left: 37%;
+}
+.ul-index{
+  flex-direction: column;
+  font-size: x-large;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+/* -_- ----------------- ESTILOS FLOATING SECTION ----------------- -_- */
+.floating-section {
+  height: 31vh;
+  margin: 0;
+  padding: 0;
+  background: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(199, 175, 67, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(255, 255, 255,0.8) 0%, rgba(199, 175, 67, 1) 100%);
+  background: linear-gradient(-135deg, rgba(255, 255, 255,0.8) 0%, rgba(199, 175, 67, 1) 100%);
+}
+.floating-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-title {
+  font-size: 24px;
+  margin: 10px 0 0 0;
+  font-weight: lighter;
+  color: #eeeeee;
+}
+
+.floating-p {
+    font-size: 12px;
+    font-weight: light;
+    color: #333333;
+}
+
+@keyframes float {
+  0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
   }
+  50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px);
+  }
+  100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+  }
+}
 
-  /* -_- ------------ END OF FLIP CARD STYLE ------------ -_- */
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+  img { width: 100%; height: auto; }
  
-/* Fin del estilo de Home*/
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+
+
+/* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
+.flip-card-section{
+
+}
+
+.flip-card-title-container{
+margin-left: 20%;
+margin-bottom: 60px;
+background-color: gold;
+width: 80%;
+}
+
+.flipcard-container {
+  display: flex;
+  justify-content: space-around; /* Cambiado de space-around a space-between */
+  height: 30vh;
+  margin-bottom: 200px;
+}
+
+.flipcard {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  border-radius: 15px; /* Agregado borde redondeado */
+  overflow: hidden; /* Para asegurar que los bordes redondeados se apliquen correctamente */
+}
+
+.flipcard-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+  background-color:#83C5BE;
+}
+
+.flipcard:hover .flipcard-inner {
+  transform: rotateX(180deg);
+}
+
+.flipcard-front,
+.flipcard-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 15px; /* Agregado borde redondeado */
+}
+
+.flipcard-front {
+  transform: rotateX(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipcard-back {
+  transform: rotateX(180deg);
+  background-color: #83C5BE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipcard-image{
+  height: 85%;
+
+}
+.flipcard-title{
+  height: 15%;
+  background-color:#83C5BE;
+  width: 100%;
+  text-align: center;
+}
+
+
+.flipcard h3 {
+  margin-top: 10px;
+}
+
+.flipcard p {
+  text-align: center;
+}   
+
+.image-flipcard{
+  height: 300px;
+}
+
+  /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
 
 /*Estilo Login*/
 
@@ -199,6 +391,7 @@ body {
      background-color: #c7eef3;
      border-top-left-radius: 20px;
      border-bottom-left-radius: 20px;
+     font-size: 20px;
  }
  
  .info-childs {
@@ -248,6 +441,7 @@ body {
  
  .form-information-childs {
      padding: 0 30px;
+     font-size: 15px;
  }
  
  .form-information-childs h2 {
@@ -338,7 +532,7 @@ body {
 
 /* Fin del login*/
 
-/*Estilos para la sección de Productos*/
+/*Estilos para la página de Products*/
 
 
 .product-nav{
@@ -348,10 +542,13 @@ body {
   align-items: center;
   justify-content: space-evenly;
   justify-items: center;
-  margin: 20px 120px 20px 120px;
+  margin: auto;
+  margin-top: 2vh;
   border-radius: 5px;
-  width: 65rem;
+  width: 80%;
 }
+
+
 
 .buttonfondo {
   font-size: 15px;
@@ -425,9 +622,220 @@ body {
   display: inline-block;
   margin-top: 15px;
   padding: 7px 25px;
-  border-radius: 5px;
+  border-radius: 25px;
   color: azure;
-  background-color: #c78943;
+  background-color: #91422B;
+}
+
+
+
+
+#precio-total{
+  font-size: 30px;
+  margin: 3rem;
+}
+
+/* PAGINA PAGAR*/
+table, th, td {
+  border: 1px solid black; /* Establece un borde de 1 píxel de ancho y color negro */
+}
+.table-product{
+  width: auto;
+}
+.table-product tr th{
+  width: 20rem;
+}
+hr {
+  width: 80%; /* Establece el ancho al 80% del contenedor */
+  margin: auto; /* Centra el elemento horizontalmente */
+}
+.table-bordered{
+  border-color: #000000;
+}
+.section-carrito{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  align-items: center;
+}
+.section-send{
+  height: auto;
+  margin: 4rem;
+}
+.section-send-sub-tittle{
+  margin: 2rem 0;
+  font-weight:bold;
+}
+
+.text-area-package{
+  border-radius: 0;
+  height: 70px;
+}
+
+/*Inicio payment method*/
+.section-payment-method {
+  height: auto;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+.form-payment-method {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-payment-method div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-payment-method div figure {
+  margin-left: 5rem;
+}
+
+#input-payment-method {
+  margin-top: 3rem;
+  width: 100px;
+  margin-bottom: 4rem;
+}
+
+
+/* FIN PAGINA PAGAR */
+
+@-webkit-keyframes extend {
+  0% {
+      width: 120px;
+      height: 40px;
+  
+      left: 50%;
+  } 
+  10% {
+      width: 122px;
+      height: 42px;
+      background: #fff;
+      margin-left: -6px;
+      margin-top: -6px;
+  } 
+  20% {
+      width: 120px;
+      height: 40px;
+      background: #C78943;
+      margin-left: 0px;
+      margin-top: 0px;
+  } 
+  100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 0;
+      margin-left: 38px;
+      transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+  }
+}
+
+@keyframes extend {
+  0% {
+      width: 120px;
+      height: 40px;
+      border-radius: 20px;
+      left: 50%;
+  } 
+  10% {
+      width: 122px;
+      height: 42px;
+      background: #fff;
+      margin-left: -6px;
+      margin-top: -6px;
+  } 
+  20% {
+      width: 120px;
+      height: 40px;
+      background: #C78943;
+      margin-left: 0px;
+      margin-top: 0px;
+  } 
+  100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      margin-left: 38px;
+      background: red;
+      transform: translateX(-150%); /* Añade esta propiedad para centrar el botón */
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+      opacity: 1;
+  } 
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+      opacity: 1;
+  } 
+  100% {
+      opacity: 0;
+  }
+}
+
+.wishlist-container {
+width: 100%;
+height: 40px;
+margin-top: 15px;
+position: relative; /* Agrega position: relative; al contenedor padre */
+text-align: center; /* Para centrar el contenido horizontalmente */
+}
+
+.wishlist-button {
+border-width: 1px;
+width: 120px;
+height: 40px;
+border-radius: 20px;
+background: #fff;
+position: absolute;
+border: 1px solid #C78943;
+transform: translateX(-50%); /* Añade esta propiedad para centrar el botón */
+
+}
+
+.wishlist-text {
+font-weight: bold ;
+font-size: 12px;
+color: #C78943;
+}
+
+.wishlist-button:focus {
+-webkit-animation: extend 1s ease-in-out;
+-ms-animation: extend 1s ease-in-out;
+animation: extend 1s ease-in-out;
+-webkit-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+
+.wishlist-button:focus > .wishlist-text {
+-webkit-animation: disappear 1s ease-in-out;
+-ms-animation: disappear 1s ease-in-out;
+animation: disappear 1s ease-in-out;
+-webkit-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+
+.heart-icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 20%;
+max-height: 20%;
+display: none;
+}
+
+.wishlist-button:focus > .heart-icon {
+display: block;
 }
 
 /*Fin productos*/
@@ -446,6 +854,7 @@ body {
   background-color: #c78943;
   padding-left:12px;
   box-shadow: 0 8px 10px #838080;
+  font-size: 25px;
 }
 
 .position-section {
@@ -651,13 +1060,14 @@ font-size: 35px;
 .footer {
     position: relative;
   width: 100%;
-  background: #90ccd1;
-  min-height: 100px;
+  background-color: #203048;
+  height: auto;
   padding: 20px 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  color: white;
   }
 
 .contact-footer{
@@ -666,6 +1076,7 @@ font-size: 35px;
   width: 31rem; 
   align-items: center;
   gap: 0.7rem;
+  font-size: 25px;
   }
 
 .button-send{
@@ -725,6 +1136,22 @@ font-size: 35px;
   font-weight: 300;
 }
 
+/*            PAGE CART         */
+
+#contenedor-carrito{
+  display: flex;
+  flex-direction: column;
+}
+.product-cart{
+  display: flex;
+  flex-direction: row;
+}
+.img-cart{
+  width: 200px;
+}
+
+/*          FIN PAGE CART          */
+
 /*Responsive*/ /*con responsabilidad*/
  
 
@@ -734,6 +1161,7 @@ font-size: 35px;
    html {
    font-size: 12px;
   } 
+ 
 /* HEADER */
 header {
   width: auto;
@@ -760,22 +1188,7 @@ ul {
     height: 90px;
   }
 
-  header{
-    padding: 10px;
-    background-color: #90ccd1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-  .cabecera {
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+  
   .company-name h1 {
     text-align: center;
     font-size: 25px;
@@ -829,7 +1242,7 @@ ul {
 
   .title-section {
     height: 2rem;
-    font-size: 12px;
+    font-size: 20px;
   }
   /* Fin de estilos para la sección de Servicios */
 
@@ -873,6 +1286,7 @@ ul {
   .formulario {
     margin: 5% 10%;
     width: 80%;
+    font-size: 15px;
   }
 
   textarea {
@@ -919,11 +1333,29 @@ ul {
     }
     
   /* FIN       PÁGINA DE ABOUTUS     */
+  /*Footer*/
+
+.footer {
+height: auto;
+}
+
+.social-icon{
+  display: flex;
+  flex-direction: column;
+}
+.contact-footer{
+  font-size: 20px;
+}
 }
 
 @media screen and (max-width: 767px) {
   html {
     font-size: 10px;
+  }
+
+  .buttonfondo {
+    font-weight: bold;
+    font-size: 14.5px;
   }
 
   .container-form {
@@ -941,21 +1373,8 @@ ul {
     border-bottom-right-radius: 0px;
   }
 
-  header{
-    padding: 10px;
-    background-color: #90ccd1;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
 
-  .cabecera {
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+
 
   .letra {
     font-size: 14px;
@@ -1013,7 +1432,7 @@ ul {
 
   .title-section {
     height: 2rem;
-    font-size: 12px;
+    font-size: 18px;
   }
   /* Fin de estilos para la sección de Servicios */
 
@@ -1057,6 +1476,7 @@ ul {
   .formulario {
     margin: 5% 10%;
     width: 80%;
+    font-size: 15px;
   }
 
   textarea {
@@ -1095,7 +1515,33 @@ ul {
   
   /*Footer*/
 
+
+/*PAGINA PAGAR */
+
+table, thead, tbody, th, td, tr {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+th {
+  height: auto; /* Establece la altura de las celdas de encabezado */
+}
+
+td {
+  height: 60px; /* Establece la altura de las celdas de datos */
+ align-items: center;
+}
+.img-cart{
+  width: 100px;
+}
+}
+#img-payment-methods{
+  width: 100px;
+}
+/* FIN PAGINA PAGAR */
+
+
 
 /* Fin del responsive */
 

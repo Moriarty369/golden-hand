@@ -19,46 +19,91 @@ document.addEventListener('DOMContentLoaded', () => {
       const tituloCeliaco = document.querySelector("#tituloCeliaco")
       const tituloLacteos = document.querySelector("#tituloLacteo")
       const tituloFrutos = document.querySelector("#tituloFrutos")
+      const contenedordiv = document.querySelector("#contenedordiv")
+      const botones = document.getElementById('contenedorboton')
 
-    verTodo.addEventListener('click', () => {
-      if (section1.style.display === 'none') {
-        tituloCeliaco.style.display = 'none'
-        tituloLacteos.style.display = 'none'
-        tituloFrutos.style.display = 'none'
-        section1.style.display = 'flex';
-        section2.style.display = 'flex';
-        section3.style.display = 'flex';
-      } else {
-        tituloCeliaco.style.display = 'none'
-        tituloLacteos.style.display = 'none'
-        tituloFrutos.style.display = 'none'
-        section1.style.display = 'flex';
-        section2.style.display = 'flex';
-        section3.style.display = 'flex';
-      }
-      const productosPorPagina = 3;
-      let paginaActual = 1;
 
-      function mostrarProductos() {
-        const inicio = (paginaActual - 1) * productosPorPagina;
-        const fin = inicio + productosPorPagina;
-        const productosPagina = data.slice(inicio, fin);
 
-        // Mostrar los productos en la página
-        const productosContainer = document.querySelector('.productos');
-        productosContainer.innerHTML = '';
-        productosPagina.forEach(producto => {
-          // Aquí debes mostrar cada producto en la página
+      verTodo.addEventListener('click', () => {
+        if (section1.style.display === 'none') {
+          contenedordiv.style.display = 'flex'
+          botones.style.display = 'flex'
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        } else {
+          contenedordiv.style.display = 'flex'
+          botones.style.display = 'flex'
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        }
+        let paginaActual = 1;
+        const tarjetasPorPagina = 3;
+        let data = [];
+
+        function renderizarProductos(paginaActual, tarjetasPorPagina, data) {
+          const container = document.querySelector('#contenedordiv');
+          container.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos productos
+
+          const inicio = (paginaActual - 1) * tarjetasPorPagina;
+          const final = inicio + tarjetasPorPagina;
+          const paginadoTarjetas = data.slice(inicio, final);
+
+          paginadoTarjetas.forEach(producto => {
+            const nuevoProducto = document.createElement('div');
+            nuevoProducto.classList.add('product');
+            nuevoProducto.innerHTML = `
+            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+            <div class="product-txt">
+                <h3>${producto.name}</h3>
+                <p class="precio">${producto.price}€</p>
+                <div class="cantidad-controles">
+                    <button class="restar-cantidad" data-id="${producto.id}">-</button>
+                    <span class="cantidad">0</span>
+                    <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+                </div>
+                <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+            </div>
+        `;
+            container.appendChild(nuevoProducto);
+          });
+        }
+
+        fetch('../js/data.json')
+          .then(respuesta => respuesta.json())
+          .then(json => {
+            data = json
+            renderizarProductos(paginaActual, tarjetasPorPagina, json);
+          });
+
+        document.getElementById('anterior').addEventListener('click', () => {
+          if (paginaActual > 1) {
+            paginaActual--;
+            renderizarProductos(paginaActual, tarjetasPorPagina, data);
+          }
         });
-      }
 
-
-      // Mostrar los productos en la página al cargar
-      mostrarProductos();
+        document.getElementById('siguiente').addEventListener('click', () => {
+          // Necesitarás calcular el total de páginas basado en los datos totales
+          let totalPaginas = Math.ceil(data.length / tarjetasPorPagina);
+          if (paginaActual < totalPaginas) {
+            paginaActual++;
+            renderizarProductos(paginaActual, tarjetasPorPagina, data);
+          }
+        });
       });
 
       btnCeliaco.addEventListener('click', () => {
         if (section1.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'flex'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'none'
@@ -66,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'none';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'flex'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'none'
@@ -77,6 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btnLacteos.addEventListener('click', () => {
         if (section2.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'flex'
           tituloFrutos.style.display = 'none'
@@ -84,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'flex';
           section3.style.display = 'none';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'flex'
           tituloFrutos.style.display = 'none'
@@ -95,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btnFrutos.addEventListener('click', () => {
         if (section3.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'flex'
@@ -102,6 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'flex';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'flex'
