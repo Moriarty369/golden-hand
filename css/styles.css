@@ -273,7 +273,7 @@ body {
  }
  
  
- .form label {
+ .Estiloform{
      display: flex;
      align-items: center;
      margin-bottom: 15px;
@@ -282,7 +282,7 @@ body {
      background-color: #fff;
      box-shadow: 0 2px 5px rgba(0 ,0 ,0 , .1);
  }
- .form label input {
+ .nombreUsuario{
      width: 100%;
      padding: 10px;
      background-color: #fff;
@@ -291,8 +291,8 @@ body {
      border-radius: 20px;
      color: #333;
  }
- .form label i {
-     color: #a7a7a7;
+ .bx{
+     color: black;
  }
  
  .form input[type="submit"] {
@@ -308,6 +308,27 @@ body {
  
  .form input[type="submit"]:hover {
      background-color: #7a7a9a;
+ }
+
+ .botoncitos{
+  background-color: #9191bd;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0 ,0 ,0 , .1);
+  margin: 20px;
+ }
+
+ .botoncitos:hover{
+  background-color: #7a7a9a;
+ }
+
+ .contenedorboton{
+  display: none;
+  justify-content: space-evenly;
  }
  
  .hide{
@@ -356,6 +377,7 @@ body {
   text-align: left;
   padding-left: 8px;
   border-radius: 3px;
+  display: none;
 }
 
 .product-content {

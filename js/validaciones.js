@@ -6,9 +6,9 @@ function validarNombreUsuario(nombre) {
     let resultado = "";
 
     if (nombre.length < longitudMinima || nombre.length > longitudMaxima) {
-        resultado = "Debe poner nombre, apellido con la primera letra de cada palabra en mayuscula.";
+        resultado = "Debe tener entre 6 y 20 carácteres";
     } else if (!expresionRegular.test(nombre)) {
-        resultado = "El nombre solo puede contener letras y espacios.";
+        resultado = "Debe poner nombre, apellido con la primera letra de cada palabra en mayuscula y no puede contenr carácteres especiales";
     } else {
         resultado = "";
     }
