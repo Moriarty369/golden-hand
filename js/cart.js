@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <img class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
+        <a id="open-modal" href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // PRINCIPIO CONTADOR DE CESTA EL NUMERO
       // Seleccionar todos los botones de "agregar al carrito"
+
       const btnContador = document.querySelectorAll('.agregar-carrito');
       const contadorProductos = document.querySelector('#contador-productos');
 
@@ -232,50 +233,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   //Modal
-  document.addEventListener('DOMContentLoaded', function () {
-    const windowBackground = document.getElementById('window-background');
-    const windowContainer = document.getElementById('window-container');
-    const closeModal = document.getElementById('close-modal');
-    const modalContent = document.getElementById('modal-content');
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   const windowBackground = document.getElementById('window-background');
+  //   const windowContainer = document.getElementById('window-container');
+  //   const closeModal = document.getElementById('close-modal');
+  //   const modalContent = document.getElementById('modal-content');
   
-    // Reemplaza esta parte con tu propia lógica para obtener la información del producto
-    const obtenerInformacionProducto = (producto) => {
-      const imagen = producto.querySelector('img').src;
-      const nombre = producto.querySelector('h3').textContent;
-      const cantidad = producto.querySelector('.cantidad').textContent;
-      return { imagen, nombre, cantidad };
-    };
+  //   // Reemplaza esta parte con tu propia lógica para obtener la información del producto
+  //   const obtenerInformacionProducto = (producto) => {
+  //     const imagen = producto.querySelector('img').src;
+  //     const nombre = producto.querySelector('h3').textContent;
+  //     const cantidad = producto.querySelector('.cantidad').textContent;
+  //     return { imagen, nombre, cantidad };
+  //   };
   
-    const mostrarInformacionProducto = (producto) => {
-      const { imagen, nombre, cantidad } = obtenerInformacionProducto(producto);
-      modalContent.innerHTML = `
-        <img src="${producto.img}" alt="${producto.name}">
-        <h2>${producto.name}</h2>
-        <p>Cantidad seleccionada: ${producto.price}</p>
-      `;
-    };
+  //   const mostrarInformacionProducto = (producto) => {
+  //     const { imagen, nombre, cantidad } = obtenerInformacionProducto(producto);
+  //     modalContent.innerHTML = `
+  //       <img src="${producto.img}" alt="${producto.name}">
+  //       <h2>${producto.name}</h2>
+  //       <p>Cantidad seleccionada: ${producto.price}</p>
+  //     `;
+  //   };
   
-    const openModals = document.querySelectorAll('.product .open-modal');
+  //   const openModals = document.querySelectorAll('.product .open-modal');
   
-    openModals.forEach(openModal => {
-      openModal.addEventListener('click', (event) => {
-        event.preventDefault();
-        windowBackground.style.display = 'flex';
-        mostrarInformacionProducto(event.currentTarget.closest('.product'));
-      });
-    });
+  //   openModals.forEach(openModal => {
+  //     openModal.addEventListener('click', (event) => {
+  //       event.preventDefault();
+  //       windowBackground.style.display = 'flex';
+  //       mostrarInformacionProducto(event.currentTarget.closest('.product'));
+  //     });
+  //   });
   
-    const closeWindow = () => {
-      windowContainer.classList.add('close');
-      setTimeout(() => {
-        windowContainer.classList.remove('close');
-        windowBackground.style.display = 'none';
-      }, 1000);
-    };
+  //   const closeWindow = () => {
+  //     windowContainer.classList.add('close');
+  //     setTimeout(() => {
+  //       windowContainer.classList.remove('close');
+  //       windowBackground.style.display = 'none';
+  //     }, 1000);
+  //   };
   
-    closeModal.addEventListener('click', () => closeWindow());
-    window.addEventListener('click', e => e.target == windowBackground && closeWindow());
-  });
+  //   closeModal.addEventListener('click', () => closeWindow());
+  //   window.addEventListener('click', e => e.target == windowBackground && closeWindow());
+  // });
+
+
+
+// Obtener todas las imágenes con la clase "open-modal"
+var images = document.querySelectorAll('.product img#open-modal');
+var modal = document.getElementById('myModal');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+images.forEach(img => {
+  img.onclick = function(){
+    var imageSrc = this.src;
+    var productName = this.alt.replace('Imagen de ', '');
+    var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
+
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+    captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
+  }
+});
 
 
 });

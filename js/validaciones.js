@@ -32,7 +32,8 @@ function validarCorreoElectronico(correo) {
 
 function validarContraseña(contraseña) {
     // Expresión regular para validar la contraseña Requisitos: Al menos una letra mayúscula, una letra minúscula, un número y un símbolo especial Longitud mínima de 8 caracteres
-    const expresionRegular3 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const expresionRegular3 = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&,.;])[A-Za-z\d@$!%?&,.;]{8,}$/;
+    ;
 
     let resultado3 = "";
 
@@ -62,7 +63,7 @@ function validarCorreoElectronico2(correo) {
 
 function validarContraseña2(contraseña) {
     // Expresión regular para validar la contraseña Requisitos: Al menos una letra mayúscula, una letra minúscula, un número y un símbolo especial Longitud mínima de 8 caracteres
-    const expresionRegular5 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const expresionRegular5 = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&,.;])[A-Za-z\d@$!%?&,.;]{8,}$/;
 
     let resultado5 = "";
 

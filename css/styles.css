@@ -1527,6 +1527,7 @@ td {
 /* Estilos de mensaje de validacion de formularios*/
 
 .mensaje-error {
-  color: red!important;
+  color: #721c24!important;
   font-size: 0.7rem;
+  font-family: Arial, sans-serif;
 }
