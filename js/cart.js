@@ -19,62 +19,91 @@ document.addEventListener('DOMContentLoaded', () => {
       const tituloCeliaco = document.querySelector("#tituloCeliaco")
       const tituloLacteos = document.querySelector("#tituloLacteo")
       const tituloFrutos = document.querySelector("#tituloFrutos")
+      const contenedordiv = document.querySelector("#contenedordiv")
+      const botones = document.getElementById('contenedorboton')
 
-    verTodo.addEventListener('click', () => {
-      if (section1.style.display === 'none') {
-        tituloCeliaco.style.display = 'none'
-        tituloLacteos.style.display = 'none'
-        tituloFrutos.style.display = 'none'
-        section1.style.display = 'flex';
-        section2.style.display = 'flex';
-        section3.style.display = 'flex';
-      } else {
-        tituloCeliaco.style.display = 'none'
-        tituloLacteos.style.display = 'none'
-        tituloFrutos.style.display = 'none'
-        section1.style.display = 'flex';
-        section2.style.display = 'flex';
-        section3.style.display = 'flex';
-      }
-      const productosPorPagina = 3;
-      let paginaActual = 1;
 
-      function mostrarProductos() {
-        const inicio = (paginaActual - 1) * productosPorPagina;
-        const fin = inicio + productosPorPagina;
-        const productosPagina = data.slice(inicio, fin);
 
-        // Mostrar los productos en la página
-        const productosContainer = document.querySelector('.productos');
-        productosContainer.innerHTML = '';
-        productosPagina.forEach(producto => {
-          // Aquí debes mostrar cada producto en la página
+      verTodo.addEventListener('click', () => {
+        if (section1.style.display === 'none') {
+          contenedordiv.style.display = 'flex'
+          botones.style.display = 'flex'
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        } else {
+          contenedordiv.style.display = 'flex'
+          botones.style.display = 'flex'
+          tituloCeliaco.style.display = 'none'
+          tituloLacteos.style.display = 'none'
+          tituloFrutos.style.display = 'none'
+          section1.style.display = 'none';
+          section2.style.display = 'none';
+          section3.style.display = 'none';
+        }
+        let paginaActual = 1;
+        const tarjetasPorPagina = 3;
+        let data = [];
+
+        function renderizarProductos(paginaActual, tarjetasPorPagina, data) {
+          const container = document.querySelector('#contenedordiv');
+          container.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos productos
+
+          const inicio = (paginaActual - 1) * tarjetasPorPagina;
+          const final = inicio + tarjetasPorPagina;
+          const paginadoTarjetas = data.slice(inicio, final);
+
+          paginadoTarjetas.forEach(producto => {
+            const nuevoProducto = document.createElement('div');
+            nuevoProducto.classList.add('product');
+            nuevoProducto.innerHTML = `
+            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+            <div class="product-txt">
+                <h3>${producto.name}</h3>
+                <p class="precio">${producto.price}€</p>
+                <div class="cantidad-controles">
+                    <button class="restar-cantidad" data-id="${producto.id}">-</button>
+                    <span class="cantidad">0</span>
+                    <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+                </div>
+                <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+            </div>
+        `;
+            container.appendChild(nuevoProducto);
+          });
+        }
+
+        fetch('../js/data.json')
+          .then(respuesta => respuesta.json())
+          .then(json => {
+            data = json
+            renderizarProductos(paginaActual, tarjetasPorPagina, json);
+          });
+
+        document.getElementById('anterior').addEventListener('click', () => {
+          if (paginaActual > 1) {
+            paginaActual--;
+            renderizarProductos(paginaActual, tarjetasPorPagina, data);
+          }
         });
-      }
 
-      function irPaginaAnterior() {
-        if (paginaActual > 1) {
-          paginaActual--;
-          mostrarProductos();
-        }
-      }
-      function irPaginaSiguiente() {
-        if (paginaActual < Math.ceil(data.length / productosPorPagina)) {
-          paginaActual++;
-          mostrarProductos();
-        }
-      }
-
-        // Agregar event listeners a los botones de paginación
-      document.querySelector('.pagina-anterior').addEventListener('click', irPaginaAnterior);
-      document.querySelector('.pagina-siguiente').addEventListener('click', irPaginaSiguiente);
-
-      // Mostrar los productos en la página al cargar
-      mostrarProductos();
+        document.getElementById('siguiente').addEventListener('click', () => {
+          // Necesitarás calcular el total de páginas basado en los datos totales
+          let totalPaginas = Math.ceil(data.length / tarjetasPorPagina);
+          if (paginaActual < totalPaginas) {
+            paginaActual++;
+            renderizarProductos(paginaActual, tarjetasPorPagina, data);
+          }
+        });
       });
 
       btnCeliaco.addEventListener('click', () => {
         if (section1.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'flex'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'none'
@@ -82,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'none';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'flex'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'none'
@@ -93,6 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btnLacteos.addEventListener('click', () => {
         if (section2.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'flex'
           tituloFrutos.style.display = 'none'
@@ -100,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'flex';
           section3.style.display = 'none';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'flex'
           tituloFrutos.style.display = 'none'
@@ -111,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btnFrutos.addEventListener('click', () => {
         if (section3.style.display === 'none') {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'flex'
@@ -118,6 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'flex';
         } else {
+          contenedordiv.style.display = 'none'
+          botones.style.display = 'none'
           tituloCeliaco.style.display = 'none'
           tituloLacteos.style.display = 'none'
           tituloFrutos.style.display = 'flex'
@@ -238,54 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
 
-  //Modal
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   const windowBackground = document.getElementById('window-background');
-  //   const windowContainer = document.getElementById('window-container');
-  //   const closeModal = document.getElementById('close-modal');
-  //   const modalContent = document.getElementById('modal-content');
-  
-  //   // Reemplaza esta parte con tu propia lógica para obtener la información del producto
-  //   const obtenerInformacionProducto = (producto) => {
-  //     const imagen = producto.querySelector('img').src;
-  //     const nombre = producto.querySelector('h3').textContent;
-  //     const cantidad = producto.querySelector('.cantidad').textContent;
-  //     return { imagen, nombre, cantidad };
-  //   };
-  
-  //   const mostrarInformacionProducto = (producto) => {
-  //     const { imagen, nombre, cantidad } = obtenerInformacionProducto(producto);
-  //     modalContent.innerHTML = `
-  //       <img src="${producto.img}" alt="${producto.name}">
-  //       <h2>${producto.name}</h2>
-  //       <p>Cantidad seleccionada: ${producto.price}</p>
-  //     `;
-  //   };
-  
-  //   const openModals = document.querySelectorAll('.product .open-modal');
-  
-  //   openModals.forEach(openModal => {
-  //     openModal.addEventListener('click', (event) => {
-  //       event.preventDefault();
-  //       windowBackground.style.display = 'flex';
-  //       mostrarInformacionProducto(event.currentTarget.closest('.product'));
-  //     });
-  //   });
-  
-  //   const closeWindow = () => {
-  //     windowContainer.classList.add('close');
-  //     setTimeout(() => {
-  //       windowContainer.classList.remove('close');
-  //       windowBackground.style.display = 'none';
-  //     }, 1000);
-  //   };
-  
-  //   closeModal.addEventListener('click', () => closeWindow());
-  //   window.addEventListener('click', e => e.target == windowBackground && closeWindow());
-  // });
-
-
-
+ 
+  //// MODAL 
 // Obtener todas las imágenes con la clase "open-modal"
 var images = document.querySelectorAll('.product img#open-modal');
 var modal = document.getElementById('myModal');
@@ -303,6 +296,6 @@ images.forEach(img => {
     captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
   }
 });
-
+///////// FIN MODAL
 
 });

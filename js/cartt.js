@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// const carrito = JSON.parse(localStorage.getItem('carrito')) || { items: [], total: 0 };
-
-=======
->>>>>>> origin/abel
 document.addEventListener('DOMContentLoaded', () => {
     const carroLista = document.querySelector('#carro-lista');
 

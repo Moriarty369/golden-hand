@@ -118,19 +118,21 @@
                 </div></a>
           </nav>
         </div>
+      </section>
+      
+      <div class="product-content" id="contenedordiv"></div>
+      <div class="contenedorboton" id="contenedorboton">
+      <button class="botoncitos" id="anterior">Anterior</button>
+      <button class="botoncitos" id="siguiente">Siguiente</button>
+      </div>
+      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2> 
+      <section id="gluten" class="product-content products container" ></section>
+      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+      <section id="lacteo" class="product-content products container"></section>
+      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+      <section id="frutos" class="product-content products container"></section>
 
-    </section>
-
-    <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
-    <section id="gluten" class="product-content products container"></section>
-    <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
-    <section id="lacteo" class="product-content products container"></section>
-    <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
-    <section id="frutos" class="product-content products container"></section>
-
-    <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
-    <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
-
+    
     <!-- Modal -->
     <section>
       <div class="modal" id="mi-modal">
@@ -196,5 +198,6 @@ $(window).on("click", function(event) {
  
 <script src="../js/hamburguer.js"></script>
 <script src="../js/cart.js"></script>
+<!-- <script src="../js/pages.js"></script> -->
   </body>
 </html>
