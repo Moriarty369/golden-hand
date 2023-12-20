@@ -16,9 +16,11 @@
 </head>
 <style>
 .captcha{
+  display: block;
   position: absolute;
   top:0;
   right: 0;
+  background-color: aqua;
 }
 </style>
 
@@ -89,7 +91,7 @@
               <input id="contrasena" type="text" placeholder="Password" required autocomplete="off"/>
               <p class="mensaje-error" id="resultadoValidacion3"></p>
             </div>
-            <input onclick="validarNombreUsuario(document.querySelector('.nombreUsuario').value), validarCorreoElectronico(document.getElementById('email').value), validarContraseña(document.getElementById('contrasena').value)" type="submit" value="Registrarse"/>
+            <input onclick="validarNombreUsuario(document.querySelector('.nombreUsuario').value); validarCorreoElectronico(document.getElementById('email').value); validarContraseña(document.getElementById('contrasena').value)" type="submit" value="Registrarse"/>
       </form> 
     </section>
     <!-- formulario de registro -->
@@ -139,6 +141,7 @@
         document.getElementById("captchaInput").value = num1 + num2; // Almacena el resultado esperado
     }
 </script>
+
 
 </body>
 
