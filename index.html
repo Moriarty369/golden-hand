@@ -44,7 +44,7 @@
     
     .parallax__dust {
       --parallax-speed: -20;
-      background-color: yellow;
+      background-color:#C7AF43;
       opacity: 0.3;
     }
 
@@ -102,14 +102,9 @@
     }
 
 /* Estilos para los botones de los controles */
-#directions-controls button {
-
-}
-  
-  
-    .root-text-parallax{
+.root-text-parallax{
       font-size: xx-large;
-    }
+}
    /* -_- ----------------- ESTILOS SEARCH BAR ----------------- -_- */
     
    #search-container {
@@ -316,7 +311,6 @@
           <input type="radio" name="font-size" id="large"
             onclick="changeFontSize('large')">
           <label for="large">Grande</label>
-          <button onclick="resetFontSize()">Restablecer</button>
         </div>
       </div>
 
@@ -585,10 +579,7 @@
                     break;
             }
         }
-
-        function resetFontSize() {
-            document.body.style.fontSize = '16px'; // Tamaño de fuente predeterminado
-        }
+        
       </script>
       <script src="./js/abel.js"></script>
          <!-- Carga asincrónica de la API de Google Maps -->
@@ -599,3 +590,4 @@
     </main> 
     </body>
   </html>
+  

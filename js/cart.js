@@ -1,6 +1,7 @@
 const carrito = new Map();
-const itemsPorPagina = 5; // Ajusta este valor según tus necesidades
-let paginaActual = 1; // Inicialmente, muestra la primera página
+let cantidadProductos = 0; // Inicializar el contador
+const contadorProductos = document.getElementById('contador-productos');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let section1, section2, section3;
@@ -19,57 +20,57 @@ document.addEventListener('DOMContentLoaded', () => {
       const tituloLacteos = document.querySelector("#tituloLacteo")
       const tituloFrutos = document.querySelector("#tituloFrutos")
 
-      verTodo.addEventListener('click', () => {
-        if (section1.style.display === 'none') {
-          tituloCeliaco.style.display = 'none'
-          tituloLacteos.style.display = 'none'
-          tituloFrutos.style.display = 'none'
-          section1.style.display = 'flex';
-          section2.style.display = 'flex';
-          section3.style.display = 'flex';
-        } else {
-          tituloCeliaco.style.display = 'none'
-          tituloLacteos.style.display = 'none'
-          tituloFrutos.style.display = 'none'
-          section1.style.display = 'flex';
-          section2.style.display = 'flex';
-          section3.style.display = 'flex';
-        }
-        const productosPorPagina = 3;
-        let paginaActual = 1;
+    verTodo.addEventListener('click', () => {
+      if (section1.style.display === 'none') {
+        tituloCeliaco.style.display = 'none'
+        tituloLacteos.style.display = 'none'
+        tituloFrutos.style.display = 'none'
+        section1.style.display = 'flex';
+        section2.style.display = 'flex';
+        section3.style.display = 'flex';
+      } else {
+        tituloCeliaco.style.display = 'none'
+        tituloLacteos.style.display = 'none'
+        tituloFrutos.style.display = 'none'
+        section1.style.display = 'flex';
+        section2.style.display = 'flex';
+        section3.style.display = 'flex';
+      }
+      const productosPorPagina = 3;
+      let paginaActual = 1;
 
-        function mostrarProductos() {
-          const inicio = (paginaActual - 1) * productosPorPagina;
-          const fin = inicio + productosPorPagina;
-          const productosPagina = productos.slice(inicio, fin);
+      function mostrarProductos() {
+        const inicio = (paginaActual - 1) * productosPorPagina;
+        const fin = inicio + productosPorPagina;
+        const productosPagina = data.slice(inicio, fin);
 
-          // Mostrar los productos en la página
-          const productosContainer = document.querySelector('.productos');
-          productosContainer.innerHTML = '';
-          productosPagina.forEach(producto => {
-            // Aquí debes mostrar cada producto en la página
-          });
-        }
+        // Mostrar los productos en la página
+        const productosContainer = document.querySelector('.productos');
+        productosContainer.innerHTML = '';
+        productosPagina.forEach(producto => {
+          // Aquí debes mostrar cada producto en la página
+        });
+      }
 
-        function irPaginaAnterior() {
-          if (paginaActual > 1) {
-            paginaActual--;
-            mostrarProductos();
-          }
+      function irPaginaAnterior() {
+        if (paginaActual > 1) {
+          paginaActual--;
+          mostrarProductos();
         }
-        function irPaginaSiguiente() {
-          if (paginaActual < Math.ceil(productos.length / productosPorPagina)) {
-            paginaActual++;
-            mostrarProductos();
-          }
+      }
+      function irPaginaSiguiente() {
+        if (paginaActual < Math.ceil(data.length / productosPorPagina)) {
+          paginaActual++;
+          mostrarProductos();
         }
+      }
 
         // Agregar event listeners a los botones de paginación
-        document.querySelector('.pagina-anterior').addEventListener('click', irPaginaAnterior);
-        document.querySelector('.pagina-siguiente').addEventListener('click', irPaginaSiguiente);
+      document.querySelector('.pagina-anterior').addEventListener('click', irPaginaAnterior);
+      document.querySelector('.pagina-siguiente').addEventListener('click', irPaginaSiguiente);
 
-        // Mostrar los productos en la página al cargar
-        mostrarProductos();
+      // Mostrar los productos en la página al cargar
+      mostrarProductos();
       });
 
       btnCeliaco.addEventListener('click', () => {
@@ -126,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-
       data.forEach(producto => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
@@ -142,17 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div class="wishlist-container">
-            <button class="wishlist-button">
-              <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
-              <img class="heart-icon" src="../images/heart-solid.svg" alt="">
-            </button>
-          </div>
-          <div>
+          <button class="wishlist-button" onclick="addToWishlist()">
+            <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
+            <img class="heart-icon" src="../images/heart-solid.svg" alt="">
+          </button>
+        </div>
+        <div>
           <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
-          </div>
+        </div>
       `;
-
-
 
         if (producto.category === "celiaco") {
           section1.appendChild(nuevoProducto);
@@ -171,17 +169,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
 
         let cantidad = 0;
-
         restarBtn.addEventListener('click', () => {
           if (cantidad > 0) {
             cantidad -= 1;
-            cantidadSpan.textContent = cantidad;
+            // Actualizar el contador de productos
+            actualizarContadorProductos();
           }
         });
 
         sumarBtn.addEventListener('click', () => {
           cantidad += 1;
           cantidadSpan.textContent = cantidad;
+          // Actualizar el contador de productos
+          actualizarContadorProductos();
         });
 
         agregarBtn.addEventListener('click', (event) => {
@@ -195,38 +195,44 @@ document.addEventListener('DOMContentLoaded', () => {
               // Actualizar localStorage
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
               console.log(carrito);
+              // Reiniciar la cantidad después de agregar al carrito
+              cantidad = 0;
+              cantidadSpan.textContent = cantidad;
+              // Actualizar el contador de productos
+              cantidadProductos += 1;
+              actualizarContadorProductos();
             }
 
           }
         });
       });
-
-
-
-      // PRINCIPIO CONTADOR DE CESTA EL NUMERO
-      // Seleccionar todos los botones de "agregar al carrito"
+     
+      
+      // agregando cantidad seleccionada al icono de la cesta
 
       const btnContador = document.querySelectorAll('.agregar-carrito');
-      const contadorProductos = document.querySelector('#contador-productos');
 
-      // Inicializar el contador
-      let cantidadProductos = 0;
       contadorProductos.textContent = cantidadProductos;
-
+      console.log(contadorProductos);
+       function actualizarContadorProductos() {
+        contadorProductos.textContent = cantidadProductos;
+        // Actualizar localStorage con el nuevo estado del carrito
+        localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
+      }
       // Agregar un event listener a cada botón para escuchar los clics
       btnContador.forEach(boton => {
         boton.addEventListener('click', () => {
+          // Obtener el valor asociado al botón
+          const cantidadSeleccionada = parseInt(boton.dataset.cantidad, 10);
 
-          // Incrementar la cantidad de productos
-          cantidadProductos++;
+          console.log(cantidadSeleccionada);
+          // Sumar la cantidad seleccionada a la cantidad total de productos
+          cantidadProductos += cantidadSeleccionada;
+
           // Actualizar el contador con la nueva cantidad
           contadorProductos.textContent = cantidadProductos;
         });
       });
-
-      // FIN CONTADOR DE CESTA EL NUMERO 
-
-
     })
     .catch(error => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
