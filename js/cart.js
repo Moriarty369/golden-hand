@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <img class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
+        <img data-target="window-container" id="open-modal" class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -221,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         
       });
-
       
 
 
