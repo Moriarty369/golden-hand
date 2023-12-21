@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         restarBtn.addEventListener('click', () => {
           if (cantidad > 0) {
             cantidad -= 1;
+            cantidadSpan.textContent = cantidad;
             // Actualizar el contador de productos
             actualizarContadorProductos();
           }

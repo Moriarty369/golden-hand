@@ -993,9 +993,12 @@ textarea{
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: flex;
+  align-items: center;
 }
 .article-container img {
     border-radius: 10px; /* Añade bordes redondeados si es necesario */
+  height: 20rem;
+ 
   }
 
 .parrafo-about-us {
