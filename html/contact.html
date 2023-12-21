@@ -70,6 +70,11 @@
             <input type="text" name= "asunto" id="asunto" placeholder="Asunto" autocomplete="off" required>
             <textarea cols="10" rows="10" name= "mensaje" id="mensaje" placeholder="Mensaje" autocomplete="off"></textarea>
             <span><input type="checkbox" required> AUTORIZO el tratamiento de mis datos personales con la finalidad de atender mi contacto</span>
+            <label for="captchaInput">Por favor, resuelva el captcha:</label>
+            <div id="textoCaptcha"></div> <!-- Espacio para el texto del captcha -->
+            <input type="text" id="captchaInput" required>
+            <button type="button" onclick="generarCaptcha()">Generar Captcha</button>
+            <p id="mensajeResultado"></p>
             <input type="submit" value="Enviar" class="enviar" onclick="validarEmail(), ValidarNombre()"> 
           </form>
       </section>
@@ -101,5 +106,6 @@
   </footer>
   <script src="../js/hamburguer.js"></script>
   <script src="../js/validaciones.js"></script>
+  <script src="../js/captcha.js"></script>
   </body>
 </html>
