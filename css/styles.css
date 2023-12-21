@@ -408,7 +408,6 @@ width: 80%;
 .parallax-map {
   display: flex;
   height: 60vh;
-  background-color: red;
   width: 80%;
   margin: 5vh auto;
   justify-content: center;
@@ -418,12 +417,12 @@ width: 80%;
   margin-top: 10px; /* Espaciado superior */
   padding: 10px;
   border: 1px solid #ccc; /* Borde para resaltar el área */
-  background-color: aqua;
+  background-color: #83C5BE;
 }
 
 #directions-controls {
 margin-top: 10px; /* Espaciado superior */
-background-color: red;
+background-color: #91422B;
 height: 40px;
 
 
@@ -432,7 +431,7 @@ height: 40px;
 .btn-map{
   height: 100%;
   width: auto;
-  background-color: blue;
+  background-color:#83C5BE;
   font-size: x-large;
 }
 
@@ -1564,9 +1563,7 @@ ul {
   display: none;
 }
 /* FIN HEADER*/
-.avatar{
-  height: 125px
-}
+
 .ul-index{
   font-size: 15px;
   display: block;

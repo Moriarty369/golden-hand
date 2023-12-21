@@ -7,7 +7,7 @@ function initMap() {
     
 
     const mapIcon = {
-        url: "../images/golden-hands.png",
+        url: "../images/manos.png",
         scaledSize: new google.maps.Size(30, 48),
         // origin: new google.maps.Point(0, 0),
         // anchor: new google.maps.Point(24, 20.5)
@@ -34,7 +34,7 @@ function initMap() {
         map: map,
         title: "Tu ubicación",
         icon: {
-            url: "../images/golden-hands.png", // Ruta de la imagen personalizada del usuario
+            url: "../images/abuelos.png", // Ruta de la imagen personalizada del usuario
             scaledSize: new google.maps.Size(30, 30),
         },
     });
