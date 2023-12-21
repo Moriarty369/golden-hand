@@ -269,8 +269,6 @@ background-color: #83C5BE;
   text-align: center;
 }
 
-/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
-
 
 /* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
 
@@ -357,6 +355,133 @@ width: 80%;
 .image-flipcard{
   height: 300px;
 }
+
+/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+.parallax {
+  display: grid;
+  align-items: center;
+}
+
+.parallax > * {
+  grid-area: stack;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+ 
+.parallax__bg {
+  --parallax-speed: -2.5;
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parallax__dust {
+  --parallax-speed: -20;
+  background-color:#C7AF43;
+  opacity: 0.3;
+}
+
+@keyframes parallax {
+  to {
+    transform: 
+      translateY(calc(var(--parallax-speed) * 100px));
+  }
+}
+
+.text-section{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  height: 100vh;
+    
+}
+
+.parallax-img {
+  display: block;
+  max-width: 80%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.parallax-map {
+  display: flex;
+  height: 60vh;
+  background-color: red;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#directions-panel {
+  margin-top: 10px; /* Espaciado superior */
+  padding: 10px;
+  border: 1px solid #ccc; /* Borde para resaltar el área */
+  background-color: aqua;
+}
+
+#directions-controls {
+margin-top: 10px; /* Espaciado superior */
+background-color: red;
+height: 40px;
+
+
+}
+
+.btn-map{
+  height: 100%;
+  width: auto;
+  background-color: blue;
+  font-size: x-large;
+}
+
+/* Estilos para los botones de los controles */
+.root-text-parallax{
+  font-size: xx-large;
+}
+
+/* Estilos para los logos de la pag index */
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
+  height: 100vh;
+}
+
+
+.cifras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cifra-item {
+  text-align: center;
+  margin: 10px;
+  width: 200px; /* Ajusta el ancho según tus preferencias */
+}
+
+
+
+h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+}
+.cifras-fotos{
+  width: 222px;
+  height: 186px;
+}
+
 
   /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
 
@@ -545,6 +670,7 @@ width: 80%;
   width: 80%;
   margin-bottom: 4vh;
 }
+
 
 /* -_- ----------------- ESTILOS SEARCH BAR ----------------- -_- */
     
