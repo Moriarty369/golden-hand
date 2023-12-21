@@ -22,135 +22,7 @@
     <script type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
-  <style>
-    /* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
-    .parallax {
-      display: grid;
-      align-items: center;
-    }
-    
-    .parallax > * {
-      grid-area: stack;
-      animation: parallax linear;
-      animation-timeline: scroll();
-    }
-     
-    .parallax__bg {
-      --parallax-speed: -10;
-      min-height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    
-    .parallax__dust {
-      --parallax-speed: -20;
-      background-color:#C7AF43;
-      opacity: 0.3;
-    }
 
-    @keyframes parallax {
-      to {
-        transform: 
-          translateY(calc(var(--parallax-speed) * 150px));
-      }
-    }
-    
-    .text-section{
-      width: 80%;
-      margin: auto;
-      margin-top: 50px;
-      height: 100vh;
-        
-    }
-   
-    .parallax-img {
-      display: block;
-      max-width: 80%;
-      margin: auto;
-      border-radius: 20px;
-    }
-    
-    .parallax-map {
-      display: flex;
-      height: 60vh;
-      background-color: red;
-      width: 80%;
-      margin: 0 auto;
-      justify-content: center;
-    }
-
-    #directions-panel {
-      margin-top: 10px; /* Espaciado superior */
-      padding: 10px;
-      border: 1px solid #ccc; /* Borde para resaltar el área */
-      background-color: aqua;
-    }
-
-    #directions-controls {
-    margin-top: 10px; /* Espaciado superior */
-    background-color: red;
-    height: 40px;
-
-    
-    }
-    
-    .btn-map{
-      height: 100%;
-      width: auto;
-      background-color: blue;
-      font-size: x-large;
-    }
-
-/* Estilos para los botones de los controles */
-.root-text-parallax{
-      font-size: xx-large;
-}
-
-    /* Estilos para los logos de la pag index */
-
-    .text-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      margin: auto;
-      margin-top: 0;
-      height: 100vh;
-    }
-    
-
-    .cifras {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .cifra-item {
-      text-align: center;
-      margin: 10px;
-      width: 200px; /* Ajusta el ancho según tus preferencias */
-    }
-    
-
-    
-    h2 {
-      font-size: 18px;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-    
-    p {
-      margin: 0;
-    }
-    .cifras-fotos{
-      width: 222px;
-      height: 186px;
-    }
-    
-    
-  </style>
   <body>
 
     <header>
@@ -299,7 +171,19 @@
         </div>
       </section>
       
-      <section class="map-title">
+
+
+      <section class="parallax">
+
+        
+        
+        <img class="parallax__dust parallax-img" src="./images/frase-paradax.png" />
+        <br>
+        <img class="parallax__bg parallax-img" src="./images/abuela.jpg" />
+        
+      </section>
+      
+         <section class="map-title">
         <h2 class="root-text-parallax">
           UBICANOS:
         </h2>
@@ -316,18 +200,11 @@
           <button class="btn-map" id="btnTransport" onclick="calculateRoute('TRANSIT')">🚆</button>
       </div>
 
-      </section>
-
-      <section class="parallax">
-
-        
-        <div class="parallax-map" id="parallax-map">
+      </section>   
+<div class="parallax-map" id="parallax-map">
           
 
         </div>
-        <img class="parallax__dust parallax-img" src="./images/frase-paradax.png" />
-        <img class="parallax__bg parallax-img" src="./images/abuela.jpg" />
-      </section>
 
       <section class="flip-card-title-container">
         <h2 class>
@@ -416,82 +293,7 @@
         </section>
       </footer>
 
-  
-      
-   
-      <!--  BUSCADOR -->
-      <script>
-              // SCRIPT SEARCH BUTTON 
-        
-        // desplegando y escondiendo el div contenedor search input      
-        function toggleSearch() {
-          const searchContainer = document.getElementById('search-container');
-            // imprimiendo div contenedor del searchbar
-          // console.log(searchContainer);
-          searchContainer.style.display = (searchContainer.style.display === 'block') ? 'none' : 'block';
-        }
 
-        async function searchProducts() {
-          const searchTerm = document.getElementById('search-input').value.toLowerCase();
-          // imprimiendo dinamicamente el input
-          // console.log(searchTerm);
-          const response = await fetch('./js/data.json');
-          const productos = await response.json();
-          // imprimiendo json de productos para supervisar sugerencias dinámicas
-          // console.log(productos)
-          const resultados = productos.filter(producto =>
-            producto.name.toLowerCase().startsWith(searchTerm)
-          );
-          // OJO imprimiendo dinamicamente json comparado con busqueda (por cualquier caracter) 
-          console.log(resultados)
-          displaySearchResults(resultados);
-        }
-
-        function displaySearchResults(results) {
-          const resultsContainer = document.getElementById('search-results');
-          resultsContainer.classList.add('show-search');
-          // Limpiamos el contenido actual
-          resultsContainer.innerHTML = '';
-        
-          // Iterando sobre los resultados
-          results.forEach(result => {
-            //  un elemento div para contener cada resultado
-            const resultContainer = document.createElement('div');
-            resultContainer.classList.add('search-result'); // Agregamos una clase para aplicar estilos si es necesario
-        
-           
-            //  div para la imagen y le aplicamos una clase
-            const imageContainer = document.createElement('div');
-            imageContainer.classList.add('search-img-container');
-            resultsContainer.appendChild(imageContainer);
-            //  elemento img para la imagen
-            const imageElement = document.createElement('img');
-            imageElement.classList.add('search-img'); 
-            imageElement.src = result.img; // Supongo que tienes una propiedad img en tu objeto resultado
-            imageElement.alt = result.name; // Asignamos el nombre como el texto alternativo de la imagen
-            imageContainer.appendChild(imageElement);
-            // Creamos un elemento para el nombre
-            const nameElement = document.createElement('div');
-            nameElement.classList.add('search-name'); 
-            nameElement.textContent = result.name;
-            resultContainer.appendChild(nameElement);
-        
-            // Creamos un elemento para el precio
-            const priceElement = document.createElement('div');
-            priceElement.classList.add('search-price'); 
-            priceElement.textContent = `Precio: $${result.price}`;
-            resultContainer.appendChild(priceElement);
-        
-            // Añadimos el contenedor de resultados al contenedor principal
-            resultsContainer.appendChild(resultContainer);
-          });
-        }
-        
-
-        // Agregar un evento al input de búsqueda para llamar a searchProducts cuando haya cambios
-        document.getElementById('search-input').addEventListener('input', searchProducts);
-
-      </script>
       <!-- FONT SIZE -->
       <script>
         // SCRIPT FONT SIZE 
