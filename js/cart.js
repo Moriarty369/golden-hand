@@ -1,7 +1,8 @@
 const carrito = new Map();
-let cantidadProductos = 0; // Inicializar el contador
+let cantidadProductos = 0; // Inicializar el contador para agregar a pagina de carrito
 let cantidadProductosSeleccionada = 0; // contador para agregar numero de productos a icono de carrito
 const contadorProductos = document.getElementById('contador-productos');
+
 // Función para actualizar el contador de productos en el icono de carrito
 function actualizarContadorProductos() {
   contadorProductos.textContent = cantidadProductosSeleccionada;
@@ -12,7 +13,7 @@ function actualizarContadorProductos() {
 
 document.addEventListener('DOMContentLoaded', () => {
   let section1, section2, section3;
-
+  // Realizar una solicitud para obtener datos del archivo JSON
   fetch('../js/data.json')
     .then(response => response.json())
     .then(data => {
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const botones = document.getElementById('contenedorboton')
 
 
-      //// ESTO ES PARA MOSTRAR EN "VER TODO" LOS PRODUCTOS PAGINADOS
+      // Agregar evento al botón "Ver Todo"
       verTodo.addEventListener('click', () => {
         if (section1.style.display === 'none') {
           contenedordiv.style.display = 'flex'
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data = json
             renderizarProductos(paginaActual, tarjetasPorPagina, json);
           });
-
+        // Agregar eventos para la paginación
         document.getElementById('anterior').addEventListener('click', () => {
           if (paginaActual > 1) {
             paginaActual--;
@@ -160,10 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      /// AQUI TERMINA LOS PRODUCTOS PAGINADOS
 
-      /// AQUI EMPIEZA LOS PRODUCTOS POR CATEGORIAS SEGUN SUS BOTONES
-
+      // Agregar eventos para cambiar la visibilidad de las secciones
       btnCeliaco.addEventListener('click', () => {
         if (section1.style.display === 'none') {
           contenedordiv.style.display = 'none'
@@ -229,9 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
           section3.style.display = 'flex';
         }
       });
-
-      /// AQUI TERMINA LOS PRODUCTOS POR BOTONES DE CATEGORIA
-
+      // Iterar sobre los productos y agregarlos a las secciones correspondientes
       data.forEach(producto => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
@@ -256,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
         </div>
       `;
-
+        // Agregar el producto a la sección correspondiente según la categoría
         if (producto.category === "celiaco") {
           section1.appendChild(nuevoProducto);
           section1.style.display = 'flex'
@@ -272,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
         const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
         const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
-
+        // Inicializar la cantidad para cada producto
         let cantidad = 0;
         restarBtn.addEventListener('click', () => {
           if (cantidad > 0) {
@@ -300,20 +297,24 @@ document.addEventListener('DOMContentLoaded', () => {
               carrito.set(productoEncontrado.id, { producto: productoEncontrado, cantidad });
               // Actualizar localStorage
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
-              console.log(carrito);
 
+              // Actualizar la cantidad seleccionada para el icono de carrito
               cantidadProductosSeleccionada += cantidad;
               // Reiniciar la cantidad después de agregar al carrito
               cantidad = 0;
-              cantidadSpan.textContent = cantidad;
+
+              // Actualizando el span en icono de cesta con cantidad
               contadorProductos.textContent = cantidadProductosSeleccionada;
-              // Actualizar el contador de productos
-              cantidadProductos += 1;
+
+
+
+              // Actualizar el contador de productos total y el localStorage
+
               actualizarContadorProductos();
-// Actualizar el contador de productos seleccionados en el icono de carrito
-contadorProductos.textContent = cantidadProductosSeleccionada;
-// Actualizar el texto del span cantidadSpan a 0
-cantidadSpan.textContent = 0;
+              // Actualizar el contador de productos seleccionados en el icono de carrito
+              contadorProductos.textContent = cantidadProductosSeleccionada;
+              // Actualizar el texto del span cantidadSpan a 0
+              cantidadSpan.textContent = 0;
 
 
             }
@@ -323,30 +324,14 @@ cantidadSpan.textContent = 0;
       });
 
 
-      // agregando cantidad seleccionada al icono de la cesta
 
-      const btnContador = document.querySelectorAll('.agregar-carrito');
 
-      // contadorProductos.textContent = cantidadProductos;
-      function actualizarContadorProductos() {
-        contadorProductos.textContent = cantidadProductos;
-        console.log(contadorProductos);
-        // Actualizar localStorage con el nuevo estado del carrito
-        localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
-      }
+
+
+
+
       // Agregar un event listener a cada botón para escuchar los clics
-      btnContador.forEach(boton => {
-        boton.addEventListener('click', () => {
-          // Obtener el valor asociado al botón
-          let cantidadSeleccionada = 0;
 
-          // Sumar la cantidad seleccionada a la cantidad total de productos
-          cantidadProductos += cantidadSeleccionada;
-
-          // Actualizar el contador con la nueva cantidad
-          contadorProductos.textContent = cantidadProductos;
-        });
-      });
     })
     .catch(error => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
