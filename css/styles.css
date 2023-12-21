@@ -822,7 +822,9 @@ font-size: 15px;
   background-color: #91422B;
 }
 
-
+.lupa{
+  height: 40px;
+  }
 
 
 #precio-total{
@@ -1477,6 +1479,7 @@ ul {
   flex-direction: column;
   height: 50vh;
 }
+
 
   /* Fin de estilos para la sección de Productos */
 

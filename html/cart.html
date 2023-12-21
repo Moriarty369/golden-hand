@@ -177,7 +177,7 @@
 
       // Crear el elemento para mostrar el precio total
       const contenedorTotal = document.querySelector('#precio-total');
-      contenedorTotal.innerHTML = `Precio total: ${total}€`;
+      contenedorTotal.innerHTML = `Precio total: ${total.toFixed(2)}€`;
     });
   </script>
 
@@ -208,7 +208,7 @@
       <button type="submit" class="button-send">Enviar</button>
     </section>
   </footer>
-  <script src="./js/hamburguer.js"></script>
+  <script src="../js/hamburguer.js"></script>
 
   <script src="../js/cart.js"></script>
 </body>
