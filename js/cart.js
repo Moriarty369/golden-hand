@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <a id="open-modal" href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
+        <img data-target="window-container" id="open-modal" class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -297,40 +297,35 @@ document.addEventListener('DOMContentLoaded', () => {
               carrito.set(productoEncontrado.id, { producto: productoEncontrado, cantidad });
               // Actualizar localStorage
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
-
-              // Actualizar la cantidad seleccionada para el icono de carrito
-              cantidadProductosSeleccionada += cantidad;
-              // Reiniciar la cantidad después de agregar al carrito
-              cantidad = 0;
-
-              // Actualizando el span en icono de cesta con cantidad
-              contadorProductos.textContent = cantidadProductosSeleccionada;
-
-
-
-              // Actualizar el contador de productos total y el localStorage
-
-              actualizarContadorProductos();
-              // Actualizar el contador de productos seleccionados en el icono de carrito
-              contadorProductos.textContent = cantidadProductosSeleccionada;
-              // Actualizar el texto del span cantidadSpan a 0
-              cantidadSpan.textContent = 0;
-
-
+              console.log(carrito);
             }
 
           }
+           // PRINCIPIO CONTADOR DE CESTA EL NUMERO
+          // Seleccionar todos los botones de "agregar al carrito"
+          const btnContador = document.querySelectorAll('.agregar-carrito');
+          const contadorProductos = document.querySelector('#contador-productos');
+          
+          contadorProductos.textContent = cantidad;
+          
+          // Agregar un e ent listener a cada botón para escuchar los clics
+          btnContador.forEach(boton => {
+            boton.addEventListener('click', () => {
+            
+              // Incrementar la cantidad de productos
+              productoEncontrado;
+               
+              contadorProductos.textContent = productoEncontrado;
+            });
+          });
+
+        // FIN CONTADOR DE CESTA EL NUMERO 
         });
+        
+        
       });
+      
 
-
-
-
-
-
-
-
-      // Agregar un event listener a cada botón para escuchar los clics
 
     })
     .catch(error => {
