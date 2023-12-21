@@ -249,8 +249,8 @@ background-color: #83C5BE;
 }
 
 .avatar {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
@@ -281,6 +281,8 @@ width: 80%;
 
 .flipcard-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1vh;
   justify-content: space-around; /* Cambiado de space-around a space-between */
   height: 30vh;
   margin-bottom: 200px;
@@ -408,7 +410,7 @@ width: 80%;
   height: 60vh;
   background-color: red;
   width: 80%;
-  margin: 0 auto;
+  margin: 5vh auto;
   justify-content: center;
 }
 
@@ -457,7 +459,7 @@ height: 40px;
   flex-wrap: wrap;
   justify-content: space-around;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .cifra-item {
@@ -477,6 +479,7 @@ h2 {
 p {
   margin: 0;
 }
+
 .cifras-fotos{
   width: 222px;
   height: 186px;
@@ -1370,8 +1373,8 @@ header {
 ul {
   display: none;
 }
-
 /* FIN HEADER*/
+
   .letra {
     font-size: 14px;
     padding-left: 18%;
@@ -1532,6 +1535,7 @@ ul {
 
 .footer {
 height: auto;
+
 }
 
 .social-icon{
@@ -1568,8 +1572,18 @@ height: auto;
     border-bottom-right-radius: 0px;
   }
 
+  .promo-container{
+    margin: auto;
+    background-color: #e95e6c;
+    margin-bottom: 5vh;
+  }
+  .promo-container h2, a{
+    font-size: 15px;
+  }
 
-
+  .floating-title {
+    font-size: 18px;
+  }
 
   .letra {
     font-size: 14px;
@@ -1602,6 +1616,24 @@ height: auto;
 
   .background-image {
     height: 65vh;
+  }
+
+  .cifras {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #555;
+  }
+  .cifra-item {
+    text-align: center;
+    width: 80px;
+}
+
+  .cifras-fotos{
+    width: 80px;
+    height: 80px;
   }
 
   /* Estilos para la sección de Servicios */
@@ -1707,8 +1739,6 @@ height: auto;
     }
 
   /* FIN      PÁGINA DE ABOUTUS    */
-  
-  /*Footer*/
 
 
 /*PAGINA PAGAR */
