@@ -14,15 +14,6 @@
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
   <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
 </head>
-<!-- <style>
-.captcha{
-  display: block;
-  position: absolute;
-  top:0;
-  right: 0;
-  background-color: aqua;
-}
-</style> -->
 
 <body>
   <header>
@@ -90,7 +81,7 @@
             </div>
             <p class="mensaje-error" id="resultadoValidacion3"></p>
             <!-- AQUI METO EL CAPTCHA -->
-            <div class="jeje" id="captcha">
+            <div class="captcha-div" id="captcha">
               <div id="textoCaptcha"></div> <!-- Espacio para el texto del captcha -->
               <input type="text" id="captchaInput" placeholder="Introduce el código" required>
               <button type="button" onclick="generarCaptcha()">Generar Captcha</button>
@@ -167,8 +158,6 @@ function validarCaptcha() {
 </script>
 
 </body>
-
-
 
 
 </html>

@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nuevoProducto = document.createElement('div');
             nuevoProducto.classList.add('product');
             nuevoProducto.innerHTML = `
-            <a id="open-modal" href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
+            <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
             <div class="product-txt">
               <h3>${producto.name}</h3>
               <p class="precio">${producto.price}€</p>
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
-        <img data-target="window-container" id="open-modal" class="open-modal" src="${producto.img}" alt="Imagen de ${producto.name}">
+        <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
         <div class="product-txt">
           <h3>${producto.name}</h3>
           <p class="precio">${producto.price}€</p>
@@ -332,25 +332,5 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
 
-
-  //// MODAL 
-  // Obtener todas las imágenes con la clase "open-modal"
-  var images = document.querySelectorAll('.product img#open-modal');
-  var modal = document.getElementById('myModal');
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
-
-  images.forEach(img => {
-    img.onclick = function () {
-      var imageSrc = this.src;
-      var productName = this.alt.replace('Imagen de ', '');
-      var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
-
-      modal.style.display = "block";
-      modalImg.src = imageSrc;
-      captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
-    }
-  });
-  ///////// FIN MODAL
 
 });
