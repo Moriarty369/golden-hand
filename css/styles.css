@@ -571,7 +571,7 @@ p {
  
  .form-information-childs h2 {
      color: #333;
-     font-size: 2rem;
+     font-size: 15px;
  }
  .form-information-childs p {
      color: #555;
@@ -1374,7 +1374,13 @@ ul {
   display: none;
 }
 /* FIN HEADER*/
-
+.avatar{
+  height: 125px
+}
+.ul-index{
+  font-size: 15px;
+  display: block;
+}
   .letra {
     font-size: 14px;
     padding-left: 18%;
@@ -1465,6 +1471,13 @@ ul {
   .products #gluten, #lacteos, #frutos {
     padding: 20px;
   }
+
+.product-nav{
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
   /* Fin de estilos para la sección de Productos */
 
   /* Estilos para la sección de Contacto */
@@ -1574,17 +1587,20 @@ height: auto;
 
   .promo-container{
     margin: auto;
-    background-color: #e95e6c;
-    margin-bottom: 5vh;
+     margin-bottom: 5vh;
   }
   .promo-container h2, a{
     font-size: 15px;
   }
-
+.text-section{
+  height: 200vh;
+}
   .floating-title {
     font-size: 18px;
   }
-
+.flip-card-section{
+  height: 200vh;
+}
   .letra {
     font-size: 14px;
     padding-left: 50%;
@@ -1619,22 +1635,28 @@ height: auto;
   }
 
   .cifras {
-    position: absolute;
+    display: flex;
+  flex-direction: column;
     top: 0;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    background-color: #555;
   }
   .cifra-item {
     text-align: center;
-    width: 80px;
+    width: 200px;
+
 }
 
   .cifras-fotos{
-    width: 80px;
-    height: 80px;
+    width: 179px;
+    height: 174px;
   }
+
+ .parallax__dust{
+  display: none;
+ } 
+ .parallax__bg{
+  display: none;
+ }
 
   /* Estilos para la sección de Servicios */
 
@@ -1685,6 +1707,11 @@ height: auto;
     padding: 20px;
   }
   /* Fin de estilos para la sección de Productos */
+
+  .login-container{
+
+    height: 150vh;
+}
 
   /* Estilos para la sección de Contacto */
   .central {
