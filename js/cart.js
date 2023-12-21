@@ -1,4 +1,3 @@
-// Declaración de variables globales
 const carrito = new Map();
 let cantidadProductos = 0; // Inicializar el contador para agregar a pagina de carrito
 let cantidadProductosSeleccionada = 0; // contador para agregar numero de productos a icono de carrito
@@ -12,17 +11,12 @@ function actualizarContadorProductos() {
 }
 
 
-
-
-// Esperar hasta que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
-  // Declaración de variables para las secciones
   let section1, section2, section3;
   // Realizar una solicitud para obtener datos del archivo JSON
   fetch('../js/data.json')
     .then(response => response.json())
     .then(data => {
-      // Asignar secciones y elementos del DOM a las variables
       section1 = document.querySelector('#gluten');
       section2 = document.querySelector('#lacteo');
       section3 = document.querySelector('#frutos');
@@ -143,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
 
-        // Obtener datos adicionales del archivo JSON y renderizar productos
         fetch('../js/data.json')
           .then(respuesta => respuesta.json())
           .then(json => {
@@ -237,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       // Iterar sobre los productos y agregarlos a las secciones correspondientes
       data.forEach(producto => {
-        // Crear elemento div en HTML para cada producto
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
@@ -273,16 +265,12 @@ document.addEventListener('DOMContentLoaded', () => {
           section3.style.display = 'flex'
         }
 
-
-        // Obtener elementos del DOM relacionados con la cantidad y botones
         const cantidadSpan = nuevoProducto.querySelector('.cantidad');
         const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
         const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
         const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
         // Inicializar la cantidad para cada producto
         let cantidad = 0;
-
-        // Agregar eventos para los botones de restar, sumar y agregar al carrito
         restarBtn.addEventListener('click', () => {
           if (cantidad > 0) {
             cantidad -= 1;
@@ -333,11 +321,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           }
         });
-
-
-        // agregando cantidad seleccionada al icono de la cesta
-
-
       });
 
 

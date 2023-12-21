@@ -269,8 +269,6 @@ background-color: #83C5BE;
   text-align: center;
 }
 
-/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
-
 
 /* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
 
@@ -357,6 +355,133 @@ width: 80%;
 .image-flipcard{
   height: 300px;
 }
+
+/* -_- ----------------- ESTILOS PARALLAX SECTION ----------------- -_- */
+.parallax {
+  display: grid;
+  align-items: center;
+}
+
+.parallax > * {
+  grid-area: stack;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+ 
+.parallax__bg {
+  --parallax-speed: -2.5;
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parallax__dust {
+  --parallax-speed: -20;
+  background-color:#C7AF43;
+  opacity: 0.3;
+}
+
+@keyframes parallax {
+  to {
+    transform: 
+      translateY(calc(var(--parallax-speed) * 100px));
+  }
+}
+
+.text-section{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  height: 100vh;
+    
+}
+
+.parallax-img {
+  display: block;
+  max-width: 80%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.parallax-map {
+  display: flex;
+  height: 60vh;
+  background-color: red;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#directions-panel {
+  margin-top: 10px; /* Espaciado superior */
+  padding: 10px;
+  border: 1px solid #ccc; /* Borde para resaltar el área */
+  background-color: aqua;
+}
+
+#directions-controls {
+margin-top: 10px; /* Espaciado superior */
+background-color: red;
+height: 40px;
+
+
+}
+
+.btn-map{
+  height: 100%;
+  width: auto;
+  background-color: blue;
+  font-size: x-large;
+}
+
+/* Estilos para los botones de los controles */
+.root-text-parallax{
+  font-size: xx-large;
+}
+
+/* Estilos para los logos de la pag index */
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
+  height: 100vh;
+}
+
+
+.cifras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cifra-item {
+  text-align: center;
+  margin: 10px;
+  width: 200px; /* Ajusta el ancho según tus preferencias */
+}
+
+
+
+h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+}
+.cifras-fotos{
+  width: 222px;
+  height: 186px;
+}
+
 
   /* -_- ------------ FINAL ESTILOS INDEX ------------ -_- */
 
@@ -546,6 +671,73 @@ width: 80%;
   margin-bottom: 4vh;
 }
 
+
+/* -_- ----------------- ESTILOS SEARCH BAR ----------------- -_- */
+    
+#search-container {
+  display: none;
+  margin-top: 40px;
+  background-color:red;
+  height: 60px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+}
+.search-btn-container{
+  display:block;
+
+}
+#search-results {
+  display: none;
+  position: absolute;
+  top: 90;
+  right: -300px; /* Inicialmente fuera de la pantalla */
+  width: 300px;
+  height: 100%;
+  background-color: #fff; /* Color de fondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  transition: right 0.3s ease; /* Animación suave de la posición */
+  overflow-y: auto; /* Añadir desplazamiento si es necesario */
+}
+
+#search-results.show-search {
+  right: 0; /* Muestra la barra lateral cuando se agrega la clase 'show' */
+  display: block;
+}
+
+.search-result {
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Línea de separación entre resultados */
+}
+
+.search-img-container {
+  width: 50px; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: 50px; /* Ajusta la altura de la imagen según tus necesidades */
+  overflow: hidden; /* Recorta la imagen si es más grande que el contenedor */
+  margin-right: 10px; /* Espacio a la derecha de la imagen */
+}
+
+.search-img-container img {
+  width: 100%; /* Haz que la imagen ocupe el 100% del contenedor */
+  height: auto; /* Mantén la proporción de aspecto original */
+}
+
+.search-name {
+  font-weight: bold; /* Hace que el nombre sea más llamativo */
+}
+
+/* Agrega estos estilos si quieres que la barra lateral sea desplazable */
+#search-results {
+  overflow-y: auto;
+}
+
+/* Estilos para el botón de cerrar la barra lateral */
+#close-search-results {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
 
 .buttonfondo {
@@ -991,9 +1183,12 @@ textarea{
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: flex;
+  align-items: center;
 }
 .article-container img {
     border-radius: 10px; /* Añade bordes redondeados si es necesario */
+  height: 20rem;
+ 
   }
 
 .parrafo-about-us {
