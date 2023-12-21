@@ -105,69 +105,7 @@
 .root-text-parallax{
       font-size: xx-large;
 }
-   /* -_- ----------------- ESTILOS SEARCH BAR ----------------- -_- */
-    
-   #search-container {
-      display: none;
-      margin-top: 40px;
-      background-color:red;
-      height: 60px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      z-index: 1;
-    }
-    #search-results {
-      display: none;
-      position: absolute;
-      top: 90;
-      right: -300px; /* Inicialmente fuera de la pantalla */
-      width: 300px;
-      height: 100%;
-      background-color: #fff; /* Color de fondo */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
-      transition: right 0.3s ease; /* Animación suave de la posición */
-      overflow-y: auto; /* Añadir desplazamiento si es necesario */
-    }
-    
-    #search-results.show-search {
-      right: 0; /* Muestra la barra lateral cuando se agrega la clase 'show' */
-      display: block;
-    }
-    
-    .search-result {
-      padding: 10px;
-      border-bottom: 1px solid #ccc; /* Línea de separación entre resultados */
-    }
-    
-    .search-img-container {
-      width: 50px; /* Ajusta el ancho de la imagen según tus necesidades */
-      height: 50px; /* Ajusta la altura de la imagen según tus necesidades */
-      overflow: hidden; /* Recorta la imagen si es más grande que el contenedor */
-      margin-right: 10px; /* Espacio a la derecha de la imagen */
-    }
-    
-    .search-img-container img {
-      width: 100%; /* Haz que la imagen ocupe el 100% del contenedor */
-      height: auto; /* Mantén la proporción de aspecto original */
-    }
-    
-    .search-name {
-      font-weight: bold; /* Hace que el nombre sea más llamativo */
-    }
-    
-    /* Agrega estos estilos si quieres que la barra lateral sea desplazable */
-    #search-results {
-      overflow-y: auto;
-    }
-    
-    /* Estilos para el botón de cerrar la barra lateral */
-    #close-search-results {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-    
+
     /* Estilos para los logos de la pag index */
 
     .text-section {
@@ -180,13 +118,7 @@
       height: 100vh;
     }
     
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-    
+
     .cifras {
       display: flex;
       flex-wrap: wrap;
@@ -238,9 +170,6 @@
             <li><a href="./html/about-us.html">Nosotros</a></li>
             <i></i>
             <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
-            <li class="search-button"> <button type="button"
-                onclick="toggleSearch()">🔎</button></li>
-
           </ul>
         </div>
         <div class="show">
@@ -255,7 +184,7 @@
             <li><a href="./html/about-us.html">Nosotros</a></li>
             <li> <a href="./html/login.html"><i class="fas fa-user icons"></i></a>
             </li>
-            <li> <button type="button" onclick="toggleSearch()">🔎</button></li>
+    
           </ul>
         </div>
 
