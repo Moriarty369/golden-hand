@@ -15,51 +15,26 @@
   <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-
 </head>
-<style> 
-  /* Modal */
-  .window-background {
+<style>
+  /* -_- ----------- ESTILOS VENTANA MODAL ----------- -_- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: 1;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
   }
 
-  .window-container {
+  .modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
     position: relative;
-    background-color: #fff;
-    width: 550px;
-    height: auto;
-    padding: 1.5rem;
-    border-radius: 8px;
-    animation-name: modal;
-    animation-duration: .5s;
-    box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 4);
-    z-index: 10;
-  }
-
-  @keyframes modal {
-    from {
-      transform: translateY(50vh);
-    }
-
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  .close {
-    transition: transform 1s cubic-bezier(0, -0.42, 1, -0.41);
-    transform: translateY(60vh);
   }
 
   .close-modal {
@@ -93,7 +68,6 @@
           <li><a href="./products.html">Productos</a></li>
           <li><a href="./contact.html">Contactos</a></li>
           <li><a href="./about-us.html">Nosotros</a></li>
-          <i class="fa-solid fa-magnifying-glass icons"></i>
           <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
       </div>
@@ -102,7 +76,6 @@
       </div>
       <div class="hidden-container">
         <ul class="hidden-list">
-          <li><input type="text"><i class="fa-solid fa-magnifying-glass icons"></i></li>
           <li><a href="./services.html">Servicios</a></li>
           <li><a href="./products.html">Productos</a></li>
           <li><a href="./contact.html">Contactos</a></li>
@@ -138,9 +111,13 @@
           </a>
         </nav>
       </div>
-
     </section>
 
+    <div class="product-content" id="contenedordiv"></div>
+    <div class="contenedorboton" id="contenedorboton">
+      <button class="botoncitos" id="anterior">Anterior</button>
+      <button class="botoncitos" id="siguiente">Siguiente</button>
+    </div>
     <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
     <section id="gluten" class="product-content products container"></section>
     <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
@@ -148,21 +125,17 @@
     <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
     <section id="frutos" class="product-content products container"></section>
 
-    <button id="anterior" onclick="cambiarPagina(-1)">Anterior</button>
-    <button id="siguiente" onclick="cambiarPagina(1)">Siguiente</button>
 
     <!-- Modal -->
     <section>
-      <div class="window-background" id="window-background">
-        <div class="window-container" id="window-container">
-          <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-          <h1>Hola 👋</h1>
-          <p> Lorem ipsum dolor, provident est iusto quibusdam fugiat laboriosam nostrum quisquam doloribus, non facilis
-            consequuntur molestias? Repellat numquam repellendus commodi exercitationem iure?</p>
+      <div class="modal" id="mi-modal">
+        <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
       </div>
-          </div>
     </section>
-<!-- Fin del modal -->
+    <!-- Fin del modal -->
 
   </main>
 
@@ -193,7 +166,30 @@
     
 
   </footer>
-  
+  <!-- MODAL -->
+  <!-- <script>
+function openModal(imageSrc, description) {
+    $("#myModal").css("display", "block");
+    $("#modalImage").attr("src", imageSrc);
+    $("#modalDescription").text(description);
+}
+
+function closeModal() {
+    $("#myModal").css("display", "none");
+}
+
+// Cierra el modal si el usuario hace clic fuera del contenido del modal
+$(window).on("click", function(event) {
+    var modal = $("#myModal")[0];
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+
+</script>  -->
+
+
   <script src="../js/hamburguer.js"></script>
   <script src="../js/cart.js"></script>
 </body>
