@@ -81,16 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const nuevoProducto = document.createElement('div');
             nuevoProducto.classList.add('product');
             nuevoProducto.innerHTML = `
-            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+            <a id="open-modal" href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
             <div class="product-txt">
-                <h3>${producto.name}</h3>
-                <p class="precio">${producto.price}€</p>
-                <div class="cantidad-controles">
-                    <button class="restar-cantidad" data-id="${producto.id}">-</button>
-                    <span class="cantidad">0</span>
-                    <button class="sumar-cantidad" data-id="${producto.id}">+</button>
-                </div>
-                <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+              <h3>${producto.name}</h3>
+              <p class="precio">${producto.price}€</p>
+              <div class="cantidad-controles">
+                <button class="restar-cantidad" data-id="${producto.id}">-</button>
+                <span class="cantidad">0</span>
+                <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+              </div>
+            </div>
+            <div class="wishlist-container">
+              <button class="wishlist-button" onclick="addToWishlist()">
+                <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
+                <img class="heart-icon" src="../images/heart-solid.svg" alt="">
+              </button>
+            </div>
+            <div>
+              <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
             </div>
         `;
             container.appendChild(nuevoProducto);
@@ -252,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Actualizar el contador de productos
           actualizarContadorProductos();
         });
-
+        /// LOCAL STORAGE ES IGUAL A LA PIZARRA DE NATALIA
         agregarBtn.addEventListener('click', (event) => {
           event.preventDefault();
 
@@ -308,25 +316,25 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
 
- 
+
   //// MODAL 
-// Obtener todas las imágenes con la clase "open-modal"
-var images = document.querySelectorAll('.product img#open-modal');
-var modal = document.getElementById('myModal');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
+  // Obtener todas las imágenes con la clase "open-modal"
+  var images = document.querySelectorAll('.product img#open-modal');
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
 
-images.forEach(img => {
-  img.onclick = function(){
-    var imageSrc = this.src;
-    var productName = this.alt.replace('Imagen de ', '');
-    var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
+  images.forEach(img => {
+    img.onclick = function () {
+      var imageSrc = this.src;
+      var productName = this.alt.replace('Imagen de ', '');
+      var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
 
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-    captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
-  }
-});
-///////// FIN MODAL
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+      captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
+    }
+  });
+  ///////// FIN MODAL
 
 });

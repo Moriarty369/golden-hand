@@ -273,9 +273,6 @@ background-color: #83C5BE;
 
 
 /* -_- ----------------- ESTILOS FLIPCARD SECTION ----------------- -_- */
-.flip-card-section{
-
-}
 
 .flip-card-title-container{
 margin-left: 20%;
@@ -546,6 +543,7 @@ width: 80%;
   margin-top: 2vh;
   border-radius: 5px;
   width: 80%;
+  margin-bottom: 4vh;
 }
 
 
