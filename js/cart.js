@@ -1,14 +1,28 @@
+// Declaración de variables globales
 const carrito = new Map();
-let cantidadProductos = 0; // Inicializar el contador
+let cantidadProductos = 0; // Inicializar el contador para agregar a pagina de carrito
+let cantidadProductosSeleccionada = 0; // contador para agregar numero de productos a icono de carrito
 const contadorProductos = document.getElementById('contador-productos');
 
+// Función para actualizar el contador de productos en el icono de carrito
+function actualizarContadorProductos() {
+  contadorProductos.textContent = cantidadProductosSeleccionada;
+  // También puedes actualizar localStorage aquí si es necesario
+  // localStorage.setItem('cantidadEnLocalStorage', cantidadProductosSeleccionada);
+}
 
+
+
+
+// Esperar hasta que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
+  // Declaración de variables para las secciones
   let section1, section2, section3;
-
+   // Realizar una solicitud para obtener datos del archivo JSON
   fetch('../js/data.json')
     .then(response => response.json())
     .then(data => {
+      // Asignar secciones y elementos del DOM a las variables
       section1 = document.querySelector('#gluten');
       section2 = document.querySelector('#lacteo');
       section3 = document.querySelector('#frutos');
@@ -23,8 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const botones = document.getElementById('contenedorboton')
 
 
-
+      // Agregar evento al botón "Ver Todo"
       verTodo.addEventListener('click', () => {
+        // Verificar el estado actual de las secciones y ajustar la visibilidad
         if (section1.style.display === 'none') {
           contenedordiv.style.display = 'flex'
           botones.style.display = 'flex'
@@ -35,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'none';
         } else {
+          // Ocultar secciones y mostrar contenedores
           contenedordiv.style.display = 'flex'
           botones.style.display = 'flex'
           tituloCeliaco.style.display = 'none'
@@ -44,18 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
           section2.style.display = 'none';
           section3.style.display = 'none';
         }
+          // INICIO Lógica de paginación
         let paginaActual = 1;
         const tarjetasPorPagina = 3;
         let data = [];
-
+        // Función para renderizar productos en la página
         function renderizarProductos(paginaActual, tarjetasPorPagina, data) {
+          // Obtener el contenedor de productos
           const container = document.querySelector('#contenedordiv');
-          container.innerHTML = ''; // Limpiar el contenedor antes de añadir nuevos productos
-
+          // Limpiar el contenedor antes de añadir nuevos productos
+          container.innerHTML = ''; 
+          // Calcular índices de inicio y fin para la paginación
           const inicio = (paginaActual - 1) * tarjetasPorPagina;
           const final = inicio + tarjetasPorPagina;
           const paginadoTarjetas = data.slice(inicio, final);
 
+
+          // Crear elementos para los productos y agregarlos al contenedor
           paginadoTarjetas.forEach(producto => {
             const nuevoProducto = document.createElement('div');
             nuevoProducto.classList.add('product');
@@ -76,13 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
 
+        // Obtener datos adicionales del archivo JSON y renderizar productos
         fetch('../js/data.json')
           .then(respuesta => respuesta.json())
           .then(json => {
             data = json
             renderizarProductos(paginaActual, tarjetasPorPagina, json);
           });
-
+          // Agregar eventos para la paginación
         document.getElementById('anterior').addEventListener('click', () => {
           if (paginaActual > 1) {
             paginaActual--;
@@ -100,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
+
+      // Agregar eventos para cambiar la visibilidad de las secciones
       btnCeliaco.addEventListener('click', () => {
         if (section1.style.display === 'none') {
           contenedordiv.style.display = 'none'
@@ -165,8 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
           section3.style.display = 'flex';
         }
       });
-
+      // Iterar sobre los productos y agregarlos a las secciones correspondientes
       data.forEach(producto => {
+        // Crear elemento div en HTML para cada producto
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
@@ -176,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="precio">${producto.price}€</p>
           <div class="cantidad-controles">
             <button class="restar-cantidad" data-id="${producto.id}">-</button>
-            <span class="cantidad">0</span>
+            <span class="cantidad" id="cantidad">0</span>
             <button class="sumar-cantidad" data-id="${producto.id}">+</button>
           </div>
         </div>
@@ -190,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
         </div>
       `;
-
+         // Agregar el producto a la sección correspondiente según la categoría
         if (producto.category === "celiaco") {
           section1.appendChild(nuevoProducto);
           section1.style.display = 'flex'
@@ -202,12 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
           section3.style.display = 'flex'
         }
 
+
+        // Obtener elementos del DOM relacionados con la cantidad y botones
         const cantidadSpan = nuevoProducto.querySelector('.cantidad');
         const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
         const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
         const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
-
+       // Inicializar la cantidad para cada producto
         let cantidad = 0;
+
+        // Agregar eventos para los botones de restar, sumar y agregar al carrito
         restarBtn.addEventListener('click', () => {
           if (cantidad > 0) {
             cantidad -= 1;
@@ -234,45 +263,46 @@ document.addEventListener('DOMContentLoaded', () => {
               carrito.set(productoEncontrado.id, { producto: productoEncontrado, cantidad });
               // Actualizar localStorage
               localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
-              console.log(carrito);
+              
+              // Actualizar la cantidad seleccionada para el icono de carrito
+              cantidadProductosSeleccionada += cantidad;
               // Reiniciar la cantidad después de agregar al carrito
               cantidad = 0;
-              cantidadSpan.textContent = cantidad;
-              // Actualizar el contador de productos
-              cantidadProductos += 1;
-              actualizarContadorProductos();
+              
+              // Actualizando el span en icono de cesta con cantidad
+              contadorProductos.textContent = cantidadProductosSeleccionada;
+
+
+             
+             // Actualizar el contador de productos total y el localStorage
+             
+             actualizarContadorProductos();
+              // Actualizar el contador de productos seleccionados en el icono de carrito
+            contadorProductos.textContent = cantidadProductosSeleccionada;
+             // Actualizar el texto del span cantidadSpan a 0
+            cantidadSpan.textContent = 0;
+
+
             }
 
           }
         });
+
+
+        // agregando cantidad seleccionada al icono de la cesta
+
+
       });
      
       
-      // agregando cantidad seleccionada al icono de la cesta
+     
 
-      const btnContador = document.querySelectorAll('.agregar-carrito');
+  
 
-      contadorProductos.textContent = cantidadProductos;
-      console.log(contadorProductos);
-       function actualizarContadorProductos() {
-        contadorProductos.textContent = cantidadProductos;
-        // Actualizar localStorage con el nuevo estado del carrito
-        localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
-      }
+  
+      
       // Agregar un event listener a cada botón para escuchar los clics
-      btnContador.forEach(boton => {
-        boton.addEventListener('click', () => {
-          // Obtener el valor asociado al botón
-          const cantidadSeleccionada = parseInt(boton.dataset.cantidad, 10);
-
-          console.log(cantidadSeleccionada);
-          // Sumar la cantidad seleccionada a la cantidad total de productos
-          cantidadProductos += cantidadSeleccionada;
-
-          // Actualizar el contador con la nueva cantidad
-          contadorProductos.textContent = cantidadProductos;
-        });
-      });
+   
     })
     .catch(error => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
