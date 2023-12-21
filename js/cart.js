@@ -1,6 +1,6 @@
 const carrito = new Map();
 let cantidadProductos = 0; // Inicializar el contador
-const contadorProductos = document.getElementById('contador-productos');
+let contadorProductos = document.getElementById('contador-productos');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const botones = document.getElementById('contenedorboton')
 
 
-
+      //// ESTO ES PARA MOSTRAR EN "VER TODO" LOS PRODUCTOS PAGINADOS
       verTodo.addEventListener('click', () => {
         if (section1.style.display === 'none') {
           contenedordiv.style.display = 'flex'
@@ -60,19 +60,72 @@ document.addEventListener('DOMContentLoaded', () => {
             const nuevoProducto = document.createElement('div');
             nuevoProducto.classList.add('product');
             nuevoProducto.innerHTML = `
-            <img href="#openModal" src="${producto.img}" alt="Imagen de ${producto.name}">
+            <a id="open-modal" href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
             <div class="product-txt">
-                <h3>${producto.name}</h3>
-                <p class="precio">${producto.price}€</p>
-                <div class="cantidad-controles">
-                    <button class="restar-cantidad" data-id="${producto.id}">-</button>
-                    <span class="cantidad">0</span>
-                    <button class="sumar-cantidad" data-id="${producto.id}">+</button>
-                </div>
-                <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
+              <h3>${producto.name}</h3>
+              <p class="precio">${producto.price}€</p>
+              <div class="cantidad-controles">
+                <button class="restar-cantidad" data-id="${producto.id}">-</button>
+                <span class="cantidad">0</span>
+                <button class="sumar-cantidad" data-id="${producto.id}">+</button>
+              </div>
+            </div>
+            <div class="wishlist-container">
+              <button class="wishlist-button" onclick="addToWishlist()">
+                <span class="wishlist-text" id="wishlist-text">Agregar a Favoritos</span>
+                <img class="heart-icon" src="../images/heart-solid.svg" alt="">
+              </button>
+            </div>
+            <div>
+              <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar</a>
             </div>
         `;
             container.appendChild(nuevoProducto);
+
+            const cantidadSpan = nuevoProducto.querySelector('.cantidad');
+            const restarBtn = nuevoProducto.querySelector('.restar-cantidad');
+            const sumarBtn = nuevoProducto.querySelector('.sumar-cantidad');
+            const agregarBtn = nuevoProducto.querySelector('.agregar-carrito');
+
+            let cantidad = 0;
+            restarBtn.addEventListener('click', () => {
+              if (cantidad > 0) {
+                cantidad -= 1;
+                cantidadSpan.textContent = cantidad;
+                // Actualizar el contador de productos
+                actualizarContadorProductos();
+              }
+            });
+
+            sumarBtn.addEventListener('click', () => {
+              cantidad += 1;
+              cantidadSpan.textContent = cantidad;
+              // Actualizar el contador de productos
+              actualizarContadorProductos();
+            });
+
+            agregarBtn.addEventListener('click', (event) => {
+              event.preventDefault();
+
+              if (cantidad > 0) {
+                const productoEncontrado = data.find(item => item.id === producto.id);
+
+                if (productoEncontrado) {
+                  carrito.set(productoEncontrado.id, { producto: productoEncontrado, cantidad });
+                  // Actualizar localStorage
+                  localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
+                  console.log(carrito);
+                  // Reiniciar la cantidad después de agregar al carrito
+                  cantidad = 0;
+                  cantidadSpan.textContent = cantidad;
+                  // Actualizar el contador de productos
+                  cantidadProductos += 1;
+                  actualizarContadorProductos();
+                }
+
+              }
+            });
+
           });
         }
 
@@ -99,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
+
+      /// AQUI TERMINA LOS PRODUCTOS PAGINADOS
+
+      /// AQUI EMPIEZA LOS PRODUCTOS POR CATEGORIAS SEGUN SUS BOTONES
 
       btnCeliaco.addEventListener('click', () => {
         if (section1.style.display === 'none') {
@@ -166,6 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      /// AQUI TERMINA LOS PRODUCTOS POR BOTONES DE CATEGORIA
+
       data.forEach(producto => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
@@ -223,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Actualizar el contador de productos
           actualizarContadorProductos();
         });
-
+        /// LOCAL STORAGE ES IGUAL A LA PIZARRA DE NATALIA
         agregarBtn.addEventListener('click', (event) => {
           event.preventDefault();
 
@@ -246,16 +305,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
-     
-      
+
+
       // agregando cantidad seleccionada al icono de la cesta
 
       const btnContador = document.querySelectorAll('.agregar-carrito');
 
-      contadorProductos.textContent = cantidadProductos;
-      console.log(contadorProductos);
-       function actualizarContadorProductos() {
+      // contadorProductos.textContent = cantidadProductos;
+      function actualizarContadorProductos() {
         contadorProductos.textContent = cantidadProductos;
+        console.log(contadorProductos);
         // Actualizar localStorage con el nuevo estado del carrito
         localStorage.setItem('carrito', JSON.stringify(Array.from(carrito.entries())));
       }
@@ -263,9 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btnContador.forEach(boton => {
         boton.addEventListener('click', () => {
           // Obtener el valor asociado al botón
-          const cantidadSeleccionada = parseInt(boton.dataset.cantidad, 10);
+          let cantidadSeleccionada = 0;
 
-          console.log(cantidadSeleccionada);
           // Sumar la cantidad seleccionada a la cantidad total de productos
           cantidadProductos += cantidadSeleccionada;
 
@@ -278,25 +336,25 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Se ha producido un error al obtener los datos del archivo JSON', error);
     });
 
- 
+
   //// MODAL 
-// Obtener todas las imágenes con la clase "open-modal"
-var images = document.querySelectorAll('.product img#open-modal');
-var modal = document.getElementById('myModal');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
+  // Obtener todas las imágenes con la clase "open-modal"
+  var images = document.querySelectorAll('.product img#open-modal');
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
 
-images.forEach(img => {
-  img.onclick = function(){
-    var imageSrc = this.src;
-    var productName = this.alt.replace('Imagen de ', '');
-    var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
+  images.forEach(img => {
+    img.onclick = function () {
+      var imageSrc = this.src;
+      var productName = this.alt.replace('Imagen de ', '');
+      var productPrice = this.nextElementSibling.querySelector('.precio').textContent;
 
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-    captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
-  }
-});
-///////// FIN MODAL
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+      captionText.innerHTML = `<h3>${productName}</h3><p>${productPrice}</p>`;
+    }
+  });
+  ///////// FIN MODAL
 
 });
