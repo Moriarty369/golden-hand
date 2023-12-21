@@ -104,3 +104,37 @@ document.getElementById('tuFormulario2').addEventListener('submit', function(eve
     }
 });
 
+/// ESTE ES EL CODIGO PARA VALIDAR EL FORMULARIO DE CONTACT
+
+function validarEmail(){
+    let emailContact = document.querySelector("#emailContact")
+    let errorContact = document.querySelector("#errorCorreo")
+    let expresionCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+    if (expresionCorreo.test(emailContact.value)){
+      errorContact.textContent = "";
+      return true
+    }else {
+      errorContact.textContent = "Por favor, introduce un correo electrónico válido."
+      return false
+    }
+  }
+
+  function ValidarNombre(){
+    let nombreContacto = document.querySelector("#nombreContact")
+    let ErrorNombreContact = document.querySelector("#errorNombreContacto")
+    let expresionNombre = /^[A-Z][a-zA-Z]*(?:\s[A-Z][a-zA-Z]*)+$/
+    const longitudMinima = 6;
+    const longitudMaxima = 20;
+
+    if (nombreContacto.length < longitudMinima || nombreContacto.length > longitudMaxima) {
+        ErrorNombreContact.textContent = "Debe tener entre 6 y 20 carácteres.";
+        return false
+    } else if (!expresionNombre.test(nombreContacto.value)) {
+        ErrorNombreContact.textContent = "Debe tener nombre y apellido y ambas empezar por mayuscula.";
+        return false
+    } else {
+        ErrorNombreContact.textContent = "";
+        return true
+    }
+  }

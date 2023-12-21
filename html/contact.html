@@ -62,19 +62,14 @@
             <p class="datos">Calle Fernando Poo 5 28045 Madrid</p>
           <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d24314.33554858614!2d-3.7236111786742847!3d40.38022177247848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d40.362294399999996!2d-3.6927540999999997!4m5!1s0xd422633b66fba33%3A0x5d3d7e4094c7e18f!2sC.%20Fernando%20Poo%2C%205%2C%2028045%20Madrid!3m2!1d40.399709!2d-3.6992813!5e0!3m2!1ses!2ses!4v1699274767278!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </article>
-          <form action="../index.html" class="formulario">
-            <input type="text" name= "nombre" id="nombreContact" placeholder="Nombre Completo" autocomplete="off" required>
+          <form action="../index.html" class="formulario" id="tuFormulario3">
+            <input type="text" name= "nombre3" id="nombreContact" placeholder="Nombre Completo" autocomplete="off" required>
             <p class="mensaje-error" id="errorNombreContacto"></p>
-            <input type="email" name= "email" id="emailContact" placeholder="Correo Electrónico" autocomplete="off" required>
+            <input type="email" name= "email3" id="emailContact" placeholder="Correo Electrónico" autocomplete="off" required>
             <p class="mensaje-error" id="errorCorreo"></p>
             <input type="text" name= "asunto" id="asunto" placeholder="Asunto" autocomplete="off" required>
             <textarea cols="10" rows="10" name= "mensaje" id="mensaje" placeholder="Mensaje" autocomplete="off"></textarea>
             <span><input type="checkbox" required> AUTORIZO el tratamiento de mis datos personales con la finalidad de atender mi contacto</span>
-            <label for="captchaInput">Por favor, resuelva el captcha:</label>
-            <div id="textoCaptcha"></div> <!-- Espacio para el texto del captcha -->
-            <input type="text" id="captchaInput" required>
-            <button type="button" onclick="generarCaptcha()">Generar Captcha</button>
-            <p id="mensajeResultado"></p>
             <input type="submit" value="Enviar" class="enviar" onclick="validarEmail(), ValidarNombre()"> 
           </form>
       </section>
