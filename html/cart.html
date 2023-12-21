@@ -16,6 +16,24 @@
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
 </head>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito de Compras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="https://kit.fontawesome.com/60be6c00de.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../images/golden-hands.png">
+</head>
+
+<body>
+  <header>
+    <nav>
 <body>
   <header>
     <nav>
@@ -31,6 +49,7 @@
           <li><a href="./products.html">Productos</a></li>
           <li><a href="./contact.html">Contactos</a></li>
           <li><a href="./about-us.html">Nosotros</a></li>
+          <a href="./login.html"><i class="fas fa-user icons"></i></a>
           <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
       </div>
@@ -50,15 +69,36 @@
       </div>
     </nav>
   </header>
+      </div>
+      <div class="hidden-container">
+        <ul class="hidden-list">
+          <li><a href="./services.html">Servicios</a></li>
+          <li><a href="./products.html">Productos</a></li>
+          <li><a href="./contact.html">Contactos</a></li>
+          <li><a href="./about-us.html">Nosotros</a></li>
+          <li class="space-icons">
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <!-- Contenedor para mostrar productos en el carrito -->
   <main>
     <section class="section-carrito">
       <div id="contenedor-carrito">
 
+
         <!-- Aquí se mostrarán los productos en el carrito -->
       </div>
       <div id="precio-total"></div>
+      </div>
+      <div id="precio-total"></div>
     </section>
+    <hr>
+    <section class="section-send">
+      <h2> Formas de entrega</h2>
+      <p class="section-send-sub-tittle"> Seleccione una opción de envío</p>
     <hr>
     <section class="section-send">
       <h2> Formas de entrega</h2>
@@ -68,17 +108,21 @@
           <tr>
             <td class="delivery_option_radio">
               <input class="delivery_option_radio" name="send" type="radio">
+              <input class="delivery_option_radio" name="send" type="radio">
             </td>
+
 
             <td>
               <strong>Correos Express</strong> Entrega a domicilio en 24/48 horas. Navidades 72 horas. El mas rápido
             </td>
             <td class="delivery_option_price">
               3,90 € (IVA incluído)
+              3,90 € (IVA incluído)
             </td>
           </tr>
           <tr>
             <td class="delivery_option_radio">
+              <input class="delivery_option_radio" name="send" type="radio">
               <input class="delivery_option_radio" name="send" type="radio">
             </td>
             <td>
@@ -86,8 +130,10 @@
             </td>
             <td class="delivery_option_price">
               3,90 € (IVA incluído)
+              3,90 € (IVA incluído)
             </td>
           </tr>
+
 
         </tbody>
       </table>
@@ -103,7 +149,21 @@
         <label>He leído y acepto las condiciones generales de venta.</label>
         <a href="#">Condiciones generales de venta</a>
       </p>
+      <p class="section-send-sub-tittle">Dejar un mensaje</p>
+      <p>Si desea añadir un mensaje sobre su pedido, por favor escribalo en el campo de abajo.</p>
+      <textarea cols="120" rows="2" class="text-area-package"></textarea>
 
+      <p class="section-send-sub-tittle">Condiciones generales de venta</p>
+
+      <p class="checkbox">
+        <input type="checkbox">
+        <label>He leído y acepto las condiciones generales de venta.</label>
+        <a href="#">Condiciones generales de venta</a>
+      </p>
+
+    </section>
+    <hr>
+    <section class="section-payment-method">
     </section>
     <hr>
     <section class="section-payment-method">
@@ -125,10 +185,28 @@
           <label>Transferencia Bancaria</label>
         </div>
         <input type="submit" value="Pagar" id="input-payment-method" />
+        <div>
+          <input type="radio" id="radio-btn1" name="grupo">
+          <label class="pago-con-tarjeta">Pago con tarjeta</label>
+          <figure>
+            <img src="../images/metodos-pago.png" alt="Imagen de visa" id="img-payment-methods">
+          </figure>
+        </div>
+        <div>
+          <input type="radio" id="radio-btn2" name="grupo">
+          <label>Paypal</label>
+        </div>
+        <div>
+          <input type="radio" id="radio-btn3" name="grupo">
+          <label>Transferencia Bancaria</label>
+        </div>
+        <input type="submit" value="Pagar" id="input-payment-method" />
 
+        </ul>
         </ul>
       </form>
 
+    </section>
     </section>
 
   </main>
@@ -139,9 +217,19 @@
       // Recuperar el carrito almacenado en localStorage
       const storedCart = localStorage.getItem('carrito');
       const cesta = new Map(JSON.parse(storedCart) || []);
+  <script src="../js/cart.js"></script>
+  <script>
+    // Espera a que el DOM esté completamente cargado para ejecutar el código
+    document.addEventListener('DOMContentLoaded', () => {
+      // Recuperar el carrito almacenado en localStorage
+      const storedCart = localStorage.getItem('carrito');
+      const cesta = new Map(JSON.parse(storedCart) || []);
 
       let total = 0; // Inicializar el total a 0
+      let total = 0; // Inicializar el total a 0
 
+      // Iterar sobre las entradas del carrito para construir el contenido en cart.html y calcular el precio total
+      cesta.forEach((productoEnCarrito, productId) => {
       // Iterar sobre las entradas del carrito para construir el contenido en cart.html y calcular el precio total
       cesta.forEach((productoEnCarrito, productId) => {
         const producto = productoEnCarrito.producto;
@@ -174,12 +262,19 @@
         const precioTotalProducto = producto.price * cantidad;
         total += precioTotalProducto;
       });
+      });
 
       // Crear el elemento para mostrar el precio total
       const contenedorTotal = document.querySelector('#precio-total');
       contenedorTotal.innerHTML = `Precio total: ${total}€`;
     });
   </script>
+      // Crear el elemento para mostrar el precio total
+      const contenedorTotal = document.querySelector('#precio-total');
+      contenedorTotal.innerHTML = `Precio total: ${total}€`;
+    });
+  </script>
+
 
 
 
@@ -207,10 +302,35 @@
       <input type="email" id="email" class="input-email-footer" placeholder="Ingrese su correo electrónico">
       <button type="submit" class="button-send">Enviar</button>
     </section>
+    <section class="footer-content container">
+      <h3>&copy; 2023 Golden Hands</h3>
+      <ul class="social-icon">
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-iconitem"><a class="social-iconlink" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+    </section>
+    <section class="contact-footer">
+      <label for="email">Manténgase en contacto para ofertas, noticias y mucho
+        más</label>
+      <input type="email" id="email" class="input-email-footer" placeholder="Ingrese su correo electrónico">
+      <button type="submit" class="button-send">Enviar</button>
+    </section>
   </footer>
   <script src="./js/hamburguer.js"></script>
 
   <script src="../js/cart.js"></script>
+</body>
+
 </body>
 
 </html>

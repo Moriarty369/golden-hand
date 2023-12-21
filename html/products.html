@@ -69,6 +69,7 @@
           <li><a href="./contact.html">Contactos</a></li>
           <li><a href="./about-us.html">Nosotros</a></li>
           <a href="./login.html"><i class="fas fa-user icons"></i></a>
+          <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
       </div>
       <div class="show">
@@ -86,6 +87,7 @@
         </ul>
       </div>
     </nav>
+    
   </header>
   <main>
     <section class="secondary-nav container">
@@ -102,94 +104,89 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
               </svg>
+          </a>   
               <!--contador-productos-->
-              <div class="count-products">
-                <span id="contador-productos">0</span>
-              </div>
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+          
+          <div class="search-btn-container">
+            <button type="button"onclick="toggleSearch()" class="search-button">🔎</button>
+          </div>
+          <!-- SEARCH -->
+          <div id="search-container">
+            <form id="search-form"
+            onsubmit="event.preventDefault(); searchProducts();">
+            <input type="text" id="search-input" name="search-input"
+              placeholder="Buscar productos...">
+  
+          </form>
+          <div id="search-results" class="search-results">
 
-            </div>
-          </a>
+          </div>
+          </div>
+          
+           <!-- FIN SEARCH -->
         </nav>
       </div>
     </section>
 
-    <div class="product-content" id="contenedordiv"></div>
-    <div class="contenedorboton" id="contenedorboton">
-      <button class="botoncitos" id="anterior">Anterior</button>
-      <button class="botoncitos" id="siguiente">Siguiente</button>
-    </div>
-    <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
-    <section id="gluten" class="product-content products container"></section>
-    <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
-    <section id="lacteo" class="product-content products container"></section>
-    <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
-    <section id="frutos" class="product-content products container"></section>
-
-
-    <!-- Modal -->
-    <section>
-      <div class="modal" id="mi-modal">
-        <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
+      <div class="product-content" id="contenedordiv"></div>
+      <div class="contenedorboton" id="contenedorboton">
+        <button class="botoncitos" id="anterior">Anterior</button>
+        <button class="botoncitos" id="siguiente">Siguiente</button>
       </div>
-    </section>
-    <!-- Fin del modal -->
+      <h2 id="tituloCeliaco" class="products-h2">Sustitutivos para celíacos</h2>
+      <section id="gluten" class="product-content products container"></section>
+      <h2 id="tituloLacteo" class="products-h2">Sustitutivos para lácteos</h2>
+      <section id="lacteo" class="product-content products container"></section>
+      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos secos</h2>
+      <section id="frutos" class="product-content products container"></section>
 
-  </main>
+      <!-- Modal -->
+      <section>
+        <div class="modal" id="mi-modal">
+          <button class="close-modal" id="close-modal"><i
+              class="fa-solid fa-xmark"></i></button>
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+      </section>
+      <!-- Fin del modal -->
 
+    </main>
 
-  <footer class="footer">
-    <section class="footer-content">
-      <h3>&copy; 2023 Golden Hands</h3>
-      <ul class="social-icon">
-        <li class="social-iconitem"><a class="social-iconlink" href="#">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a></li>
-        <li class="social-iconitem"><a class="social-iconlink" href="#">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a></li>
-        <li class="social-iconitem"><a class="social-iconlink" href="#">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a></li>
-        <li class="social-iconitem"><a class="social-iconlink" href="#">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a></li>
-      </ul>
-    </section>
-    <section class="contact-footer">
-      <label for="email">Manténgase en contacto para ofertas, noticias y mucho más</label>
-      <input type="email" id="email" class="input-email-footer" placeholder="Ingrese su correo electrónico">
-      <button type="submit" class="button-send">Enviar</button>
-    </section>
+    <footer class="footer">
+      <section class="footer-content">
+        <h3>&copy; 2023 Golden Hands</h3>
+        <ul class="social-icon">
+          <li class="social-iconitem"><a class="social-iconlink" href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li class="social-iconitem"><a class="social-iconlink" href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li class="social-iconitem"><a class="social-iconlink" href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+          <li class="social-iconitem"><a class="social-iconlink" href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+      </section>
+      <section class="contact-footer">
+        <label for="email">Manténgase en contacto para ofertas, noticias y mucho
+          más</label>
+        <input type="email" id="email" class="input-email-footer"
+          placeholder="Ingrese su correo electrónico">
+        <button type="submit" class="button-send">Enviar</button>
+      </section>
 
   </footer>
-  <!-- MODAL -->
-  <!-- <script>
-function openModal(imageSrc, description) {
-    $("#myModal").css("display", "block");
-    $("#modalImage").attr("src", imageSrc);
-    $("#modalDescription").text(description);
-}
 
-function closeModal() {
-    $("#myModal").css("display", "none");
-}
-
-// Cierra el modal si el usuario hace clic fuera del contenido del modal
-$(window).on("click", function(event) {
-    var modal = $("#myModal")[0];
-    if (event.target === modal) {
-        closeModal();
-    }
-});
-
-
-</script>  -->
-
-
-  <script src="../js/hamburguer.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="..//js//hamburguer.js"></script>
   <script src="../js/cart.js"></script>
 </body>
 
