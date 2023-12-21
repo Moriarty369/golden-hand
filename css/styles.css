@@ -581,7 +581,7 @@ p {
  .icons i {
     cursor: pointer;
     width: 5rem;
-    height: 5rem;
+    height: 3rem;
  }
  .icons i:hover {
      background-color: #c7c7f3;
@@ -651,7 +651,9 @@ p {
    position: absolute;
    transform: translateY(-300%); 
  }
-
+ .message-captcha{
+font-size: 15px;
+ }
 /* Fin del login*/
 
 /*Estilos para la página de Products*/
@@ -1745,4 +1747,13 @@ td {
   color: #721c24!important;
   font-size: 0.7rem;
   font-family: Arial, sans-serif;
+}
+
+.jeje { 
+  font-size: 24px; 
+  font-weight: bold; 
+  display: flex; 
+  flex-direction: column;
+  margin-bottom: 10px; 
+  align-items: center;
 }
