@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nuevoProducto.classList.add('product');
             nuevoProducto.innerHTML = `
             <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
+            <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
             <div class="product-txt">
               <h3>${producto.name}</h3>
               <p class="precio">${producto.price}€</p>
@@ -233,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nuevoProducto = document.createElement('div');
         nuevoProducto.classList.add('product');
         nuevoProducto.innerHTML = `
+        <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
         <a href="#"><img  src="${producto.img}" alt="Imagen de ${producto.name}"></a>
         <div class="product-txt">
           <h3>${producto.name}</h3>

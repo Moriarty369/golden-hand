@@ -22,7 +22,31 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </head>
 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/mio.css" />
+    <script src="https://kit.fontawesome.com/60be6c00de.js"
+      crossorigin="anonymous"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
+      href="../images/golden-hands.png">
+    <script type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  </head>
 
+
+  <body>
+    <header>
+      <nav>
   <body>
     <header>
       <nav>
@@ -39,10 +63,34 @@
           <li><a href="./contact.html">Contactos</a></li>
           <li><a href="./about-us.html">Nosotros</a></li>
             <a href="./login.html"><i class="fas fa-user icons"></i></a>
+            <a href="./login.html"><i class="fas fa-user icons"></i></a>
         </ul>
       </div>
       <div class="show">
         <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="hidden-container">
+          <ul class="hidden-list">
+             <li><a href="./services.html">Servicios</a></li>
+              <li><a href="./products.html">Productos</a></li>
+              <li><a href="./contact.html">Contactos</a></li>
+              <li><a href="./about-us.html">Nosotros</a></li>
+              <li class="space-icons">  
+                <a href="./login.html"><i class="fas fa-user icons"></i></a>
+              </li>
+          </ul>
+  </div>
+        </nav>
+    </header>
+    <main>
+      <section class="secondary-nav container">
+        <div class="secondary">
+          <nav class="product-nav">
+            <button class="buttonfondo" id="verTodo"> Ver Todo</button>
+            <button class="buttonfondo" id="btnCeliaco">Celíacos</button>
+            <button class="buttonfondo" id="btnLacteos">Lácteos</button>
+            <button class="buttonfondo" id="btnFrutos">Frutos</button>
+
           </div>
           <div class="hidden-container">
           <ul class="hidden-list">
@@ -97,7 +145,46 @@
 
                   </form>
                   <div id="search-results" class="search-results">
+              <div>
+                <a href="./cart.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                
+                <!--contador-productos-->
+                <div class="count-products">
+                  <span id="contador-productos">0</span>
+                </div>
+                </a>
+              </div>
+              <div>
+                <div class="search-btn-container">
+                  <button type="button" onclick="toggleSearch()"
+                    class="search-button"><img src="../images/lupa.png" alt="lupa" class="lupa"></button>
+                </div>
 
+                <!-- SEARCH -->
+                <div id="search-container">
+                  <form id="search-form"
+                    onsubmit="event.preventDefault(); searchProducts();">
+                    <input type="text" id="search-input" name="search-input"
+                      placeholder="Buscar productos...">
+
+                  </form>
+                  <div id="search-results" class="search-results">
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN SEARCH -->
+            </div>
+
+          </nav>
+        </div>
+      </section>
                   </div>
                 </div>
               </div>
@@ -119,8 +206,11 @@
       <section id="lacteo" class="product-content products container"></section>
       <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos
         secos</h2>
+      <h2 id="tituloFrutos" class="products-h2">Sustitutivos para frutos
+        secos</h2>
       <section id="frutos" class="product-content products container"></section>
 
+     
      
 
     </main>
@@ -152,7 +242,12 @@
       </section>
 
     </footer>
+    </footer>
 
+    <script src="../js/search.js"></script>
+    <script src="..//js//hamburguer.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
     <script src="../js/search.js"></script>
     <script src="..//js//hamburguer.js"></script>
     <script src="../js/cart.js"></script>
