@@ -89,6 +89,15 @@
               <input class="nombreUsuario" id="contraseña" type="password" placeholder="Password" required autocomplete="off"/>
             </div>
             <p class="mensaje-error" id="resultadoValidacion3"></p>
+            <!-- AQUI METO EL CAPTCHA -->
+            <div class="jeje" id="captcha">
+              <div id="textoCaptcha"></div> <!-- Espacio para el texto del captcha -->
+              <input type="text" id="captchaInput" placeholder="Introduce el código" required>
+              <button type="button" onclick="generarCaptcha()">Generar Captcha</button>
+              <p id="mensajeResultado" class="message-captcha"></p>
+              <input type="submit" value="Enviar" onclick="validarCaptcha()"> <!-- Agrega la llamada a la función de validación del captcha -->
+            </div>
+            <!-- AQUI TERMINA EL CAPTCHA -->
             <input onclick="validarNombreUsuario(document.querySelector('.nombreUsuario').value), validarCorreoElectronico(document.getElementById('email').value), validarContraseña(document.getElementById('contraseña').value)" type="submit" value="Registrarse"/>
       </form> 
     </section>
@@ -122,13 +131,41 @@
               <input class="nombreUsuario" id="contraseña2" type="password" placeholder="Password" required autocomplete="off"/>
             </div>
             <p class="mensaje-error" id="resultadoValidacion5"></p>
+
             <input onclick="validarCorreoElectronico2(document.getElementById('email2').value), validarContraseña2(document.getElementById('contraseña2').value)" type="submit" value="Iniciar Sesión" />
-      </form>
+           
+           
+
+          </form>
     </section>
   </main>
   <script src="../js/script.js"></script>
   <script src="../js/hamburguer.js"></script>
   <script src="../js/validaciones.js"></script>
+
+<script>
+ function generarCaptcha() {
+    var captcha = '';
+    var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < 6; i++) {
+        captcha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    document.getElementById('textoCaptcha').innerText = captcha; // Actualizar el elemento correcto
+}
+
+function validarCaptcha() {
+    const captchaIngresado = document.getElementById('captchaInput').value;
+    const captchaMostrado = document.getElementById('textoCaptcha').innerText;
+
+    if (captchaIngresado === captchaMostrado) {
+        document.getElementById('mensajeResultado').textContent = "Captcha correcto.";
+    } else {
+        document.getElementById('mensajeResultado').textContent = "Captcha incorrecto. Por favor, inténtalo de nuevo.";
+    }
+}
+</script>
+
 </body>
 
 
