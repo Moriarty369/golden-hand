@@ -1,80 +1,110 @@
+///AQUI ESTAN LAS VALIDACIONES PARA CREAR UNA CUENTA
 function validarNombreUsuario(nombre) {
     const longitudMinima = 6;
     const longitudMaxima = 20;
-    const expresionRegular = /^[A-Z][a-zA-Z]*(?:\s[A-Z][a-zA-Z]*)+$/; // Solo permite letras y espacios
-
-    let resultado = "";
+    const expresionRegular = /^[A-Z][a-zA-Z]*(?:\s[A-Z][a-zA-Z]*)+$/;
 
     if (nombre.length < longitudMinima || nombre.length > longitudMaxima) {
-        resultado = "Debe tener entre 6 y 20 carácteres";
+        document.getElementById("resultadoValidacion").innerText = "Debe tener entre 6 y 20 carácteres";
+        return false;
     } else if (!expresionRegular.test(nombre)) {
-        resultado = "Debe poner nombre, apellido con la primera letra de cada palabra en mayuscula y no puede contenr carácteres especiales";
+        document.getElementById("resultadoValidacion").innerText = "Debe poner nombre, apellido con la primera letra de cada palabra en mayúscula y no puede contener caracteres especiales";
+        return false;
     } else {
-        resultado = "";
+        document.getElementById("resultadoValidacion").innerText = "";
+        return true;
     }
-
-    document.getElementById("resultadoValidacion").innerText = resultado;
 }
 
 function validarCorreoElectronico(correo) {
     const expresionRegular2 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Expresión regular para validar correos electrónicos
 
-    let resultado2 = "";
-
     if (!expresionRegular2.test(correo)) {
-        resultado2 = "Por favor, introduce un correo electrónico válido.";
+        document.getElementById("resultadoValidacion2").innerText = "Por favor, introduce un correo electrónico válido.";
+        return false;
     } else {
-        resultado2 = "";
+        document.getElementById("resultadoValidacion2").innerText = "";
+        return true;
     }
 
-    document.getElementById("resultadoValidacion2").innerText = resultado2;
 }
 
 function validarContraseña(contraseña) {
     // Expresión regular para validar la contraseña Requisitos: Al menos una letra mayúscula, una letra minúscula, un número y un símbolo especial Longitud mínima de 8 caracteres
-    const expresionRegular3 = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&,.;])[A-Za-z\d@$!%?&,.;]{8,}$/;
+    const expresionRegular3 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,.;])[A-Za-z\d@$!%*?&,.;]{8,}$/;
     ;
 
-    let resultado3 = "";
-
     if (!expresionRegular3.test(contraseña)) {
-        resultado3 = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres" ;
-
+        document.getElementById("resultadoValidacion3").innerText = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres" ;
+        return false;
     } else {
-        resultado3 = "";
+        document.getElementById("resultadoValidacion3").innerText = "";
+        return true;
     }
-
-    document.getElementById("resultadoValidacion3").innerText = resultado3;
 }
 
-function validarCorreoElectronico2(correo) {
+document.getElementById('tuFormulario').addEventListener('submit', function(event) {
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('email').value;
+    const contraseña = document.getElementById('contraseña').value;
+
+    const esNombreValido = validarNombreUsuario(nombre);
+    const esCorreoValido = validarCorreoElectronico(correo);
+    const esContraseñaValida = validarContraseña(contraseña);
+
+    if (!esNombreValido || !esCorreoValido || !esContraseñaValida) {
+        event.preventDefault(); // Previene el envío del formulario
+    }
+});
+
+
+
+
+
+
+
+
+/// AQUI ESTA EL CODIGO PARA INICIAR SESION
+function validarCorreoElectronico2(correo2) {
     const expresionRegular4 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Expresión regular para validar correos electrónicos
 
-    let resultado4 = "";
-
-    if (!expresionRegular4.test(correo)) {
-        resultado4 = "Por favor, introduce un correo electrónico válido.";
+    if (!expresionRegular4.test(correo2)) {
+        document.getElementById("resultadoValidacion4").innerText = "Por favor, introduce un correo electrónico válido.";
+        return false;
     } else {
-        resultado4 = "";
+        document.getElementById("resultadoValidacion4").innerText = "";
+        return true;
     }
 
-    document.getElementById("resultadoValidacion4").innerText = resultado4;
 }
 
-function validarContraseña2(contraseña) {
+function validarContraseña2(contraseña2) {
     // Expresión regular para validar la contraseña Requisitos: Al menos una letra mayúscula, una letra minúscula, un número y un símbolo especial Longitud mínima de 8 caracteres
-    const expresionRegular5 = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&,.;])[A-Za-z\d@$!%?&,.;]{8,}$/;
+    const expresionRegular5 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,.;])[A-Za-z\d@$!%*?&,.;]{8,}$/;
+    ;
 
-    let resultado5 = "";
-
-    if (!expresionRegular5.test(contraseña)) {
-        resultado5 = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres";
+    if (!expresionRegular5.test(contraseña2)) {
+        document.getElementById("resultadoValidacion5").innerText = "Debe contener: Una letra minuscula, Una letra mayuscula, Un numero, Un simbolo especial y al menos 8 caracteres" ;
+        return false;
     } else {
-        resultado5 = "";
+        document.getElementById("resultadoValidacion5").innerText = "";
+        return true;
     }
-
-    document.getElementById("resultadoValidacion5").innerText = resultado5;
 }
+
+document.getElementById('tuFormulario2').addEventListener('submit', function(event) {
+    const correo2 = document.getElementById('email2').value;
+    const contraseña2 = document.getElementById('contraseña2').value;
+
+    const esCorreoValido2 = validarCorreoElectronico2(correo2);
+    const esContraseñaValida2 = validarContraseña2(contraseña2);
+
+    if (!esCorreoValido2 || !esContraseñaValida2) {
+        event.preventDefault(); // Previene el envío del formulario
+    }
+});
+
+/// ESTE ES EL CODIGO PARA VALIDAR EL FORMULARIO DE CONTACT
 
 function validarEmail(){
     let emailContact = document.querySelector("#emailContact")
@@ -83,8 +113,10 @@ function validarEmail(){
   
     if (expresionCorreo.test(emailContact.value)){
       errorContact.textContent = "";
+      return true
     }else {
       errorContact.textContent = "Por favor, introduce un correo electrónico válido."
+      return false
     }
   }
 
@@ -96,10 +128,13 @@ function validarEmail(){
     const longitudMaxima = 20;
 
     if (nombreContacto.length < longitudMinima || nombreContacto.length > longitudMaxima) {
-        ErrorNombreContact.textContent = "Debe poner nombre, apellido con la primera letra de cada palabra en mayuscula.";
+        ErrorNombreContact.textContent = "Debe tener entre 6 y 20 carácteres.";
+        return false
     } else if (!expresionNombre.test(nombreContacto.value)) {
-        ErrorNombreContact.textContent = "El nombre solo puede contener letras y espacios.";
+        ErrorNombreContact.textContent = "Debe tener nombre y apellido y ambas empezar por mayuscula.";
+        return false
     } else {
         ErrorNombreContact.textContent = "";
+        return true
     }
   }
